@@ -1,0 +1,9 @@
+node_modules
+build
+.env
+.DS_Store
+tmp-*.txt
+*.xls
+*.xlsx
+__pycache__/
+*.pyc

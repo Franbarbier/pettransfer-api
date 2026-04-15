@@ -1,0 +1,57 @@
+{
+  "name": "pettransfer-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js",
+    "lint": "eslint src",
+    "db:seed:test-quote": "tsx src/scripts/seedTestQuote.ts",
+    "db:import:quotes-clean": "tsx src/scripts/importQuotesClean.ts",
+    "db:import:quotes-clean:2024": "tsx src/scripts/importQuotesClean2024.ts",
+    "db:import:2025-bulk": "tsx src/scripts/importJson2025Bulk.ts",
+    "db:import:quote-items-from-quotes": "tsx src/scripts/importQuoteItemsFromQuotes.ts",
+    "db:import:quotes-formatted26": "tsx src/scripts/importQuotesFormatted26.ts",
+    "db:migrate:crate-size": "tsx src/scripts/applyMigration004CrateSize.ts",
+    "db:migrate:crate-tariffs": "tsx src/scripts/applyMigration005CrateTariffs.ts",
+    "db:migrate:formatted-origin": "tsx src/scripts/applyMigration006FormattedOrigin.ts",
+    "db:backfill:formatted-origin": "tsx src/scripts/backfillFormattedOrigin.ts",
+    "db:migrate:formatted-destination": "tsx src/scripts/applyMigration007FormattedDestination.ts",
+    "db:migrate:formatted-quotation-date": "tsx src/scripts/applyMigration008FormattedQuotationDate.ts",
+    "db:migrate:formatted-travel-date": "tsx src/scripts/applyMigration009FormattedTravelDate.ts",
+    "db:migrate:quote-date-columns": "npm run db:migrate:formatted-quotation-date && npm run db:migrate:formatted-travel-date",
+    "db:migrate:impo-quote-templates": "tsx src/scripts/applyMigration010ImpoQuoteTemplates.ts",
+    "db:backfill:formatted-quote-dates": "tsx src/scripts/backfillFormattedQuotationDates.ts",
+    "db:analyze:quotation-date-formats": "tsx src/scripts/analyzeQuotationDateRawFormats.ts",
+    "db:analyze:travel-date-formats": "tsx src/scripts/analyzeQuotationDateRawFormats.ts --travel",
+    "db:backfill:formatted-destination": "tsx src/scripts/backfillFormattedDestination.ts",
+    "db:export:bad-destination-usd": "tsx src/scripts/exportQuotesDestinationLooksLikeUsd.ts",
+    "db:export:airport-source-files": "tsx src/scripts/exportQuotesAirportRelatedSourceFiles.ts",
+    "db:apply:destination-fixes": "tsx src/scripts/applyQuotesDestinationFixes.ts"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.14.1",
+    "googleapis": "^171.4.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/archiver": "^7.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.13.10",
+    "@types/pg": "^8.11.11",
+    "eslint": "^9.21.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}
