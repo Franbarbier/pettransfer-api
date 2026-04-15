@@ -1,0 +1,3215 @@
+[
+  {
+    "item_catalog_id": "additional_after_hours_fee",
+    "display_name": "additional after-hours fee",
+    "category": "other",
+    "aliases": [
+      "additional after-hours fee"
+    ]
+  },
+  {
+    "item_catalog_id": "air_freight",
+    "display_name": "Air freight",
+    "category": "air_transport",
+    "aliases": [
+      "Cargo Freight AEP/EZE - GRU",
+      "Cargo Freight BOG - CDG",
+      "Cargo Freight BOG - DXB",
+      "Cargo Freight BOG - JFK",
+      "Cargo Freight BOG - LIS",
+      "Cargo Freight BOG - YUL",
+      "Cargo Freight EZE - BOG",
+      "Cargo Freight EZE - CPH",
+      "Cargo Freight EZE - CTL",
+      "Cargo Freight EZE - CUN",
+      "Cargo Freight EZE - DEN",
+      "Cargo Freight EZE - DFW",
+      "Cargo Freight EZE - DTW",
+      "Cargo Freight EZE - GIG",
+      "Cargo Freight EZE - GRU",
+      "Cargo Freight EZE - IAD",
+      "Cargo Freight EZE - IAH",
+      "Cargo Freight EZE - JFK",
+      "Cargo Freight EZE - JFK or MIA",
+      "Cargo Freight EZE - KEF",
+      "Cargo Freight EZE - LAX",
+      "Cargo Freight EZE - LCA",
+      "Cargo Freight EZE - LIS",
+      "Cargo Freight EZE - MAD",
+      "Cargo Freight EZE - MEX",
+      "Cargo Freight EZE - MIA",
+      "Cargo Freight EZE - MIA or JFK",
+      "Cargo Freight EZE - ORD",
+      "Cargo Freight EZE - SCL",
+      "Cargo Freight EZE - SFO",
+      "Cargo Freight EZE - SJO",
+      "Cargo Freight EZE - VLC",
+      "Cargo Freight MEX - ARN",
+      "Cargo Freight MEX - ATH",
+      "Cargo Freight MEX - ATL",
+      "Cargo Freight MEX - BAH",
+      "Cargo Freight MEX - BCN",
+      "Cargo Freight MEX - BER",
+      "Cargo Freight MEX - BEY",
+      "Cargo Freight MEX - BOG",
+      "Cargo Freight MEX - BZE",
+      "Cargo Freight MEX - CDG",
+      "Cargo Freight MEX - CGK",
+      "Cargo Freight MEX - CPH",
+      "Cargo Freight MEX - DEN",
+      "Cargo Freight MEX - DUB",
+      "Cargo Freight MEX - DXB",
+      "Cargo Freight MEX - FCO",
+      "Cargo Freight MEX - FRA",
+      "Cargo Freight MEX - GRU",
+      "Cargo Freight MEX - GUA",
+      "Cargo Freight MEX - IAH",
+      "Cargo Freight MEX - JED",
+      "Cargo Freight MEX - JFK",
+      "Cargo Freight MEX - JNB",
+      "Cargo Freight MEX - LAX",
+      "Cargo Freight MEX - MAD",
+      "Cargo Freight MEX - MDE",
+      "Cargo Freight MEX - MGA",
+      "Cargo Freight MEX - MIA",
+      "Cargo Freight MEX - MIA or IAH",
+      "Cargo Freight MEX - MUC",
+      "Cargo Freight MEX - ORD",
+      "Cargo Freight MEX - OSL",
+      "Cargo Freight MEX - RUH",
+      "Cargo Freight MEX - SCL",
+      "Cargo Freight MEX - SFO",
+      "Cargo Freight MEX - SJU",
+      "Cargo Freight MEX - TLV",
+      "Cargo Freight MEX - ZRH",
+      "Cargo Freight PTY- BCN",
+      "Cargo Freight PTY- EZE",
+      "Cargo Freight PTY- GUA",
+      "Cargo Freight PTY- JFK",
+      "Cargo Freight PTY- MDE",
+      "Cargo Freight PTY- MVD",
+      "Cargo Freight SCL - BKK",
+      "Cargo Freight SCL - MAD",
+      "Cargo Freight SCL - OSL",
+      "Cargo Freight SCL - RUH",
+      "Cargo Freight SJO - SAP",
+      "Cargo Freight SJO - SCL",
+      "Cargo freight BOG - AMS",
+      "Cargo freight BOG - ATL",
+      "Cargo freight BOG - BCN",
+      "Cargo freight BOG - BER",
+      "Cargo freight BOG - BOS",
+      "Cargo freight BOG - CCS",
+      "Cargo freight BOG - CDG",
+      "Cargo freight BOG - FRA",
+      "Cargo freight BOG - GRU",
+      "Cargo freight BOG - IAD",
+      "Cargo freight BOG - JFK",
+      "Cargo freight BOG - JNB",
+      "Cargo freight BOG - LAX",
+      "Cargo freight BOG - LIM",
+      "Cargo freight BOG - LIS",
+      "Cargo freight BOG - MAD",
+      "Cargo freight BOG - MEX",
+      "Cargo freight BOG - MIA",
+      "Cargo freight BOG - ORD",
+      "Cargo freight BOG - SCL",
+      "Cargo freight BOG - UIO",
+      "Cargo freight BOG - VER",
+      "Cargo freight BOG - YUL",
+      "Cargo freight BOG - YVR",
+      "Cargo freight BOG - YYC",
+      "Cargo freight BOG - YYZ",
+      "Cargo freight CCS - BOG",
+      "Cargo freight CLO - IAD",
+      "Cargo freight CLO - JFK",
+      "Cargo freight CLO - LAX",
+      "Cargo freight CLO - MIA",
+      "Cargo freight CLO - ORD",
+      "Cargo freight EZE - AGP",
+      "Cargo freight EZE - ATH",
+      "Cargo freight EZE - BER",
+      "Cargo freight EZE - CDG",
+      "Cargo freight EZE - CPH",
+      "Cargo freight EZE - CPT",
+      "Cargo freight EZE - DXB",
+      "Cargo freight EZE - FCO",
+      "Cargo freight EZE - FRA",
+      "Cargo freight EZE - FRA - FCO",
+      "Cargo freight EZE - HEL",
+      "Cargo freight EZE - HND",
+      "Cargo freight EZE - JNB",
+      "Cargo freight EZE - LIM",
+      "Cargo freight EZE - LIS",
+      "Cargo freight EZE - MAD",
+      "Cargo freight EZE - MEL",
+      "Cargo freight EZE - MIA",
+      "Cargo freight EZE - MVD",
+      "Cargo freight EZE - MXP",
+      "Cargo freight EZE - NBO",
+      "Cargo freight EZE - SCL",
+      "Cargo freight EZE - SEA",
+      "Cargo freight EZE - SJO",
+      "Cargo freight EZE - TFN",
+      "Cargo freight EZE - VIE",
+      "Cargo freight EZE - WAW",
+      "Cargo freight EZE LHR",
+      "Cargo freight EZE- GRU",
+      "Cargo freight EZE/AEP- GRU",
+      "Cargo freight EZE/MVD",
+      "Cargo freight GIG - BKK",
+      "Cargo freight GIG - DXB",
+      "Cargo freight GIG - LHR",
+      "Cargo freight GIG - MEX",
+      "Cargo freight GIG- PVG",
+      "Cargo freight GRU - BKK",
+      "Cargo freight GRU - BOS",
+      "Cargo freight GRU - CDG",
+      "Cargo freight GRU - DXB",
+      "Cargo freight GRU - FCO",
+      "Cargo freight GRU - LAX",
+      "Cargo freight GRU - LIS",
+      "Cargo freight GRU - MEX",
+      "Cargo freight GRU - MXP",
+      "Cargo freight GRU - OPO",
+      "Cargo freight GRU - SJO",
+      "Cargo freight GRU- MEX",
+      "Cargo freight GRU- MIA",
+      "Cargo freight LIM - AMS",
+      "Cargo freight LIM - ATL",
+      "Cargo freight LIM - BCN",
+      "Cargo freight LIM - DXB",
+      "Cargo freight LIM - FRA",
+      "Cargo freight LIM - GIG",
+      "Cargo freight LIM - JFK",
+      "Cargo freight LIM - LAX",
+      "Cargo freight LIM - MAD",
+      "Cargo freight LIM - MEX",
+      "Cargo freight LIM - MIA",
+      "Cargo freight LIM - ORD",
+      "Cargo freight LIM - SCL",
+      "Cargo freight LIM - YUL",
+      "Cargo freight MDE - JFK",
+      "Cargo freight MDE - MAD",
+      "Cargo freight MDE - MIA",
+      "Cargo freight MDE - SCL",
+      "Cargo freight MEX - ATL",
+      "Cargo freight MEX - BCN",
+      "Cargo freight MEX - BRU",
+      "Cargo freight MEX - CDG",
+      "Cargo freight MEX - CUN",
+      "Cargo freight MEX - DEN",
+      "Cargo freight MEX - DFW",
+      "Cargo freight MEX - DUB",
+      "Cargo freight MEX - FRA",
+      "Cargo freight MEX - GDL",
+      "Cargo freight MEX - GIG",
+      "Cargo freight MEX - GRU",
+      "Cargo freight MEX - IAD",
+      "Cargo freight MEX - IAH",
+      "Cargo freight MEX - JFK",
+      "Cargo freight MEX - LAP",
+      "Cargo freight MEX - LAX",
+      "Cargo freight MEX - LHR",
+      "Cargo freight MEX - LIM",
+      "Cargo freight MEX - LIS",
+      "Cargo freight MEX - MAD",
+      "Cargo freight MEX - MAN",
+      "Cargo freight MEX - MIA",
+      "Cargo freight MEX - MIA or IAH",
+      "Cargo freight MEX - MID",
+      "Cargo freight MEX - MNL",
+      "Cargo freight MEX - MTY",
+      "Cargo freight MEX - MVD",
+      "Cargo freight MEX - MXP",
+      "Cargo freight MEX - NBO",
+      "Cargo freight MEX - NRT",
+      "Cargo freight MEX - ORD",
+      "Cargo freight MEX - PTY",
+      "Cargo freight MEX - PVG",
+      "Cargo freight MEX - PVR",
+      "Cargo freight MEX - SFO",
+      "Cargo freight MEX - SJD",
+      "Cargo freight MEX - TGZ",
+      "Cargo freight MEX - TIJ",
+      "Cargo freight MEX - TRC",
+      "Cargo freight MEX - UIO",
+      "Cargo freight MEX - VER",
+      "Cargo freight MEX - VSA",
+      "Cargo freight MEX - YUL",
+      "Cargo freight MEX - YVR",
+      "Cargo freight MEX - YYR",
+      "Cargo freight MEX - YYZ",
+      "Cargo freight MEX - ZRH",
+      "Cargo freight MEX- EZE",
+      "Cargo freight MVD - DXB",
+      "Cargo freight MVD - IAD",
+      "Cargo freight MVD - JNB",
+      "Cargo freight MVD - MAN",
+      "Cargo freight MVD - MEX",
+      "Cargo freight MVD - MIA",
+      "Cargo freight SCL - AKL",
+      "Cargo freight SCL - ASU",
+      "Cargo freight SCL - ATL",
+      "Cargo freight SCL - AUS",
+      "Cargo freight SCL - BCN",
+      "Cargo freight SCL - BOG",
+      "Cargo freight SCL - CCS",
+      "Cargo freight SCL - EZE",
+      "Cargo freight SCL - FCO",
+      "Cargo freight SCL - GRU",
+      "Cargo freight SCL - HKG",
+      "Cargo freight SCL - IAD",
+      "Cargo freight SCL - JFK",
+      "Cargo freight SCL - JNB",
+      "Cargo freight SCL - LAX",
+      "Cargo freight SCL - LIM",
+      "Cargo freight SCL - MAD",
+      "Cargo freight SCL - MDE",
+      "Cargo freight SCL - MEL",
+      "Cargo freight SCL - MIA",
+      "Cargo freight SCL - MVD",
+      "Cargo freight SCL - MXP",
+      "Cargo freight SCL - ORD",
+      "Cargo freight SCL - ORD or MIA",
+      "Cargo freight SCL - OSL",
+      "Cargo freight SCL - PTY",
+      "Cargo freight SCL - SDQ",
+      "Cargo freight SCL - YUL",
+      "Cargo freight SCL - YVR",
+      "Cargo freight SCL - YYZ",
+      "Cargo freight SCL - ZRH",
+      "Cargo freight SCL- ATH",
+      "Cargo freight SCL- BOM",
+      "Cargo freight SCL- CDG",
+      "Cargo freight SCL- DUB",
+      "Cargo freight SCL- EZE",
+      "Cargo freight SCL- GUA",
+      "Cargo freight SCL- LHR",
+      "Cargo freight SCL- LPB",
+      "Cargo freight SCL- MEX",
+      "Cargo freight SCL- SJO",
+      "Cargo freight SCL- TLS",
+      "Cargo freight SCL- VVI",
+      "Cargo freight SCL-BOG",
+      "Cargo freight SCL-CLO",
+      "Cargo freight SCL-GIG",
+      "Cargo freight SCL-GRU",
+      "Cargo freight SCL-GYE",
+      "Cargo freight SCL-LIS",
+      "Cargo freight SJO - AUS",
+      "Cargo freight SJO - BOG",
+      "Cargo freight SJO - IAH",
+      "Cargo freight SJO - JFK",
+      "Cargo freight SJO - LAX",
+      "Cargo freight SJO - MIA",
+      "Cargo freight SJO - MVD",
+      "Cargo freight SJO-AMS",
+      "Cargo freight SJO-MIA",
+      "Cargo freight UIO - JNB",
+      "Cargo freight UIO - LHR",
+      "Cargo freight from EZE to DXB",
+      "Cargo freight from GRU - AMS",
+      "Cargo freight from GRU - BCN",
+      "Cargo freight from GRU - FRA",
+      "Cargo freight from GRU - ICN",
+      "Cargo freight from GRU - JNB",
+      "Cargo freight from GRU - KIX",
+      "Cargo freight from GRU - LUN",
+      "Cargo freight from GRU - MPM",
+      "Cargo freight from GRU - VIE",
+      "Cargo freight from GRU - YUL",
+      "Cargo freight from GRU - YYZ",
+      "Cargo freight from GRU - ZRH",
+      "Cargo freight from GRU to SCL",
+      "Cargo freight from MEX - CDG",
+      "Cargo freight from MEX to DXB",
+      "Cargo freight from SCL to DXB",
+      "Cargo freight from SJO to DXB",
+      "Domestic Air freight MEX-MID",
+      "Flete aéreo EZE - BOG",
+      "Flete aéreo y handling BOG - EZE",
+      "Flete aéreo y handling EZE - BOG",
+      "Flete aéreo y handling EZE - CDG",
+      "Flete aéreo y handling EZE - LIM",
+      "Flete aéreo y handling EZE - MAD",
+      "Flete aéreo y handling EZE - UIO",
+      "Flete aéreo y handling EZE - VIE",
+      "Flete aéreo y handling LIM - EZE",
+      "LATAM Pet Transport Fees",
+      "LATAM Pet Transport fees",
+      "LATAM Pet transport fees"
+    ]
+  },
+  {
+    "item_catalog_id": "airfreight_eze_gru",
+    "display_name": "Airfreight EZE - GRU",
+    "category": "other",
+    "aliases": [
+      "Airfreight EZE - GRU"
+    ]
+  },
+  {
+    "item_catalog_id": "airline_tender",
+    "display_name": "Tender / airline presentation",
+    "category": "air_transport",
+    "aliases": [
+      "Presentación a la aerolínea",
+      "Tender Process",
+      "Tender Process to the airline",
+      "Tender process",
+      "Tender process o the airline",
+      "Tender process to the airline"
+    ]
+  },
+  {
+    "item_catalog_id": "airport_assistance",
+    "display_name": "Airport assistance",
+    "category": "other",
+    "aliases": [
+      "Airport assistance"
+    ]
+  },
+  {
+    "item_catalog_id": "airport_pick_up",
+    "display_name": "Airport Pick up",
+    "category": "other",
+    "aliases": [
+      "Airport Pick up"
+    ]
+  },
+  {
+    "item_catalog_id": "assist_at_bog_airport",
+    "display_name": "Assist at BOG airport",
+    "category": "other",
+    "aliases": [
+      "Assist at BOG airport"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_at_bog_cnx",
+    "display_name": "Assistance at BOG cnx",
+    "category": "other",
+    "aliases": [
+      "Assistance at BOG cnx"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_at_check_in",
+    "display_name": "Assistance at check in",
+    "category": "other",
+    "aliases": [
+      "Assistance at check in"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_at_pty_airport",
+    "display_name": "Assistance at PTY airport",
+    "category": "other",
+    "aliases": [
+      "Assistance at PTY airport"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_at_the_airport",
+    "display_name": "Assistance at the airport",
+    "category": "other",
+    "aliases": [
+      "Assistance at the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_between_flights_in_bogota",
+    "display_name": "Assistance between flights in Bogota",
+    "category": "other",
+    "aliases": [
+      "Assistance between flights in Bogota"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_during_connection_flights",
+    "display_name": "Assistance during connection flights",
+    "category": "other",
+    "aliases": [
+      "Assistance during connection flights"
+    ]
+  },
+  {
+    "item_catalog_id": "assistance_in_bog",
+    "display_name": "Assistance in BOG",
+    "category": "other",
+    "aliases": [
+      "Assistance in BOG"
+    ]
+  },
+  {
+    "item_catalog_id": "bell",
+    "display_name": "BELL",
+    "category": "other",
+    "aliases": [
+      "BELL"
+    ]
+  },
+  {
+    "item_catalog_id": "blood_tests",
+    "display_name": "Blood tests",
+    "category": "other",
+    "aliases": [
+      "Blood tests"
+    ]
+  },
+  {
+    "item_catalog_id": "boarding",
+    "display_name": "Boarding",
+    "category": "boarding",
+    "aliases": [
+      "Boarding",
+      "Boarding 3 days",
+      "Boarding 3 days 2 dogs",
+      "Boarding at CDMX",
+      "Boarding at MEX",
+      "Boarding at SCL",
+      "Boarding at the hotel",
+      "Boarding in Bogota",
+      "Boarding in Buenos Aires",
+      "Boarding in Santiago",
+      "Boarding in Santiago 4 days",
+      "Boarding in Santiago for one night",
+      "Boarding in Sao Paulo",
+      "Comfort stop / overnight boarding at CDMX",
+      "Delivery to boarding",
+      "Delivery to boarding in Santiago de Chile",
+      "Domestic flight + Boarding",
+      "Hospedaje",
+      "Overnight Boarding",
+      "Overnight boarding",
+      "Pick up and transport to our boarding",
+      "Pick up and trasport to boarding",
+      "Pick up from Puerto varas and transport to our boarding",
+      "Pick up from airport and trasport to boarding",
+      "Pick up from boarding and transport to EZE",
+      "Pick up from boarding facility",
+      "Pick up from la Serena and transport to our boarding",
+      "Reception + Boarding",
+      "Reception at EZE airport and transport to our boarding",
+      "Reception from SCL airport and transport to our boarding",
+      "Reception from acapulpo and transport to our boarding",
+      "Transport from Ostional to SJO boarding",
+      "Transport from SCL airport to our boarding",
+      "Transport from Tarrazu to SJO boarding",
+      "Transport from boarding to Aguas Calientes",
+      "Transport from boarding to Calama",
+      "Transport from boarding to Coquimbo",
+      "Transport from boarding to SCL Airport",
+      "Transport from boarding to SCL airport",
+      "Transport from boarding to the airport",
+      "Transport from our boarding to MEX airport",
+      "Transport to our boarding",
+      "Transport to the boarding",
+      "boarding in SP",
+      "delivery to boarding facility"
+    ]
+  },
+  {
+    "item_catalog_id": "cajaa_transportadoras",
+    "display_name": "Cajaa transportadoras",
+    "category": "other",
+    "aliases": [
+      "Cajaa transportadoras"
+    ]
+  },
+  {
+    "item_catalog_id": "cargo_clearance_bog_airport",
+    "display_name": "Cargo Clearance BOG airport",
+    "category": "other",
+    "aliases": [
+      "Cargo Clearance BOG airport"
+    ]
+  },
+  {
+    "item_catalog_id": "cargo_clearance_lim_airport",
+    "display_name": "Cargo Clearance LIM airport",
+    "category": "other",
+    "aliases": [
+      "Cargo Clearance LIM airport"
+    ]
+  },
+  {
+    "item_catalog_id": "cargo_clearance_mex_airport",
+    "display_name": "Cargo Clearance MEX airport",
+    "category": "other",
+    "aliases": [
+      "Cargo Clearance MEX airport"
+    ]
+  },
+  {
+    "item_catalog_id": "cargo_clearance_scl_airport",
+    "display_name": "Cargo Clearance SCL airport",
+    "category": "other",
+    "aliases": [
+      "Cargo Clearance SCL airport"
+    ]
+  },
+  {
+    "item_catalog_id": "cargo_frieght_scl_fra",
+    "display_name": "Cargo frieght SCL - FRA",
+    "category": "other",
+    "aliases": [
+      "Cargo frieght SCL - FRA"
+    ]
+  },
+  {
+    "item_catalog_id": "cargo_frieght_scl_prg",
+    "display_name": "Cargo frieght SCL - PRG",
+    "category": "other",
+    "aliases": [
+      "Cargo frieght SCL - PRG"
+    ]
+  },
+  {
+    "item_catalog_id": "certificate_of_tenure",
+    "display_name": "Certificate of tenure",
+    "category": "other",
+    "aliases": [
+      "Certificate of tenure"
+    ]
+  },
+  {
+    "item_catalog_id": "collection_and_ground_trannsport",
+    "display_name": "Collection and ground trannsport",
+    "category": "other",
+    "aliases": [
+      "Collection and ground trannsport"
+    ]
+  },
+  {
+    "item_catalog_id": "collection_form_valdivia_and_transport_to_santiago",
+    "display_name": "Collection form Valdivia and transport to Santiago",
+    "category": "other",
+    "aliases": [
+      "Collection form Valdivia and transport to Santiago"
+    ]
+  },
+  {
+    "item_catalog_id": "comfort_stop_in_mexico_metro",
+    "display_name": "Comfort stop in Mexico metro",
+    "category": "other",
+    "aliases": [
+      "Comfort stop in Mexico metro"
+    ]
+  },
+  {
+    "item_catalog_id": "consular_endorsement",
+    "display_name": "Consular endorsement",
+    "category": "other",
+    "aliases": [
+      "Consular endorsement"
+    ]
+  },
+  {
+    "item_catalog_id": "consulate_legalazation_of_the_hc",
+    "display_name": "Consulate legalazation of the HC",
+    "category": "other",
+    "aliases": [
+      "Consulate legalazation of the HC"
+    ]
+  },
+  {
+    "item_catalog_id": "crate",
+    "display_name": "Crate",
+    "category": "equipment",
+    "aliases": [
+      "Access to our own kennel at the warehouse",
+      "Caja transportadora",
+      "Cajas transportadoras",
+      "Crate",
+      "Crate with food bowl and water dispenser",
+      "Crates",
+      "Delivery to boarding kennel",
+      "Delivery to boarding kennel Metro Mexico City",
+      "Ground transport to kennel",
+      "Jaula",
+      "Pick up from boarding kennel and transport to SCL",
+      "Pick up from kennel and transport to GRU",
+      "Pick up in Pachuca and transport to boarding kennel",
+      "Pre delivery crate",
+      "Pre delivery of the crate",
+      "Pre delivery of the crate and collection of original documents",
+      "Pre delivery of the crate and document inspection",
+      "Pre-delivery of the crate",
+      "Transport to kennel facility",
+      "pre delivery of the crate",
+      "pre delivery of the crate in advanced"
+    ]
+  },
+  {
+    "item_catalog_id": "customes_clearance",
+    "display_name": "Customes clearance",
+    "category": "other",
+    "aliases": [
+      "Customes clearance"
+    ]
+  },
+  {
+    "item_catalog_id": "customs_clearance",
+    "display_name": "Customs clearance",
+    "category": "customs",
+    "aliases": [
+      "Customs Clearance",
+      "Customs Clearance AWB 1",
+      "Customs Clearance BOG airport",
+      "Customs Clearance BSB airport",
+      "Customs Clearance CLO airport",
+      "Customs Clearance CUN airport",
+      "Customs Clearance EZE airport",
+      "Customs Clearance GIG airport",
+      "Customs Clearance GRU",
+      "Customs Clearance GRU airport",
+      "Customs Clearance GUA airport",
+      "Customs Clearance GUE airport",
+      "Customs Clearance LIM airport",
+      "Customs Clearance MDE airport",
+      "Customs Clearance MEX airport",
+      "Customs Clearance MGA airport",
+      "Customs Clearance MVD airport",
+      "Customs Clearance PTY airport",
+      "Customs Clearance SCL",
+      "Customs Clearance SCL airport",
+      "Customs Clearance SJO",
+      "Customs Clearance at SCL",
+      "Customs Clearance in Chile",
+      "Customs clearance",
+      "Customs clearance in GYE",
+      "Customs clearance in UIO",
+      "Import Formalities",
+      "Liberacion de Aduana en Aeropuerto de MEX",
+      "Liberacion de aduana",
+      "Liberación de aduana"
+    ]
+  },
+  {
+    "item_catalog_id": "de_worming_treatment",
+    "display_name": "De-worming treatment",
+    "category": "other",
+    "aliases": [
+      "De-worming treatment"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery",
+    "display_name": "Delivery",
+    "category": "other",
+    "aliases": [
+      "Delivery"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_documents",
+    "display_name": "Delivery of documents",
+    "category": "other",
+    "aliases": [
+      "Delivery of documents"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_documents_check_in_and_assistance",
+    "display_name": "Delivery of documents , check in and assistance",
+    "category": "other",
+    "aliases": [
+      "Delivery of documents , check in and assistance"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_the_documents",
+    "display_name": "Delivery of the documents",
+    "category": "other",
+    "aliases": [
+      "Delivery of the documents"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_the_documents_to_client_s_residence",
+    "display_name": "Delivery of the documents to client's residence",
+    "category": "other",
+    "aliases": [
+      "Delivery of the documents to client's residence"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_the_documetns_to_hotel",
+    "display_name": "delivery of the documetns to hotel",
+    "category": "other",
+    "aliases": [
+      "delivery of the documetns to hotel"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_the_hc_endorsed_by_the_sag_to_client",
+    "display_name": "Delivery of the HC endorsed by the SAG to client",
+    "category": "other",
+    "aliases": [
+      "Delivery of the HC endorsed by the SAG to client"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_of_the_hc_to_client_in_scl_metro_area",
+    "display_name": "Delivery of the HC to client in SCL metro area",
+    "category": "other",
+    "aliases": [
+      "Delivery of the HC to client in SCL metro area"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_to_to_bocas_del_toro",
+    "display_name": "Delivery to To Bocas del Toro",
+    "category": "other",
+    "aliases": [
+      "Delivery to To Bocas del Toro"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_to_to_boquete",
+    "display_name": "Delivery to To Boquete",
+    "category": "other",
+    "aliases": [
+      "Delivery to To Boquete"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_to_to_david",
+    "display_name": "Delivery to To David",
+    "category": "other",
+    "aliases": [
+      "Delivery to To David"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_to_to_pedasi",
+    "display_name": "Delivery to To Pedasi",
+    "category": "other",
+    "aliases": [
+      "Delivery to To Pedasi"
+    ]
+  },
+  {
+    "item_catalog_id": "delivery_to_to_puerto_armuelles",
+    "display_name": "Delivery to To Puerto Armuelles",
+    "category": "other",
+    "aliases": [
+      "Delivery to To Puerto Armuelles"
+    ]
+  },
+  {
+    "item_catalog_id": "derechos_de_importacion",
+    "display_name": "Derechos de Importación",
+    "category": "other",
+    "aliases": [
+      "Derechos de Importación"
+    ]
+  },
+  {
+    "item_catalog_id": "destination_services",
+    "display_name": "Destination services",
+    "category": "other",
+    "aliases": [
+      "Destination services"
+    ]
+  },
+  {
+    "item_catalog_id": "destination_services_in_honduras",
+    "display_name": "Destination services in Honduras",
+    "category": "other",
+    "aliases": [
+      "Destination services in Honduras"
+    ]
+  },
+  {
+    "item_catalog_id": "destination_services_in_italy",
+    "display_name": "Destination services in Italy",
+    "category": "other",
+    "aliases": [
+      "Destination services in Italy"
+    ]
+  },
+  {
+    "item_catalog_id": "destination_services_in_usa",
+    "display_name": "Destination services in USA",
+    "category": "other",
+    "aliases": [
+      "Destination services in USA"
+    ]
+  },
+  {
+    "item_catalog_id": "domesctic_flight_from_aep_to_mdz",
+    "display_name": "Domesctic flight from AEP to MDZ",
+    "category": "other",
+    "aliases": [
+      "Domesctic flight from AEP to MDZ"
+    ]
+  },
+  {
+    "item_catalog_id": "domest_freight_from_gru_to_rec",
+    "display_name": "Domest freight from GRU to REC",
+    "category": "other",
+    "aliases": [
+      "Domest freight from GRU to REC"
+    ]
+  },
+  {
+    "item_catalog_id": "domest_freight_gru_bsb",
+    "display_name": "Domest freight GRU - BSB",
+    "category": "other",
+    "aliases": [
+      "Domest freight GRU - BSB"
+    ]
+  },
+  {
+    "item_catalog_id": "domesti_fright_aep_cor",
+    "display_name": "Domesti fright AEP COR",
+    "category": "other",
+    "aliases": [
+      "Domesti fright AEP COR"
+    ]
+  },
+  {
+    "item_catalog_id": "domesti_fright_aep_mdz",
+    "display_name": "Domesti fright AEP MDZ",
+    "category": "other",
+    "aliases": [
+      "Domesti fright AEP MDZ"
+    ]
+  },
+  {
+    "item_catalog_id": "domesti_fright_aep_tuc",
+    "display_name": "Domesti fright AEP TUC",
+    "category": "other",
+    "aliases": [
+      "Domesti fright AEP TUC"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_airport_pickup",
+    "display_name": "Domestic airport pickup",
+    "category": "other",
+    "aliases": [
+      "Domestic airport pickup"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_baq_bog",
+    "display_name": "Domestic cargo BAQ-BOG",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo BAQ-BOG"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_clo_bog",
+    "display_name": "Domestic cargo CLO-BOG",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo CLO-BOG"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_gye_loh",
+    "display_name": "Domestic Cargo GYE- LOH",
+    "category": "other",
+    "aliases": [
+      "Domestic Cargo GYE- LOH"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_mde_bog",
+    "display_name": "Domestic cargo MDE-BOG",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo MDE-BOG"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_mex_gdl",
+    "display_name": "Domestic cargo MEX - GDL",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo MEX - GDL"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_mex_pvr",
+    "display_name": "Domestic cargo MEX - PVR",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo MEX - PVR"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_mex_tij",
+    "display_name": "Domestic cargo MEX - TIJ",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo MEX - TIJ"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_smr_bog",
+    "display_name": "Domestic cargo SMR-BOG",
+    "category": "other",
+    "aliases": [
+      "Domestic cargo SMR-BOG"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_uio_cue",
+    "display_name": "Domestic Cargo UIO - CUE",
+    "category": "other",
+    "aliases": [
+      "Domestic Cargo UIO - CUE"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_uio_gye",
+    "display_name": "Domestic Cargo UIO - GYE",
+    "category": "other",
+    "aliases": [
+      "Domestic Cargo UIO - GYE"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_cargo_uio_loh",
+    "display_name": "Domestic Cargo UIO - LOH",
+    "category": "other",
+    "aliases": [
+      "Domestic Cargo UIO - LOH"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_flight",
+    "display_name": "Domestic flight",
+    "category": "air_transport",
+    "aliases": [
+      "Domestic Flight MTY-MEX",
+      "Domestic flight AEP-MDZ",
+      "Domestic flight AQP - LIM",
+      "Domestic flight BAQ-BOG",
+      "Domestic flight BBA - SCL",
+      "Domestic flight BGA - BOG",
+      "Domestic flight BOG - AXM",
+      "Domestic flight BOG - BAQ",
+      "Domestic flight BOG - BGA",
+      "Domestic flight BOG - CUC",
+      "Domestic flight BOG - MDE",
+      "Domestic flight BOG - PEI",
+      "Domestic flight BOG - SMR",
+      "Domestic flight BOG- BAQ",
+      "Domestic flight BUC-BOG",
+      "Domestic flight CDMX- HUX",
+      "Domestic flight CEN-MEX",
+      "Domestic flight CJS-MEX",
+      "Domestic flight CLO-BOG",
+      "Domestic flight CUC - BOG",
+      "Domestic flight CUC-BOG",
+      "Domestic flight CUL-MEX",
+      "Domestic flight CUN MEX",
+      "Domestic flight CUN- CDMX",
+      "Domestic flight CUN-MEX",
+      "Domestic flight CUU- CDMX",
+      "Domestic flight CUZ - LIM",
+      "Domestic flight GDL - MEX",
+      "Domestic flight GDL-MEX",
+      "Domestic flight GRU - CWB",
+      "Domestic flight GRU-CNF",
+      "Domestic flight GRU-VIX",
+      "Domestic flight LIM - AQP",
+      "Domestic flight LIM - CJA",
+      "Domestic flight LIM - CUZ",
+      "Domestic flight LIM - IQT",
+      "Domestic flight LIM - PEM",
+      "Domestic flight MDE - BOG",
+      "Domestic flight MDE-BOG",
+      "Domestic flight MEX - CUN",
+      "Domestic flight MEX - Tuxtla",
+      "Domestic flight MEX MID",
+      "Domestic flight MEX PVR",
+      "Domestic flight MEX TIJ",
+      "Domestic flight MEX ZLO",
+      "Domestic flight MEX-CUN",
+      "Domestic flight MLM- CDMX",
+      "Domestic flight MTY MEX",
+      "Domestic flight MTY-MEX",
+      "Domestic flight MXL-MEX",
+      "Domestic flight PEI-BOG",
+      "Domestic flight PVR - MEX",
+      "Domestic flight PVR- CDMX",
+      "Domestic flight PXM-MEX",
+      "Domestic flight SCL - BBA",
+      "Domestic flight SJD-MEX",
+      "Domestic flight SLA- AEP",
+      "Domestic flight SMR - BOG",
+      "Domestic flight SMR-BOG",
+      "Domestic flight TAM-MEX",
+      "Domestic flight TAP- CDMX",
+      "Domestic flight TIJ-MEX",
+      "Domestic flight ZCO-SCL",
+      "Domestic flight from CEN to CDMX",
+      "Domestic flight to Fortaleza",
+      "Domestic flight to Mendoza",
+      "HC for the domestic flight",
+      "Reception from domestic flight",
+      "Reception from the domestic flight",
+      "Reception of the domestic flight",
+      "Vuelo domestico BOG-SMR",
+      "overnight prior to tender to domestic flight",
+      "reception from domestic flight"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_clo",
+    "display_name": "Domestic freight BOG - CLO",
+    "category": "other",
+    "aliases": [
+      "Domestic freight BOG - CLO"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_ctg",
+    "display_name": "Domestic freight BOG - CTG",
+    "category": "other",
+    "aliases": [
+      "Domestic freight BOG - CTG"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_cuc",
+    "display_name": "Domestic freight BOG - CUC",
+    "category": "other",
+    "aliases": [
+      "Domestic freight BOG - CUC",
+      "Domestic freight BOG- CUC"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_mde",
+    "display_name": "Domestic Freight BOG - MDE",
+    "category": "other",
+    "aliases": [
+      "Domestic Freight BOG - MDE"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_pei",
+    "display_name": "Domestic Freight BOG - PEI",
+    "category": "other",
+    "aliases": [
+      "Domestic Freight BOG - PEI",
+      "Domestic freight BOG - PEI"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_per",
+    "display_name": "Domestic Freight BOG - PER",
+    "category": "other",
+    "aliases": [
+      "Domestic Freight BOG - PER"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_santa_marta",
+    "display_name": "Domestic freight BOG - Santa Marta",
+    "category": "other",
+    "aliases": [
+      "Domestic freight BOG - Santa Marta"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_smr",
+    "display_name": "Domestic Freight BOG - SMR",
+    "category": "other",
+    "aliases": [
+      "Domestic Freight BOG - SMR"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_bog_smr_santa_marta",
+    "display_name": "Domestic freight BOG - SMR Santa Marta",
+    "category": "other",
+    "aliases": [
+      "Domestic freight BOG - SMR Santa Marta"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_czm_mex",
+    "display_name": "Domestic freight CZM -MEX",
+    "category": "other",
+    "aliases": [
+      "Domestic freight CZM -MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_from_gru_to_for",
+    "display_name": "Domestic freight from GRU to FOR",
+    "category": "other",
+    "aliases": [
+      "Domestic freight from GRU to FOR"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_freight_mid_mex",
+    "display_name": "Domestic freight MID-MEX",
+    "category": "other",
+    "aliases": [
+      "Domestic freight MID-MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_fright_bog_mde",
+    "display_name": "Domestic fright BOG - MDE",
+    "category": "other",
+    "aliases": [
+      "Domestic fright BOG - MDE"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_bog_mde",
+    "display_name": "Domestic transport BOG - MDE",
+    "category": "other",
+    "aliases": [
+      "Domestic transport BOG - MDE"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_chihuahua_to_cdmx",
+    "display_name": "Domestic transport Chihuahua to CDMX",
+    "category": "other",
+    "aliases": [
+      "Domestic transport Chihuahua to CDMX"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_cucuta_to_bogota",
+    "display_name": "Domestic transport Cucuta to Bogota",
+    "category": "other",
+    "aliases": [
+      "Domestic transport Cucuta to Bogota"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_mde_bog",
+    "display_name": "Domestic transport MDE-BOG",
+    "category": "other",
+    "aliases": [
+      "Domestic transport MDE-BOG"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_sjd_mex",
+    "display_name": "Domestic transport SJD- MEX",
+    "category": "other",
+    "aliases": [
+      "Domestic transport SJD- MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_tij_mex",
+    "display_name": "Domestic transport TIJ MEX",
+    "category": "other",
+    "aliases": [
+      "Domestic transport TIJ MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_to_cali",
+    "display_name": "Domestic Transport to Cali",
+    "category": "other",
+    "aliases": [
+      "Domestic Transport to Cali"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transport_to_mtr",
+    "display_name": "Domestic Transport to MTR",
+    "category": "other",
+    "aliases": [
+      "Domestic Transport to MTR"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transportation_to_monterrey",
+    "display_name": "Domestic transportation to Monterrey",
+    "category": "other",
+    "aliases": [
+      "Domestic transportation to Monterrey"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transportation_to_pei",
+    "display_name": "Domestic transportation to PEI",
+    "category": "other",
+    "aliases": [
+      "Domestic transportation to PEI"
+    ]
+  },
+  {
+    "item_catalog_id": "domestic_transportation_to_puebla",
+    "display_name": "Domestic transportation to Puebla",
+    "category": "other",
+    "aliases": [
+      "Domestic transportation to Puebla"
+    ]
+  },
+  {
+    "item_catalog_id": "eb_fees",
+    "display_name": "EB Fees",
+    "category": "other",
+    "aliases": [
+      "EB Fees",
+      "EB fees"
+    ]
+  },
+  {
+    "item_catalog_id": "endorsement",
+    "display_name": "Endorsement",
+    "category": "other",
+    "aliases": [
+      "Endorsement"
+    ]
+  },
+  {
+    "item_catalog_id": "entrega_en_el_aeropuerto",
+    "display_name": "Entrega en el aeropuerto",
+    "category": "other",
+    "aliases": [
+      "Entrega en el aeropuerto"
+    ]
+  },
+  {
+    "item_catalog_id": "entrega_en_el_aeropuerto_de_mex",
+    "display_name": "Entrega en el aeropuerto de MEX",
+    "category": "other",
+    "aliases": [
+      "Entrega en el aeropuerto de MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "eu_hc",
+    "display_name": "EU HC",
+    "category": "other",
+    "aliases": [
+      "EU HC"
+    ]
+  },
+  {
+    "item_catalog_id": "eu_hc_to_transit_eu",
+    "display_name": "EU HC to transit EU",
+    "category": "other",
+    "aliases": [
+      "EU HC to transit EU"
+    ]
+  },
+  {
+    "item_catalog_id": "excess_baggage_fees",
+    "display_name": "Excess baggage fees",
+    "category": "other",
+    "aliases": [
+      "Excess baggage fees"
+    ]
+  },
+  {
+    "item_catalog_id": "export_clearance",
+    "display_name": "Export Clearance",
+    "category": "other",
+    "aliases": [
+      "Export Clearance"
+    ]
+  },
+  {
+    "item_catalog_id": "export_custom_clearance",
+    "display_name": "Export Custom Clearance",
+    "category": "other",
+    "aliases": [
+      "Export Custom Clearance"
+    ]
+  },
+  {
+    "item_catalog_id": "export_customs_clearance",
+    "display_name": "Export customs clearance",
+    "category": "customs",
+    "aliases": [
+      "Export Customs Clearance",
+      "Export Customs Clearance in GIG",
+      "Export Customs Clearance in GRU",
+      "Export customs Clearance",
+      "Export customs clearance",
+      "Export customs clearance at GRU"
+    ]
+  },
+  {
+    "item_catalog_id": "extra_charge_for_overnight_export",
+    "display_name": "Extra charge for overnight export",
+    "category": "other",
+    "aliases": [
+      "Extra charge for overnight export"
+    ]
+  },
+  {
+    "item_catalog_id": "extra_fee",
+    "display_name": "Extra fee",
+    "category": "other",
+    "aliases": [
+      "Extra fee"
+    ]
+  },
+  {
+    "item_catalog_id": "extra_fee_customs_and_senasa_out_of_hours",
+    "display_name": "Extra Fee Customs and SENASA out of hours",
+    "category": "other",
+    "aliases": [
+      "Extra Fee Customs and SENASA out of hours"
+    ]
+  },
+  {
+    "item_catalog_id": "extra_fee_out_of_hours",
+    "display_name": "Extra fee out of hours",
+    "category": "other",
+    "aliases": [
+      "Extra fee out of hours"
+    ]
+  },
+  {
+    "item_catalog_id": "extra_fees",
+    "display_name": "Extra fees",
+    "category": "other",
+    "aliases": [
+      "Extra fees",
+      "Extra fees out of hours",
+      "extra fees"
+    ]
+  },
+  {
+    "item_catalog_id": "fecal_tests",
+    "display_name": "fecal tests",
+    "category": "other",
+    "aliases": [
+      "fecal tests"
+    ]
+  },
+  {
+    "item_catalog_id": "flight_bog_gru",
+    "display_name": "Flight BOG - GRU",
+    "category": "other",
+    "aliases": [
+      "Flight BOG - GRU"
+    ]
+  },
+  {
+    "item_catalog_id": "flight_bog_mex",
+    "display_name": "Flight BOG - MEX",
+    "category": "other",
+    "aliases": [
+      "Flight BOG - MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "flight_bog_pty",
+    "display_name": "Flight BOG-PTY",
+    "category": "other",
+    "aliases": [
+      "Flight BOG-PTY"
+    ]
+  },
+  {
+    "item_catalog_id": "flight_bog_sal",
+    "display_name": "Flight BOG- SAL",
+    "category": "other",
+    "aliases": [
+      "Flight BOG- SAL"
+    ]
+  },
+  {
+    "item_catalog_id": "flight_bog_scl",
+    "display_name": "Flight BOG-SCL",
+    "category": "other",
+    "aliases": [
+      "Flight BOG-SCL"
+    ]
+  },
+  {
+    "item_catalog_id": "flight_mex_cun",
+    "display_name": "Flight MEX - CUN",
+    "category": "other",
+    "aliases": [
+      "Flight MEX - CUN"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_tarnsport_curitiba_to_sao_paulo",
+    "display_name": "Ground tarnsport Curitiba to Sao Paulo",
+    "category": "other",
+    "aliases": [
+      "Ground tarnsport Curitiba to Sao Paulo"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_tarnsport_from_santiago_to_asuncion_paraguay",
+    "display_name": "Ground tarnsport from Santiago to Asuncion Paraguay",
+    "category": "other",
+    "aliases": [
+      "Ground tarnsport from Santiago to Asuncion Paraguay"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_tarnsport_from_santiago_to_bolivia_la_paz",
+    "display_name": "Ground tarnsport from Santiago to Bolivia, La Paz",
+    "category": "other",
+    "aliases": [
+      "Ground tarnsport from Santiago to Bolivia, La Paz"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_tarnsport_from_santiago_to_buenos_aires_argentina",
+    "display_name": "Ground tarnsport from Santiago to Buenos aires, Argentina",
+    "category": "other",
+    "aliases": [
+      "Ground tarnsport from Santiago to Buenos aires, Argentina"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_transport",
+    "display_name": "Ground transport",
+    "category": "ground_transport",
+    "aliases": [
+      "Airline fee to transfer to the Warehouse",
+      "Airline fee to transfer to the warehouse",
+      "Airport assistance and ground transportation",
+      "Bground transportation",
+      "Collection and ground transport",
+      "Collection and ground transportation",
+      "Collection and transport to the airport",
+      "Ground Transport",
+      "Ground Transport to Mangua",
+      "Ground Transport to Mar del Plata",
+      "Ground Transport to Morelia",
+      "Ground Transport to San Luis Potosi residence",
+      "Ground transport",
+      "Ground transport MEX - VER",
+      "Ground transport SCL to Argentina",
+      "Ground transport SCL to Buenos Aires Argentina",
+      "Ground transport Santiago to Buenos Aires, Argentina",
+      "Ground transport Santiago to Buenos Aires, Paraguay",
+      "Ground transport Santiago to Mar del Tuyu, Argentina",
+      "Ground transport Santiago to Mendoza, Argentina",
+      "Ground transport Santiago to Montevideo Uruguay",
+      "Ground transport and home delivery",
+      "Ground transport from Actopan to CDMX",
+      "Ground transport from Aguas Calientes to CDMX",
+      "Ground transport from Aguas calientes to CDMX",
+      "Ground transport from Asunción to Buenos Aires",
+      "Ground transport from Corrientes to Buenos Aires",
+      "Ground transport from Guadalajara",
+      "Ground transport from Guadalajara to CDMX",
+      "Ground transport from Gualeguaychu to Buenos Aires",
+      "Ground transport from Mar del plata to Buenos Aires",
+      "Ground transport from Mendoza to Buenos Aires",
+      "Ground transport from Morelia to CDMX",
+      "Ground transport from Morelos to CDMX",
+      "Ground transport from Puebla to CDMX",
+      "Ground transport from Queretaro to CDMX",
+      "Ground transport from San Miguel de Allende",
+      "Ground transport from Santa Lucia cosamaloapan to CDMX",
+      "Ground transport from Santiago de Chile to Viña del Mar",
+      "Ground transport from Toluca to CDMX",
+      "Ground transport from airport to boarding",
+      "Ground transport from boarding to Cordoba",
+      "Ground transport from boarding to La Junta (Región de Aysén)",
+      "Ground transport from boarding to Mendoza",
+      "Ground transport from boarding to Neuquen",
+      "Ground transport from boarding to San Luis Potosi",
+      "Ground transport from boarding to Silao",
+      "Ground transport from boarding to Uruguay, Montevideo",
+      "Ground transport from the airport to boarding",
+      "Ground transport home delivery to Sta Cruz de la Sierra",
+      "Ground transport in Bogota",
+      "Ground transport in Mexico City",
+      "Ground transport in Mexico City boarding facility",
+      "Ground transport to",
+      "Ground transport to Bahía Blanca",
+      "Ground transport to Cerritos, Guanajuato",
+      "Ground transport to Cuautla",
+      "Ground transport to Florianopolis",
+      "Ground transport to Guadalajara",
+      "Ground transport to Guadalajara residence",
+      "Ground transport to Guadalajara, Ajijic",
+      "Ground transport to Guanajuato",
+      "Ground transport to Irapuato",
+      "Ground transport to Ivaipora (Parana)",
+      "Ground transport to Leon",
+      "Ground transport to Leon Guanajuato",
+      "Ground transport to Mendoza",
+      "Ground transport to Mendoza, San Rafael",
+      "Ground transport to Puebla",
+      "Ground transport to Puerto Vallarta, San pancho",
+      "Ground transport to Puerto Varas",
+      "Ground transport to Queretaro",
+      "Ground transport to Querétaro",
+      "Ground transport to Rio de Janeiro",
+      "Ground transport to San Miguel de allende residence",
+      "Ground transport to San juan del Rio",
+      "Ground transport to Santa Fe",
+      "Ground transport to Tornquist residence",
+      "Ground transport to Veracruz",
+      "Ground transport to Villaviciencio",
+      "Ground transport to boarding",
+      "Ground transportation",
+      "Ground transportation Bs As - Bahía Blanca",
+      "Ground transportation Bs As - Cordoba",
+      "Ground transportation Bs As - Salta",
+      "Ground transportation Bs As - San Juan",
+      "Ground transportation Buenos Aires. Santiago de Chile",
+      "Ground transportation Cali - Bogota",
+      "Ground transportation Quito- Cuenca",
+      "Ground transportation Quito- Guayaquil",
+      "Ground transportation Quito- Manta",
+      "Ground transportation Santiago to Buenos Aires",
+      "Ground transportation and home delivery",
+      "Ground transportation from Asunción to Buenos Aires",
+      "Ground transportation in Bogota",
+      "Ground transportation in Mexico metro",
+      "Ground transportation to Angra Dos Reis",
+      "Ground transportation to Brasilia",
+      "Ground transportation to Cali",
+      "Ground transportation to Cucuta",
+      "Ground transportation to Cuidad del Este Paraguay",
+      "Ground transportation to Duitama",
+      "Ground transportation to Ibague",
+      "Ground transportation to Jamundi",
+      "Ground transportation to Londrina",
+      "Ground transportation to Medellin",
+      "Ground transportation to Medellín",
+      "Ground transportation to Montevideo",
+      "Ground transportation to Montevideo, Uruguay",
+      "Ground transportation to Paraguay",
+      "Ground transportation to Salvador de Bahia",
+      "Ground transportation to Santander",
+      "Ground transportation to Uruguay",
+      "Pick at EL Hoyo Chubut and ground transport to Bs As",
+      "Pick up and ground transport to the airport",
+      "Pick up and transport to MEX airport",
+      "Pick up and transport to airport",
+      "Pick up and transport to boarding",
+      "Pick up and transport to the airport",
+      "Pick up at MEX airport and transport to boarding",
+      "Pick up from Cuernavaca and transport to boarding",
+      "Pick up from airport and transport to boarding",
+      "Pick up from boarding and transport to MEX airport",
+      "Pick up from boarding and transport to the airport",
+      "Pick up from boarding facility and transport to airport",
+      "Pick up in Guadalajara and transport to boarding",
+      "Pick up in Jaco and transport to the airport",
+      "Pick up in La Calera and transport to the airport",
+      "Pick up in Villa alemana and transport to the airport",
+      "Reception and transport to boarding",
+      "Reception from domestic flight and ground transport",
+      "Reception from domestic flight and transport to boarding",
+      "Transport to Airport",
+      "Transport to Boarding",
+      "Transport to MEX Airport",
+      "Transport to MEX airport",
+      "Transport to MEX airport and tender to airline",
+      "Transport to airport",
+      "Transport to boarding",
+      "Transport to boarding facility",
+      "Transport to the airport",
+      "Transport to the airport and tender to the Airilne",
+      "Transporte hasta el hospedaje",
+      "Traslado Montevideo- Buenos Aires",
+      "Traslado al aeropuerto",
+      "Traslado al aeropuerto BOG",
+      "Traslado terrestre",
+      "Traslado terrestre desde Neuquen a Bs As",
+      "Traslado terrestre desde Paraguay a Santiago de Chile",
+      "ground transport to Arica",
+      "transport to Airport",
+      "transport to the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_trasport_to_coyhaique_residence",
+    "display_name": "Ground trasport to Coyhaique residence",
+    "category": "other",
+    "aliases": [
+      "Ground trasport to Coyhaique residence"
+    ]
+  },
+  {
+    "item_catalog_id": "ground_trnasport_san_paulo_brasilia",
+    "display_name": "Ground trnasport San Paulo / Brasilia",
+    "category": "other",
+    "aliases": [
+      "Ground trnasport San Paulo / Brasilia"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off",
+    "display_name": "Hand off",
+    "category": "other",
+    "aliases": [
+      "Hand off"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off_at_mde_airport",
+    "display_name": "Hand off at MDE Airport",
+    "category": "other",
+    "aliases": [
+      "Hand off at MDE Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off_at_mex_airport",
+    "display_name": "Hand off at MEX Airport",
+    "category": "other",
+    "aliases": [
+      "Hand off at MEX Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off_at_sjo_airport",
+    "display_name": "hand off at SJO Airport",
+    "category": "other",
+    "aliases": [
+      "hand off at SJO Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off_at_the_airport",
+    "display_name": "Hand off at the airport",
+    "category": "other",
+    "aliases": [
+      "Hand off at the airport",
+      "hand off at the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off_at_uio_airport",
+    "display_name": "Hand off at UIO Airport",
+    "category": "other",
+    "aliases": [
+      "Hand off at UIO Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_off_to_the_client_at_scl",
+    "display_name": "Hand off to the client at SCL",
+    "category": "other",
+    "aliases": [
+      "Hand off to the client at SCL"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_at_gru_airport",
+    "display_name": "Hand over at GRU Airport",
+    "category": "other",
+    "aliases": [
+      "Hand over at GRU Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_at_mex_airport",
+    "display_name": "Hand over at MEX Airport",
+    "category": "other",
+    "aliases": [
+      "Hand over at MEX Airport",
+      "Hand over at MEX airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_at_scl_airport",
+    "display_name": "Hand over at SCL Airport",
+    "category": "other",
+    "aliases": [
+      "Hand over at SCL Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_at_the_airport",
+    "display_name": "Hand over at the Airport",
+    "category": "other",
+    "aliases": [
+      "Hand over at the Airport",
+      "Hand over at the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_to_client_at_gru",
+    "display_name": "Hand over to client at GRU",
+    "category": "other",
+    "aliases": [
+      "Hand over to client at GRU"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_to_the_client_at_eze",
+    "display_name": "Hand over to the client at EZE",
+    "category": "other",
+    "aliases": [
+      "Hand over to the client at EZE"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_to_the_client_at_eze_airport",
+    "display_name": "hand over to the client at EZE Airport",
+    "category": "other",
+    "aliases": [
+      "hand over to the client at EZE Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_to_the_client_at_mex_airport",
+    "display_name": "Hand over to the client at MEX Airport",
+    "category": "other",
+    "aliases": [
+      "Hand over to the client at MEX Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hand_over_to_the_client_at_the_airport",
+    "display_name": "Hand over to the client at the airport",
+    "category": "other",
+    "aliases": [
+      "Hand over to the client at the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_at_sjo_airport",
+    "display_name": "Handoff at SJO airport",
+    "category": "other",
+    "aliases": [
+      "Handoff at SJO airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_client_at_eze_airport",
+    "display_name": "Handoff to client at EZE airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to client at EZE airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_client_at_mex_airport",
+    "display_name": "Handoff to client at MEX airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to client at MEX airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_client_at_mexico_airport",
+    "display_name": "Handoff to client at Mexico airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to client at Mexico airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_client_at_scl_airport",
+    "display_name": "Handoff to client at SCL airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to client at SCL airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_the_client_at_gru_airport",
+    "display_name": "Handoff to the client at GRU airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to the client at GRU airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_the_client_at_scl_airport",
+    "display_name": "Handoff to the client at SCL airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to the client at SCL airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handoff_to_the_client_at_the_mexico_city_airport",
+    "display_name": "Handoff to the client at the Mexico City airport",
+    "category": "other",
+    "aliases": [
+      "Handoff to the client at the Mexico City airport"
+    ]
+  },
+  {
+    "item_catalog_id": "handover_at_mga_airport",
+    "display_name": "Handover at MGA airport",
+    "category": "other",
+    "aliases": [
+      "Handover at MGA airport"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_at_screw_worrm",
+    "display_name": "HC at Screw worrm",
+    "category": "other",
+    "aliases": [
+      "HC at Screw worrm"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_at_senasica",
+    "display_name": "HC at Senasica",
+    "category": "other",
+    "aliases": [
+      "HC at Senasica"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_deworming",
+    "display_name": "HC Deworming",
+    "category": "other",
+    "aliases": [
+      "HC Deworming"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_eu",
+    "display_name": "HC EU",
+    "category": "other",
+    "aliases": [
+      "HC EU"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_from_bolivia_to_argentina",
+    "display_name": "HC from Bolivia to Argentina",
+    "category": "other",
+    "aliases": [
+      "HC from Bolivia to Argentina"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_to_argentina",
+    "display_name": "HC to Argentina",
+    "category": "other",
+    "aliases": [
+      "HC to Argentina"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_to_bolivia",
+    "display_name": "HC to Bolivia",
+    "category": "other",
+    "aliases": [
+      "HC to Bolivia"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_to_paraguay",
+    "display_name": "HC to Paraguay",
+    "category": "other",
+    "aliases": [
+      "HC to Paraguay"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_to_transit_eu",
+    "display_name": "HC to transit EU",
+    "category": "other",
+    "aliases": [
+      "HC to transit EU"
+    ]
+  },
+  {
+    "item_catalog_id": "hc_to_uruguay",
+    "display_name": "HC to Uruguay",
+    "category": "other",
+    "aliases": [
+      "HC to Uruguay"
+    ]
+  },
+  {
+    "item_catalog_id": "health_authorities_fees_agrocalidad",
+    "display_name": "Health Authorities fees (Agrocalidad)",
+    "category": "other",
+    "aliases": [
+      "Health Authorities fees (Agrocalidad)"
+    ]
+  },
+  {
+    "item_catalog_id": "health_certtificate_chile_argentina",
+    "display_name": "Health certtificate Chile Argentina",
+    "category": "other",
+    "aliases": [
+      "Health certtificate Chile Argentina"
+    ]
+  },
+  {
+    "item_catalog_id": "home_delivery",
+    "display_name": "Home delivery",
+    "category": "ground_transport",
+    "aliases": [
+      "Entrega en el domicilio",
+      "Home delivery",
+      "Home delivery Ciudad Quesada Alajuela",
+      "Home delivery Huatusco,Mexico",
+      "Home delivery Playa del Carmen",
+      "Home delivery Tulum",
+      "Home delivery form quarantine to residence in Santiago",
+      "Home delivery in Ajijic, Jalisco",
+      "Home delivery in Bogota metro area",
+      "Home delivery in Cali",
+      "Home delivery in Cali metro area",
+      "Home delivery in Callao",
+      "Home delivery in Colima",
+      "Home delivery in Concepcion.",
+      "Home delivery in Guadalajara",
+      "Home delivery in Guatemala City",
+      "Home delivery in Guatemala city",
+      "Home delivery in Lima",
+      "Home delivery in Medellin metro area",
+      "Home delivery in Merida",
+      "Home delivery in Metro Bauru",
+      "Home delivery in Metro Brasilia",
+      "Home delivery in Metro Mexico City",
+      "Home delivery in Metro Mexico city",
+      "Home delivery in Metro Rio de Janeiro",
+      "Home delivery in Metro Santiago de Chile",
+      "Home delivery in Metro Santos",
+      "Home delivery in Metro Sao Paulo",
+      "Home delivery in Mexico city",
+      "Home delivery in Mexico city metro area",
+      "Home delivery in Monterrey",
+      "Home delivery in Montevideo",
+      "Home delivery in Panama metro area",
+      "Home delivery in Puerto Montt",
+      "Home delivery in Reynosa",
+      "Home delivery in San Jose metro",
+      "Home delivery in San Miguel de Allende",
+      "Home delivery in Santiago metro area",
+      "Home delivery in Sao Jose dos Campos",
+      "Home delivery in Tonala",
+      "Home delivery in Tulum",
+      "Home delivery in Tutitlan metro area",
+      "Home delivery in Vina del Mar",
+      "Home delivery in metro Medellin",
+      "Home delivery in metro Sao Paulo",
+      "Home delivery in the Vitacura Metro area",
+      "Home delivery to Actopan residence",
+      "Home delivery to Ajijic",
+      "Home delivery to Belo Horizonte",
+      "Home delivery to Blumenau",
+      "Home delivery to Brasilia",
+      "Home delivery to Campiñas",
+      "Home delivery to Caratinga",
+      "Home delivery to Curitiba",
+      "Home delivery to David Chiriquí",
+      "Home delivery to Goiania",
+      "Home delivery to Joinville",
+      "Home delivery to João Monlevade",
+      "Home delivery to Lagos de Moreno",
+      "Home delivery to Londrina",
+      "Home delivery to Mar del Plata",
+      "Home delivery to Maringa",
+      "Home delivery to Mato Grosso",
+      "Home delivery to Paine metro area",
+      "Home delivery to Pereira",
+      "Home delivery to Playa del Carmen",
+      "Home delivery to Playa del carmen",
+      "Home delivery to Porto Alegre",
+      "Home delivery to Puebla",
+      "Home delivery to Puerto Morelos",
+      "Home delivery to Puerto morelos",
+      "Home delivery to Recife",
+      "Home delivery to Riberao Preto",
+      "Home delivery to Rio de Janeiro",
+      "Home delivery to Riohacha",
+      "Home delivery to Santa Cruz Do Sul",
+      "Home delivery to Santos",
+      "Home delivery to Sao Paulo",
+      "Home delivery to Texcoco, Mexico",
+      "Home delivery to Tulum",
+      "Home delivery to Tulum residence",
+      "Home delivery to Ubatuba",
+      "Home delivery to Uberlandia",
+      "Home delivery to Villa de leyva",
+      "Home delivery to Vitoria",
+      "Home delivery toToluca residence",
+      "Reception and home delivery",
+      "Reception at Monterrey and home delivery"
+    ]
+  },
+  {
+    "item_catalog_id": "home_dleivery",
+    "display_name": "Home dleivery",
+    "category": "other",
+    "aliases": [
+      "Home dleivery"
+    ]
+  },
+  {
+    "item_catalog_id": "home_dleivery_at_niteroi_rio",
+    "display_name": "Home dleivery at Niteroi Rio",
+    "category": "other",
+    "aliases": [
+      "Home dleivery at Niteroi Rio"
+    ]
+  },
+  {
+    "item_catalog_id": "home_pickup",
+    "display_name": "Home pickup",
+    "category": "ground_transport",
+    "aliases": [
+      "Collection",
+      "Home Pick Up & transport to CUN airport",
+      "Home Pick Up and transport to MEX airport",
+      "Home Pick Up in Texoco and transport to MEX airport",
+      "Home Pick up",
+      "Home Pick up from Monterrey and transport to our boarding",
+      "Home Pick up from Saltillo Coahuila to Monterrey",
+      "Home Pick up in MTY",
+      "Home pick up",
+      "Home pick up Cozumel and transport to airport",
+      "Home pick up and assistance at GRU airport",
+      "Home pick up and ground transport",
+      "Home pick up and ground transport to CDMX",
+      "Home pick up and ground transportation",
+      "Home pick up and transort to the airport",
+      "Home pick up and transport to CEN airport",
+      "Home pick up and transport to EZE",
+      "Home pick up and transport to EZE airport",
+      "Home pick up and transport to MEX airport",
+      "Home pick up and transport to airport",
+      "Home pick up and transport to the aiport",
+      "Home pick up and transport to the airport",
+      "Home pick up and trasport to EZE airport",
+      "Home pick up at Concordia and GT to Bs As",
+      "Home pick up from Cordoba & GT to BsAs",
+      "Home pick up from Maipu",
+      "Home pick up from Posadas & GT to BsAs",
+      "Home pick up from Valdivia",
+      "Home pick up in ... and tranport to Monterrey",
+      "Home pick up in Acapulco",
+      "Home pick up in Antofagasta",
+      "Home pick up in Asuncion and ground transportation",
+      "Home pick up in Asunción and ground transportation",
+      "Home pick up in Balmaceda",
+      "Home pick up in Cancun",
+      "Home pick up in Copiapo and transport to Santiago",
+      "Home pick up in Guadalajara",
+      "Home pick up in Guapiles",
+      "Home pick up in Jiutepec",
+      "Home pick up in La Serena",
+      "Home pick up in La plata and trasport to EZE airport",
+      "Home pick up in Leon",
+      "Home pick up in Lomas",
+      "Home pick up in Manizales",
+      "Home pick up in Monterrey",
+      "Home pick up in Monterrey and transport to MTY airport",
+      "Home pick up in Morelia",
+      "Home pick up in Nuevo Leon and tranport to Monterrey",
+      "Home pick up in Queretaro",
+      "Home pick up in Quillota",
+      "Home pick up in Quilpue",
+      "Home pick up in Rosario and ground transportation",
+      "Home pick up in Saltillo and tranport to Monterrey",
+      "Home pick up in San Miguel de Allende",
+      "Home pick up in Santiago",
+      "Home pick up in Talagante",
+      "Home pick up in Valparaiso",
+      "Home pick up in Xalapa",
+      "Home pick up transport to the airport and check in assitance",
+      "Pick up",
+      "Pick up and ground transport",
+      "Pick up and ground transport Chile-Argentina",
+      "Pick up and ground transportation",
+      "Pick up and ground transportation from Santa Cruz Bolivia to Buenos Aires",
+      "Pick up and ground transportation from Sta Cruz de la sierra Bolivia to buenos aires",
+      "Pick up and tender to the airline",
+      "Pick up and transport",
+      "Pick up and transport to Florianopolis",
+      "Pick up and transport to Goiania",
+      "Pick up and transport to the laboratory",
+      "Pick up from Chihuahua",
+      "Pick up from Chillán and transport to Santiago",
+      "Pick up from Curauma and ground transport to Santiago",
+      "Pick up from La Serena and ground transport to Santiago",
+      "Pick up from Puerto Montt",
+      "Pick up from San miguel allende, Guanajuato",
+      "Pick up from Valle de allende",
+      "Pick up from baording facility",
+      "Pick up from boaring facility",
+      "Pick up from client's residence",
+      "Pick up in Arica and transport to Santiago",
+      "Pick up in Arica residence and transport to Santiago",
+      "Pick up in CDMX",
+      "Pick up in CUN residence & transport to CUN airtport",
+      "Pick up in Cancun",
+      "Pick up in Cancun & transport to CUN airtport",
+      "Pick up in Cancun metro area & transport to CUN airtport",
+      "Pick up in Cancún residence and transport to CUN",
+      "Pick up in Ciudad Juárez residence and transport to CJS",
+      "Pick up in Cordoba",
+      "Pick up in Culiacan & transport to CUL airtport",
+      "Pick up in Guadalajara metro area",
+      "Pick up in Guadalajara residence and transport to GDL",
+      "Pick up in Guanajuato residence and transport to CDMX",
+      "Pick up in La reina and transport to SCL",
+      "Pick up in Liberia",
+      "Pick up in Mexicali residence and transport to MXL",
+      "Pick up in Monterrey residence and transport to MTY",
+      "Pick up in Obregon & transport to CEN airtport",
+      "Pick up in Playa Potrero",
+      "Pick up in Playa del carmen & transport to CUN airtport",
+      "Pick up in Puerto Escondido residence and transport to PXM",
+      "Pick up in Puerto Montt residence and ground transport to SCL",
+      "Pick up in Puerto Vallarta residence and transport to PVR",
+      "Pick up in Puerto vallarta",
+      "Pick up in Rosario and ground transportation",
+      "Pick up in SJD residence & transport to SJD airtport",
+      "Pick up in San Juan",
+      "Pick up in San jose del cabo residence & transport to SJD airtport",
+      "Pick up in Santiago and ground transportation",
+      "Pick up in TAM residence & transport to TAM airtport",
+      "Pick up in Tapachula",
+      "Pick up in Veracruz",
+      "Pick up in Villa la angostura to Buenos aires",
+      "Pick up in and transport to SCL",
+      "Pick up in xxx residence and transport to",
+      "Pick up the pet in order to perform the leishmania test",
+      "Retiro por el domicilio",
+      "Retiro por el domicilio del cliente."
+    ]
+  },
+  {
+    "item_catalog_id": "hospedje_en_llima",
+    "display_name": "Hospedje en Llima",
+    "category": "other",
+    "aliases": [
+      "Hospedje en Llima"
+    ]
+  },
+  {
+    "item_catalog_id": "ihc_to_chile",
+    "display_name": "IHC to Chile",
+    "category": "other",
+    "aliases": [
+      "IHC to Chile"
+    ]
+  },
+  {
+    "item_catalog_id": "import_and_transfer_licence",
+    "display_name": "Import and Transfer licence",
+    "category": "other",
+    "aliases": [
+      "Import and Transfer licence"
+    ]
+  },
+  {
+    "item_catalog_id": "import_permit",
+    "display_name": "Import permit",
+    "category": "documentation",
+    "aliases": [
+      "Application for Import Permit and Quarantine Reservation",
+      "Application for Import Permit and Reservation of Quarantine",
+      "CDC Import permit",
+      "CDC import form",
+      "CDC import from",
+      "CDC import permit",
+      "Import Permit",
+      "Import Permit in Argentina",
+      "Import permit",
+      "Import permit from DAFF",
+      "Import permit from MOCCAE",
+      "Import permit from MPI"
+    ]
+  },
+  {
+    "item_catalog_id": "import_prmit",
+    "display_name": "Import prmit",
+    "category": "other",
+    "aliases": [
+      "Import prmit"
+    ]
+  },
+  {
+    "item_catalog_id": "import_taxes_fixed",
+    "display_name": "Import taxes fixed",
+    "category": "taxes",
+    "aliases": [
+      "Agrocalidad",
+      "Import taxes Argentina",
+      "Mandatory Import Taxes",
+      "Mandatory Import taxes Mexico",
+      "Mandatory fixed import taxes",
+      "Mandatory fixed import taxes Argentina",
+      "Mandatory import taxes"
+    ]
+  },
+  {
+    "item_catalog_id": "import_taxes_variable",
+    "display_name": "Import taxes variable",
+    "category": "taxes",
+    "aliases": [
+      "Import taxes",
+      "Import taxes 39% of the CIF value",
+      "Import taxes Chile",
+      "Import taxes Guatemala",
+      "Import taxes MVD",
+      "Import taxes Managua",
+      "Import taxes Mexico",
+      "Import taxes Peru",
+      "Import taxes in Colombia",
+      "Import taxes in Ecuador",
+      "Import taxes in Nicaragua",
+      "Impuestos de Importacion",
+      "Impuestos de Importacion Mexico",
+      "Impuestos de importación",
+      "Impuestos de importación Variables",
+      "Impuestos de importación fijos",
+      "Impuestos variables"
+    ]
+  },
+  {
+    "item_catalog_id": "internal_and_external_parasite_treatments",
+    "display_name": "Internal and external parasite treatments",
+    "category": "other",
+    "aliases": [
+      "Internal and external parasite treatments"
+    ]
+  },
+  {
+    "item_catalog_id": "international_veterinary_certificate_to_australia",
+    "display_name": "International Veterinary Certificate to Australia",
+    "category": "other",
+    "aliases": [
+      "International Veterinary Certificate to Australia"
+    ]
+  },
+  {
+    "item_catalog_id": "international_veterinary_certificate_to_chile",
+    "display_name": "International Veterinary Certificate to Chile",
+    "category": "other",
+    "aliases": [
+      "International Veterinary Certificate to Chile"
+    ]
+  },
+  {
+    "item_catalog_id": "international_veterinary_certificate_to_eu",
+    "display_name": "International Veterinary Certificate to EU",
+    "category": "other",
+    "aliases": [
+      "International Veterinary Certificate to EU"
+    ]
+  },
+  {
+    "item_catalog_id": "international_veterinary_certificate_to_n_zealand",
+    "display_name": "International Veterinary Certificate to N Zealand",
+    "category": "other",
+    "aliases": [
+      "International Veterinary Certificate to N Zealand"
+    ]
+  },
+  {
+    "item_catalog_id": "international_veterinary_certificate_to_uae",
+    "display_name": "International Veterinary Certificate to UAE",
+    "category": "other",
+    "aliases": [
+      "International Veterinary Certificate to UAE"
+    ]
+  },
+  {
+    "item_catalog_id": "international_veterinary_certificate_to_uae_turkey",
+    "display_name": "International Veterinary Certificate to UAE/Turkey",
+    "category": "other",
+    "aliases": [
+      "International Veterinary Certificate to UAE/Turkey"
+    ]
+  },
+  {
+    "item_catalog_id": "invoice_e",
+    "display_name": "Invoice E",
+    "category": "other",
+    "aliases": [
+      "Invoice E"
+    ]
+  },
+  {
+    "item_catalog_id": "lab_tests",
+    "display_name": "Lab Tests",
+    "category": "other",
+    "aliases": [
+      "Lab Tests"
+    ]
+  },
+  {
+    "item_catalog_id": "latam_brazil_fees",
+    "display_name": "LATAM Brazil fees",
+    "category": "other",
+    "aliases": [
+      "LATAM Brazil fees"
+    ]
+  },
+  {
+    "item_catalog_id": "latam_chile_fees",
+    "display_name": "LATAM Chile fees",
+    "category": "other",
+    "aliases": [
+      "LATAM Chile fees",
+      "Latam Chile fees",
+      "Latam chile fees"
+    ]
+  },
+  {
+    "item_catalog_id": "latam_colombia_fees",
+    "display_name": "LATAM Colombia fees",
+    "category": "other",
+    "aliases": [
+      "LATAM Colombia fees"
+    ]
+  },
+  {
+    "item_catalog_id": "latam_costa_rica_fees",
+    "display_name": "LATAM Costa Rica Fees",
+    "category": "other",
+    "aliases": [
+      "LATAM Costa Rica Fees",
+      "LATAM Costa Rica fees"
+    ]
+  },
+  {
+    "item_catalog_id": "latam_fees",
+    "display_name": "LATAM fees",
+    "category": "other",
+    "aliases": [
+      "LATAM fees"
+    ]
+  },
+  {
+    "item_catalog_id": "latam_mexico_fees",
+    "display_name": "LATAM Mexico fees",
+    "category": "other",
+    "aliases": [
+      "LATAM Mexico fees"
+    ]
+  },
+  {
+    "item_catalog_id": "mandatory_blood_tests_for_the_dog",
+    "display_name": "Mandatory blood tests for the dog",
+    "category": "other",
+    "aliases": [
+      "Mandatory blood tests for the dog"
+    ]
+  },
+  {
+    "item_catalog_id": "mandatory_taxes",
+    "display_name": "Mandatory taxes",
+    "category": "other",
+    "aliases": [
+      "Mandatory taxes"
+    ]
+  },
+  {
+    "item_catalog_id": "mandatory_tests",
+    "display_name": "Mandatory Tests",
+    "category": "other",
+    "aliases": [
+      "Mandatory Tests"
+    ]
+  },
+  {
+    "item_catalog_id": "mandatory_tests_for_sa",
+    "display_name": "Mandatory tests for SA",
+    "category": "other",
+    "aliases": [
+      "Mandatory tests for SA"
+    ]
+  },
+  {
+    "item_catalog_id": "mc_and_rabies_verification",
+    "display_name": "MC and rabies verification",
+    "category": "other",
+    "aliases": [
+      "MC and rabies verification"
+    ]
+  },
+  {
+    "item_catalog_id": "mc_and_rabies_verification_form",
+    "display_name": "MC and rabies verification form",
+    "category": "other",
+    "aliases": [
+      "MC and rabies verification form"
+    ]
+  },
+  {
+    "item_catalog_id": "mc_verification",
+    "display_name": "MC verification",
+    "category": "other",
+    "aliases": [
+      "MC verification"
+    ]
+  },
+  {
+    "item_catalog_id": "mc_verification_id",
+    "display_name": "MC verification ID",
+    "category": "other",
+    "aliases": [
+      "MC verification ID"
+    ]
+  },
+  {
+    "item_catalog_id": "meet_an_greet",
+    "display_name": "Meet an greet",
+    "category": "other",
+    "aliases": [
+      "Meet an greet"
+    ]
+  },
+  {
+    "item_catalog_id": "meet_and_greet",
+    "display_name": "Meet and greet",
+    "category": "service",
+    "aliases": [
+      "Meet and greet"
+    ]
+  },
+  {
+    "item_catalog_id": "microchip",
+    "display_name": "Microchip",
+    "category": "veterinary",
+    "aliases": [
+      "Microchip"
+    ]
+  },
+  {
+    "item_catalog_id": "ministry_of_environment",
+    "display_name": "Ministry of Environment",
+    "category": "other",
+    "aliases": [
+      "Ministry of Environment"
+    ]
+  },
+  {
+    "item_catalog_id": "mspas_fees",
+    "display_name": "MSPAS fees",
+    "category": "other",
+    "aliases": [
+      "MSPAS fees"
+    ]
+  },
+  {
+    "item_catalog_id": "out_of_hours_extra_fee",
+    "display_name": "out of hours extra fee",
+    "category": "other",
+    "aliases": [
+      "Out of hours extra fee",
+      "out of hours extra fee"
+    ]
+  },
+  {
+    "item_catalog_id": "out_of_hours_fee",
+    "display_name": "out of hours fee",
+    "category": "other",
+    "aliases": [
+      "out of hours fee"
+    ]
+  },
+  {
+    "item_catalog_id": "overnight_at_monterrey",
+    "display_name": "Overnight at Monterrey",
+    "category": "other",
+    "aliases": [
+      "Overnight at Monterrey"
+    ]
+  },
+  {
+    "item_catalog_id": "overnight_in_monterrey",
+    "display_name": "Overnight in Monterrey",
+    "category": "other",
+    "aliases": [
+      "Overnight in Monterrey"
+    ]
+  },
+  {
+    "item_catalog_id": "pet_transport_fees",
+    "display_name": "Pet transport service fees",
+    "category": "service_fee",
+    "aliases": [
+      "Honorarios LATAM Pet Transport",
+      "Honorarios LATAM Pet Transport Argentina",
+      "LATAM Pet Transport Argentina fees",
+      "LATAM Pet Transport Brazil fees",
+      "LATAM Pet Transport Chile fees",
+      "LATAM Pet Transport Colombia fees",
+      "LATAM Pet Transport Coombia fees",
+      "LATAM Pet Transport Costa Rica Fees",
+      "LATAM Pet Transport Costa Rica fees",
+      "LATAM Pet Transport Mexico Fees",
+      "LATAM Pet Transport Mexico fees",
+      "LATAM Pet Transport Peru fees",
+      "LATAM Pet Transport Venezuela fees"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_and_transort_to_the_airport",
+    "display_name": "Pick up and transort to the airport",
+    "category": "other",
+    "aliases": [
+      "Pick up and transort to the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_and_transpor_to_the_airport",
+    "display_name": "Pick up and transpor to the airport",
+    "category": "other",
+    "aliases": [
+      "Pick up and transpor to the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_and_transport_to_eze_airport",
+    "display_name": "Pick up and transport to EZE airport",
+    "category": "other",
+    "aliases": [
+      "Pick up and transport to EZE Airport",
+      "Pick up and transport to EZE airport"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_and_transport_to_pvr_airport",
+    "display_name": "Pick up and transport to PVR airport",
+    "category": "other",
+    "aliases": [
+      "Pick up and transport to PVR airport"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_and_trasnport_to_the_airport",
+    "display_name": "Pick up and trasnport to the airport",
+    "category": "other",
+    "aliases": [
+      "Pick up and trasnport to the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_from_airport_and_transport_to_the_hotel",
+    "display_name": "Pick up from airport and transport to the hotel",
+    "category": "other",
+    "aliases": [
+      "Pick up from airport and transport to the hotel"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_from_airport_scl",
+    "display_name": "Pick up from Airport SCL",
+    "category": "other",
+    "aliases": [
+      "Pick up from Airport SCL"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_from_mex_airport",
+    "display_name": "Pick up from MEX airport",
+    "category": "other",
+    "aliases": [
+      "Pick up from MEX airport"
+    ]
+  },
+  {
+    "item_catalog_id": "pick_up_from_scl_airport",
+    "display_name": "Pick up from SCL airport",
+    "category": "other",
+    "aliases": [
+      "Pick up from SCL airport"
+    ]
+  },
+  {
+    "item_catalog_id": "poa",
+    "display_name": "POA",
+    "category": "documentation",
+    "aliases": [
+      "Export POA",
+      "Legalization of POA",
+      "POA",
+      "POA Legalization",
+      "POA de EXPO",
+      "POA export onlne",
+      "POA for export",
+      "POA notarized",
+      "POA or Fact E"
+    ]
+  },
+  {
+    "item_catalog_id": "poder_notorial",
+    "display_name": "Poder notorial",
+    "category": "other",
+    "aliases": [
+      "Poder notorial"
+    ]
+  },
+  {
+    "item_catalog_id": "pre_delivery",
+    "display_name": "Pre-delivery",
+    "category": "ground_transport",
+    "aliases": [
+      "Pre delivery",
+      "Pre entrega",
+      "Pre- delivery",
+      "Pre-Delivery",
+      "Pre-delivery"
+    ]
+  },
+  {
+    "item_catalog_id": "predelivery",
+    "display_name": "Predelivery",
+    "category": "other",
+    "aliases": [
+      "Predelivery"
+    ]
+  },
+  {
+    "item_catalog_id": "quarantine",
+    "display_name": "Quarantine",
+    "category": "other",
+    "aliases": [
+      "21 Days in Quarantine Station",
+      "21 days in the Quarantine Station (Includes Food):",
+      "Colection in Quarantine and delivery to the metropolitan zone in Santiago",
+      "Home quarantine",
+      "Quarantine",
+      "Quarantine booking & coordination",
+      "Quarantine services",
+      "Quarantine tests",
+      "Quarantine tests if required",
+      "Request for home quarantine",
+      "Transport to Official Quarantine",
+      "Transport to Quarantine",
+      "tests while at quarantine"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_and_assistance_during_connection_flights",
+    "display_name": "Reception and assistance during connection flights",
+    "category": "other",
+    "aliases": [
+      "Reception and assistance during connection flights"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_ant_mex_airport",
+    "display_name": "Reception ant MEX Airport",
+    "category": "other",
+    "aliases": [
+      "Reception ant MEX Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_at_cdmx_airport",
+    "display_name": "Reception at CDMX Airport",
+    "category": "other",
+    "aliases": [
+      "Reception at CDMX Airport",
+      "Reception at CDMX airport"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_at_mex",
+    "display_name": "Reception at MEX",
+    "category": "other",
+    "aliases": [
+      "Reception at MEX"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_at_mex_airport",
+    "display_name": "Reception at MEX Airport",
+    "category": "other",
+    "aliases": [
+      "Reception at MEX Airport"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_at_monterrey",
+    "display_name": "Reception at Monterrey",
+    "category": "other",
+    "aliases": [
+      "Reception at Monterrey"
+    ]
+  },
+  {
+    "item_catalog_id": "reception_from_valle_deallende_to_mex_airport",
+    "display_name": "Reception from Valle deallende to Mex airport",
+    "category": "other",
+    "aliases": [
+      "Reception from Valle deallende to Mex airport"
+    ]
+  },
+  {
+    "item_catalog_id": "retroviral_test",
+    "display_name": "Retroviral test",
+    "category": "other",
+    "aliases": [
+      "Retroviral Test",
+      "Retroviral test"
+    ]
+  },
+  {
+    "item_catalog_id": "retroviral_test_for_the_hotel",
+    "display_name": "Retroviral test for the Hotel",
+    "category": "other",
+    "aliases": [
+      "Retroviral test for the Hotel"
+    ]
+  },
+  {
+    "item_catalog_id": "revision_veterinaria",
+    "display_name": "Revisión veterinaria",
+    "category": "other",
+    "aliases": [
+      "Revisión veterinaria"
+    ]
+  },
+  {
+    "item_catalog_id": "sag_endorsement",
+    "display_name": "SAG endorsement",
+    "category": "other",
+    "aliases": [
+      "SAG endorsement"
+    ]
+  },
+  {
+    "item_catalog_id": "sag_endoserd_hc_issued_in_chile_to_argentina",
+    "display_name": "SAG endoserd HC issued in Chile to Argentina",
+    "category": "other",
+    "aliases": [
+      "SAG endoserd HC issued in Chile to Argentina"
+    ]
+  },
+  {
+    "item_catalog_id": "sag_endoserd_hc_issued_in_chile_to_paraguay",
+    "display_name": "SAG endoserd HC issued in Chile to Paraguay",
+    "category": "other",
+    "aliases": [
+      "SAG endoserd HC issued in Chile to Paraguay"
+    ]
+  },
+  {
+    "item_catalog_id": "sag_endoserd_hc_issued_in_chile_to_uruguay",
+    "display_name": "SAG endoserd HC issued in Chile to Uruguay",
+    "category": "other",
+    "aliases": [
+      "SAG endoserd HC issued in Chile to Uruguay"
+    ]
+  },
+  {
+    "item_catalog_id": "sanitary_and_customs_import_process",
+    "display_name": "Sanitary and Customs Import Process",
+    "category": "other",
+    "aliases": [
+      "Sanitary and Customs Import Process"
+    ]
+  },
+  {
+    "item_catalog_id": "sanitary_import_process",
+    "display_name": "Sanitary Import Process",
+    "category": "other",
+    "aliases": [
+      "Sanitary Import Process"
+    ]
+  },
+  {
+    "item_catalog_id": "sanitary_paperwork",
+    "display_name": "Sanitary paperwork",
+    "category": "documentation",
+    "aliases": [
+      "Agrocalidad Health Certificate",
+      "Certificado Internacional de viaje ICA",
+      "Certificado internacional de viaje",
+      "De-worming and health certificate",
+      "Export Health Certificate",
+      "Export Health Paperwork",
+      "Export Health Paperwork US",
+      "Health Certificate",
+      "Health Certificates To Uruguay",
+      "Health Export Certificate/ICA certificate",
+      "Health Export Paperwork",
+      "Health Export Paperwork Chile Argentina",
+      "Health Export Paperwork EU",
+      "Health Export Paperwork to Canada",
+      "Health Export Paperwork to China",
+      "Health Export Paperwork to EU",
+      "Health Export Paperwork to EU and USA",
+      "Health Export Paperwork to Mexico",
+      "Health Export Paperwork to Phillipines",
+      "Health Export Paperwork to Thailand",
+      "Health Export Paperwork to UAE",
+      "Health Export Paperwork to UK",
+      "Health Export Paperwork to US",
+      "Health Export Paperwork to Uruguay",
+      "Health Export Paperwork to transit EU",
+      "Health Export Paperwork/ICA certificates",
+      "Health Export certificate",
+      "Health Export certificate EU",
+      "Health Export paperwork",
+      "Health certificate",
+      "Health certificate EU",
+      "Health certificate Paraguay Argentina",
+      "Health certificate for domestic flight",
+      "Health certificate for the domestic flight",
+      "Health certificate to Panama enorsed by SENASA",
+      "Health export Paperwork to CR",
+      "Health export certificate to Australia",
+      "Health export certificate/AGROCALIDAD Health Certificate",
+      "Health export certificate/ICA Health Certificate",
+      "Health export paperwork",
+      "Health export paperwork EU",
+      "Health export paperwork endorsed by SENASICA",
+      "Health export paperwork to Australia",
+      "Health export paperwork to Chile",
+      "Health export paperwork to DXB",
+      "Health export paperwork to EU",
+      "Health export paperwork to Iceland",
+      "Health export paperwork to Kenya",
+      "Health export paperwork to Mexico",
+      "Health export paperwork to Mozambique",
+      "Health export paperwork to SA",
+      "Health export paperwork to Thailand",
+      "Health export paperwork to UK",
+      "Health export paperwork to USA",
+      "Health export paperwork to enter the USA",
+      "Health export paperwork to taransit EU",
+      "Health export paperwork to transit EU",
+      "Health export paperwork to transit Europe",
+      "Health export paperwork/ ICA Health Certificate",
+      "Health paperwork for domestic flight",
+      "Heath export certificate/ICA Health Certificate",
+      "ICA Health Certificate",
+      "International Health Certificate",
+      "International Health Certificate to Chile",
+      "International Health Certificate to Paraguay",
+      "International health certificate",
+      "RNATT",
+      "RNATT declaration",
+      "Transit paperwork and asistance at EZE",
+      "Transit paperwork and asistance at SCL",
+      "Transport to client's residence and delivery of the Health certificate",
+      "Trámites sanitarios",
+      "Veterinary Health Certificate",
+      "Veterinary Health Certificate issued in Chile"
+    ]
+  },
+  {
+    "item_catalog_id": "senasa_fees",
+    "display_name": "SENASA fees",
+    "category": "other",
+    "aliases": [
+      "SENASA fees",
+      "Senasa fees"
+    ]
+  },
+  {
+    "item_catalog_id": "senasa_fees_awb_1",
+    "display_name": "SENASA fees AWB 1",
+    "category": "other",
+    "aliases": [
+      "SENASA fees AWB 1"
+    ]
+  },
+  {
+    "item_catalog_id": "senasa_hc_realizado_en_paraguay_para_chile",
+    "display_name": "SENASA HC realizado en Paraguay para Chile",
+    "category": "other",
+    "aliases": [
+      "SENASA HC realizado en Paraguay para Chile"
+    ]
+  },
+  {
+    "item_catalog_id": "senasa_inspectopn_fee_at_check_in",
+    "display_name": "SENASA inspectopn fee at check in",
+    "category": "other",
+    "aliases": [
+      "SENASA inspectopn fee at check in"
+    ]
+  },
+  {
+    "item_catalog_id": "senasica_endorsed_hc",
+    "display_name": "SENASICA endorsed HC",
+    "category": "other",
+    "aliases": [
+      "SENASICA endorsed HC"
+    ]
+  },
+  {
+    "item_catalog_id": "soft_bag",
+    "display_name": "Soft bag",
+    "category": "other",
+    "aliases": [
+      "Soft bag"
+    ]
+  },
+  {
+    "item_catalog_id": "soft_travel_bag",
+    "display_name": "Soft travel bag",
+    "category": "other",
+    "aliases": [
+      "Soft travel bag"
+    ]
+  },
+  {
+    "item_catalog_id": "tender_to_domestic_fligtht",
+    "display_name": "Tender to domestic fligtht",
+    "category": "other",
+    "aliases": [
+      "Tender to domestic fligtht"
+    ]
+  },
+  {
+    "item_catalog_id": "tender_to_the_airline",
+    "display_name": "Tender to the airline",
+    "category": "other",
+    "aliases": [
+      "Tender to the airline"
+    ]
+  },
+  {
+    "item_catalog_id": "tender_to_the_airline_process",
+    "display_name": "Tender to the airline process",
+    "category": "other",
+    "aliases": [
+      "Tender to the airline process"
+    ]
+  },
+  {
+    "item_catalog_id": "tests_and_treatments",
+    "display_name": "Tests and treatments",
+    "category": "other",
+    "aliases": [
+      "Tests and treatments"
+    ]
+  },
+  {
+    "item_catalog_id": "tramites_de_importacion",
+    "display_name": "Trámites de importación",
+    "category": "other",
+    "aliases": [
+      "Trámites de importación"
+    ]
+  },
+  {
+    "item_catalog_id": "translation",
+    "display_name": "Translation",
+    "category": "other",
+    "aliases": [
+      "Translation"
+    ]
+  },
+  {
+    "item_catalog_id": "transort_to_the_airport",
+    "display_name": "Transort to the airport",
+    "category": "other",
+    "aliases": [
+      "Transort to the airport"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_from_cdmx_to_mex_airport",
+    "display_name": "Transport from CDMX to MEX airport",
+    "category": "other",
+    "aliases": [
+      "Transport from CDMX to MEX airport"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_from_durango_to_cdmx",
+    "display_name": "Transport from Durango to CDMX",
+    "category": "other",
+    "aliases": [
+      "Transport from Durango to CDMX"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_from_hermosillo_to_cdmx",
+    "display_name": "Transport from Hermosillo to CDMX",
+    "category": "other",
+    "aliases": [
+      "Transport from Hermosillo to CDMX"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_from_queretaro_to_cdmx",
+    "display_name": "Transport from Queretaro to CDMX",
+    "category": "other",
+    "aliases": [
+      "Transport from Queretaro to CDMX"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_aep_airport",
+    "display_name": "Transport to AEP airport",
+    "category": "other",
+    "aliases": [
+      "Transport to AEP airport"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_eze_airport",
+    "display_name": "Transport to EZE airport",
+    "category": "other",
+    "aliases": [
+      "Transport to EZE airport"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_liberia",
+    "display_name": "Transport to Liberia",
+    "category": "other",
+    "aliases": [
+      "Transport to Liberia"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_morelia",
+    "display_name": "Transport to Morelia",
+    "category": "other",
+    "aliases": [
+      "Transport to Morelia"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_scl_airport",
+    "display_name": "Transport to SCL airport",
+    "category": "other",
+    "aliases": [
+      "Transport to SCL airport"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_sorocaba",
+    "display_name": "Transport to Sorocaba",
+    "category": "other",
+    "aliases": [
+      "Transport to Sorocaba"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_the_vet_clinic_from_the_residence",
+    "display_name": "Transport to the vet clinic from the residence",
+    "category": "other",
+    "aliases": [
+      "Transport to the vet clinic from the residence"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_veracruz",
+    "display_name": "Transport to Veracruz",
+    "category": "other",
+    "aliases": [
+      "Transport to Veracruz"
+    ]
+  },
+  {
+    "item_catalog_id": "transport_to_zacatepec",
+    "display_name": "Transport to Zacatepec",
+    "category": "other",
+    "aliases": [
+      "Transport to Zacatepec"
+    ]
+  },
+  {
+    "item_catalog_id": "traslado_a_aeropuerto_de_lima_y_despacho",
+    "display_name": "Traslado a aeropuerto de LIMA y despacho",
+    "category": "other",
+    "aliases": [
+      "Traslado a aeropuerto de LIMA y despacho"
+    ]
+  },
+  {
+    "item_catalog_id": "traslado_a_domicilio_en_metro_santiago",
+    "display_name": "Traslado a domicilio en Metro Santiago",
+    "category": "other",
+    "aliases": [
+      "Traslado a domicilio en Metro Santiago"
+    ]
+  },
+  {
+    "item_catalog_id": "trasport_to_eze_airport",
+    "display_name": "Trasport to EZE airport",
+    "category": "other",
+    "aliases": [
+      "Trasport to EZE airport"
+    ]
+  },
+  {
+    "item_catalog_id": "travel_bag",
+    "display_name": "Travel bag",
+    "category": "other",
+    "aliases": [
+      "Travel bag"
+    ]
+  },
+  {
+    "item_catalog_id": "vaccination",
+    "display_name": "Vaccination",
+    "category": "veterinary",
+    "aliases": [
+      "HC private vet and pet's vaccination booklet"
+    ]
+  },
+  {
+    "item_catalog_id": "vet_visit",
+    "display_name": "Vet visit / check",
+    "category": "veterinary",
+    "aliases": [
+      "Vet Check",
+      "Vet Check and treatments",
+      "Vet check",
+      "Vet check and HC",
+      "Vet check and HC Argenitna - Bolivia",
+      "Vet check and HC Argenitna - Uruguay",
+      "Vet check for the domestic flight",
+      "Vet check, Deworming, HC for the domestic flight",
+      "Vet check/ internal and external deworming",
+      "Vet fees",
+      "Visita veterinaria",
+      "vet check"
+    ]
+  },
+  {
+    "item_catalog_id": "vip_travel_form_el_salvador_to_cmx_mexico",
+    "display_name": "VIP travel form El Salvador to CMX Mexico",
+    "category": "other",
+    "aliases": [
+      "VIP travel form El Salvador to CMX Mexico"
+    ]
+  },
+  {
+    "item_catalog_id": "vuelo_lim_tumbes_vuelo_directo",
+    "display_name": "Vuelo LIM-TUMBES (vuelo directo)",
+    "category": "other",
+    "aliases": [
+      "Vuelo LIM-TUMBES (vuelo directo)"
+    ]
+  },
+  {
+    "item_catalog_id": "warehouse",
+    "display_name": "Warehouse / access / taxes",
+    "category": "airport_fees",
+    "aliases": [
+      "Acceso a la bodega",
+      "Airline fee to transfer to our own Warehouse",
+      "Airline fee to transfer to our warehouse",
+      "Airline fee to transfer to warehouse",
+      "Authorization and enabling of customs clearance, warehouse, and staff",
+      "Impuesto a la aerolinea transferencia a nuestra propia bodega",
+      "Transfer to warehouse",
+      "Warehouse",
+      "Warehouse Access",
+      "Warehouse access",
+      "Warehouse access and airline fee to transfer to warehouse",
+      "Warehouse and airport taxes"
+    ]
+  }
+]
