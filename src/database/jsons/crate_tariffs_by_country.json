@@ -1,0 +1,502 @@
+{
+  "countries": {
+    "brasil": [
+      {
+        "id": "br-100",
+        "size_code": "100",
+        "pet_scope": "Dog/Cat",
+        "measures_cm": "53 x 41 x 38",
+        "weight_vol_kg": "2,5",
+        "cost_amount": 125,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "br-200",
+        "size_code": "200",
+        "pet_scope": "Dog/Cat",
+        "measures_cm": "71 x 52 x 55",
+        "weight_vol_kg": "4,0",
+        "cost_amount": 185,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "br-300",
+        "size_code": "300",
+        "pet_scope": "Dog",
+        "measures_cm": "81 x 57 x 61",
+        "weight_vol_kg": "5,6",
+        "cost_amount": 256,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "br-400",
+        "size_code": "400",
+        "pet_scope": "Dog",
+        "measures_cm": "91 x 64 x 69",
+        "weight_vol_kg": "7,5",
+        "cost_amount": 338,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "br-500",
+        "size_code": "500",
+        "pet_scope": "Dog",
+        "measures_cm": "102 x 69 x 76",
+        "weight_vol_kg": "9,5",
+        "cost_amount": 445,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "br-700",
+        "size_code": "700",
+        "pet_scope": "Dog",
+        "measures_cm": "122 x 81 x 89",
+        "weight_vol_kg": "13",
+        "cost_amount": 735,
+        "cost_currency": "USD",
+        "notes": null
+      }
+    ],
+    "chile": [
+      {
+        "id": "cl-gato",
+        "size_code": "Gato",
+        "pet_scope": "Dog/Cat",
+        "measures_cm": "65 x 45 x 45",
+        "weight_vol_kg": "22",
+        "cost_amount": 170,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-200",
+        "size_code": "200",
+        "pet_scope": "Dog",
+        "measures_cm": "75 x 50 x 53",
+        "weight_vol_kg": "34",
+        "cost_amount": 220,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-300",
+        "size_code": "300",
+        "pet_scope": "Dog",
+        "measures_cm": "85 x 56 x 60",
+        "weight_vol_kg": "48",
+        "cost_amount": 340,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-400",
+        "size_code": "400",
+        "pet_scope": "Dog",
+        "measures_cm": "100 x 63 x 70",
+        "weight_vol_kg": "74",
+        "cost_amount": 400,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-500",
+        "size_code": "500",
+        "pet_scope": "Dog",
+        "measures_cm": "115 x 67 x 80",
+        "weight_vol_kg": "103",
+        "cost_amount": 500,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-500-larga",
+        "size_code": "500 (Larga)",
+        "pet_scope": "Dog",
+        "measures_cm": "130 x 80 x 80",
+        "weight_vol_kg": "139",
+        "cost_amount": 550,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-600",
+        "size_code": "600",
+        "pet_scope": "Dog",
+        "measures_cm": "115 x 67 x 85",
+        "weight_vol_kg": "110",
+        "cost_amount": 550,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-700",
+        "size_code": "700",
+        "pet_scope": "Dog",
+        "measures_cm": "115 x 66 x 90",
+        "weight_vol_kg": "115",
+        "cost_amount": 600,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cl-pp100",
+        "size_code": "PP100",
+        "pet_scope": "Dog",
+        "measures_cm": "130 x 80 x 96",
+        "weight_vol_kg": "168",
+        "cost_amount": 700,
+        "cost_currency": "USD",
+        "notes": null
+      }
+    ],
+    "costa_rica": [
+      {
+        "id": "cr-100",
+        "size_code": "100",
+        "pet_scope": "Dog/Cat",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": 110,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cr-200",
+        "size_code": "200",
+        "pet_scope": "Dog",
+        "measures_cm": "65 x 50 x 48",
+        "weight_vol_kg": "27,1",
+        "cost_amount": 160,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cr-300",
+        "size_code": "300",
+        "pet_scope": "Dog",
+        "measures_cm": "80 x 60 x 55",
+        "weight_vol_kg": "44,0",
+        "cost_amount": 190,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cr-400",
+        "size_code": "400",
+        "pet_scope": "Dog",
+        "measures_cm": "90 x 70 x 60",
+        "weight_vol_kg": "63,0",
+        "cost_amount": 260,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cr-500",
+        "size_code": "500",
+        "pet_scope": "Dog",
+        "measures_cm": "100 x 80 x 70",
+        "weight_vol_kg": "93,3",
+        "cost_amount": 340,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cr-700",
+        "size_code": "700",
+        "pet_scope": "Dog",
+        "measures_cm": "120 x 90 x 80",
+        "weight_vol_kg": "144,0",
+        "cost_amount": 520,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "cr-cr82",
+        "size_code": "CR82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": "desde USD 280 según tamaño",
+        "notes": "Para razas peligrosas."
+      }
+    ],
+    "argentina": [
+      {
+        "id": "ar-100",
+        "size_code": "100",
+        "pet_scope": "Dog/Cat",
+        "measures_cm": "53 x 41 x 38",
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": "consultar",
+        "notes": null
+      },
+      {
+        "id": "ar-200",
+        "size_code": "200",
+        "pet_scope": "Dog",
+        "measures_cm": "65 x 50 x 48",
+        "weight_vol_kg": "27,1",
+        "cost_amount": 270,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "ar-300",
+        "size_code": "300",
+        "pet_scope": "Dog",
+        "measures_cm": "80 x 60 x 55",
+        "weight_vol_kg": "44,0",
+        "cost_amount": 310,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "ar-400",
+        "size_code": "400",
+        "pet_scope": "Dog",
+        "measures_cm": "90 x 70 x 60",
+        "weight_vol_kg": "63,0",
+        "cost_amount": 343,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "ar-500",
+        "size_code": "500",
+        "pet_scope": "Dog",
+        "measures_cm": "100 x 80 x 70",
+        "weight_vol_kg": "93,3",
+        "cost_amount": 424,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "ar-700",
+        "size_code": "700",
+        "pet_scope": "Dog",
+        "measures_cm": "120 x 90 x 80",
+        "weight_vol_kg": "144,0",
+        "cost_amount": 500,
+        "cost_currency": "USD",
+        "notes": "A medida"
+      },
+      {
+        "id": "ar-cr82",
+        "size_code": "CR82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": 550,
+        "cost_currency": "USD",
+        "notes": "Para razas peligrosas."
+      },
+      {
+        "id": "ar-700-bonacci",
+        "size_code": "700 Bonacci",
+        "pet_scope": "Dog",
+        "measures_cm": "EXT 130 x 94 x 85",
+        "weight_vol_kg": "173",
+        "cost_amount": 500,
+        "cost_currency": "USD",
+        "notes": null
+      }
+    ],
+    "mexico": [
+      {
+        "id": "mx-200",
+        "size_code": "200",
+        "pet_scope": "Perro/Gato",
+        "measures_cm": "71 x 52 x 55",
+        "weight_vol_kg": "34,0",
+        "cost_amount": 110,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "mx-300",
+        "size_code": "300",
+        "pet_scope": "Perro",
+        "measures_cm": "81 x 57 x 61",
+        "weight_vol_kg": "49,0",
+        "cost_amount": 140,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "mx-400",
+        "size_code": "400",
+        "pet_scope": "Perro",
+        "measures_cm": "91 x 69 x 63",
+        "weight_vol_kg": "61,5",
+        "cost_amount": 170,
+        "cost_currency": "USD",
+        "notes": null
+      },
+      {
+        "id": "mx-500",
+        "size_code": "500",
+        "pet_scope": "Perro",
+        "measures_cm": "102 x 76 x 76",
+        "weight_vol_kg": "93,3",
+        "cost_amount": 230,
+        "cost_currency": "USD",
+        "notes": "En fuente original medidas 102 x 76 x 9 (revisar)."
+      },
+      {
+        "id": "mx-700",
+        "size_code": "700",
+        "pet_scope": "Perro",
+        "measures_cm": "120 x 90 x 80",
+        "weight_vol_kg": "147,0",
+        "cost_amount": 460,
+        "cost_currency": "USD",
+        "notes": "LAR82 USD 750. Madera 700 ~750 USD según tamaño."
+      }
+    ],
+    "colombia": [
+      {
+        "id": "co-100",
+        "size_code": "100",
+        "pet_scope": "Perro/Gato",
+        "measures_cm": "53 x 41 x 38",
+        "weight_vol_kg": "2,5 (vol.)",
+        "cost_amount": 140,
+        "cost_currency": "USD",
+        "cost_label": "USD 140",
+        "notes": "Hasta ~9 kg mascota"
+      },
+      {
+        "id": "co-200",
+        "size_code": "200",
+        "pet_scope": "Perro/Gato",
+        "measures_cm": "65 x 50 x 48",
+        "weight_vol_kg": "29,0",
+        "cost_amount": 190,
+        "cost_currency": "USD",
+        "cost_label": "USD 190",
+        "notes": "Hasta ~13 kg mascota"
+      },
+      {
+        "id": "co-300",
+        "size_code": "300",
+        "pet_scope": "Perro",
+        "measures_cm": "80 x 60 x 55",
+        "weight_vol_kg": "44,0",
+        "cost_amount": 245,
+        "cost_currency": "USD",
+        "cost_label": "USD 245",
+        "notes": "Hasta ~22 kg mascota"
+      },
+      {
+        "id": "co-400",
+        "size_code": "400",
+        "pet_scope": "Perro",
+        "measures_cm": "90 x 70 x 60",
+        "weight_vol_kg": "61,0",
+        "cost_amount": 290,
+        "cost_currency": "USD",
+        "cost_label": "USD 290",
+        "notes": "Hasta ~31 kg mascota"
+      },
+      {
+        "id": "co-500",
+        "size_code": "500",
+        "pet_scope": "Perro",
+        "measures_cm": "100 x 80 x 70",
+        "weight_vol_kg": "89,0",
+        "cost_amount": 378,
+        "cost_currency": "USD",
+        "cost_label": "USD 378",
+        "notes": "Hasta ~40 kg mascota"
+      },
+      {
+        "id": "co-700",
+        "size_code": "700",
+        "pet_scope": "Perro",
+        "measures_cm": "120 x 90 x 80",
+        "weight_vol_kg": "147,0",
+        "cost_amount": 450,
+        "cost_currency": "USD",
+        "cost_label": "USD 450",
+        "notes": "Desde ~40 kg mascota"
+      }
+    ],
+    "ecuador": [
+      {
+        "id": "ec-100",
+        "size_code": "100",
+        "pet_scope": "Perro/Gato",
+        "measures_cm": "53 x 41 x 38",
+        "weight_vol_kg": "2,5 (vol.)",
+        "cost_amount": 160,
+        "cost_currency": "USD",
+        "cost_label": "USD 160",
+        "notes": "Hasta ~9 kg mascota"
+      },
+      {
+        "id": "ec-200",
+        "size_code": "200",
+        "pet_scope": "Perro/Gato",
+        "measures_cm": "65 x 50 x 48",
+        "weight_vol_kg": "29,0",
+        "cost_amount": 210,
+        "cost_currency": "USD",
+        "cost_label": "USD 210",
+        "notes": "Hasta ~13 kg mascota"
+      },
+      {
+        "id": "ec-300",
+        "size_code": "300",
+        "pet_scope": "Perro",
+        "measures_cm": "80 x 60 x 55",
+        "weight_vol_kg": "44,0",
+        "cost_amount": 400,
+        "cost_currency": "USD",
+        "cost_label": "USD 400",
+        "notes": "Hasta ~22 kg mascota"
+      },
+      {
+        "id": "ec-400",
+        "size_code": "400",
+        "pet_scope": "Perro",
+        "measures_cm": "90 x 70 x 60",
+        "weight_vol_kg": "61,0",
+        "cost_amount": 450,
+        "cost_currency": "USD",
+        "cost_label": "USD 450",
+        "notes": "Hasta ~31 kg mascota"
+      },
+      {
+        "id": "ec-500",
+        "size_code": "500",
+        "pet_scope": "Perro",
+        "measures_cm": "100 x 80 x 70",
+        "weight_vol_kg": "89,0",
+        "cost_amount": 420,
+        "cost_currency": "USD",
+        "cost_label": "USD 420",
+        "notes": "Hasta ~40 kg mascota"
+      },
+      {
+        "id": "ec-700",
+        "size_code": "700",
+        "pet_scope": "Perro",
+        "measures_cm": "120 x 90 x 80",
+        "weight_vol_kg": "147,0",
+        "cost_amount": 590,
+        "cost_currency": "USD",
+        "cost_label": "USD 590",
+        "notes": "Desde ~40 kg mascota"
+      }
+    ]
+  }
+}
