@@ -13,15 +13,17 @@ from openpyxl import load_workbook
 
 
 PROJECT_ROOT = Path("/Users/fran/Documents/projects/pettransfer")
-IMPO_ROOT = (
+IMPO_SOURCE_ROOT = (
     PROJECT_ROOT
     / "api/src/database/drive_files/Modelos de cotizaciones IMPO VIGENTES (1)"
 )
+USEFUL_JSONS_ROOT = PROJECT_ROOT / "api/src/database/usefuljsons"
 SOURCE_ROOT = (
-    IMPO_ROOT / "3 Modelos de cotizaciones IMPO paises que sirve LATAM Pet Transport"
+    IMPO_SOURCE_ROOT
+    / "3 Modelos de cotizaciones IMPO paises que sirve LATAM Pet Transport"
 )
-OUTPUT_ROOT = IMPO_ROOT / "json_templates"
-MANIFEST_PATH = IMPO_ROOT / "impo_templates_manifest.json"
+OUTPUT_ROOT = USEFUL_JSONS_ROOT / "templates"
+MANIFEST_PATH = USEFUL_JSONS_ROOT / "info" / "impo_templates_manifest.json"
 
 COUNTRY_MAP = {
     "ARGENTINA": "argentina",
@@ -461,7 +463,7 @@ def build_manifest() -> dict[str, Any]:
 
             entry = {
                 "file_name": output_name,
-                "relative_path": f"json_templates/{output_name}",
+                "relative_path": f"templates/{output_name}",
                 "source_file_name": file_path.name,
                 "source_relative_path": str(relative_source),
                 "source_extension": file_path.suffix.lower().lstrip("."),

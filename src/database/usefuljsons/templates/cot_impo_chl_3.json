@@ -1,0 +1,93 @@
+{
+  "title": "cot_impo_chl_3",
+  "country": "chile",
+  "location": null,
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Chile 3 pets.xls",
+    "relative_path": "CHILE/Cot IMPO en Chile 3 pets.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Hoja1",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "SCL, Chile",
+    "quotation_date": "2022-11-16",
+    "trip_date": "To be confirmed",
+    "animals": "3 pets",
+    "title": "IMPORT of 3 pets as Cargo in Chile"
+  },
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Customs Clearance",
+      "amount": 1220,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Import taxes",
+      "amount": 0,
+      "note": "35% of the CIF value will apply"
+    },
+    {
+      "item_number": 3,
+      "label": "Home delivery in Metro Santiago de Chile",
+      "amount": 280,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total",
+    "amount": 1500,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Customs clearance - SCL Airport",
+      "paragraphs": [
+        "Includes our charges, our customs agent´s charges and SAG fees.",
+        "IMPORTANT: if clearance is outside normal working days and hours, we will need to add a surcharge."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Import taxes",
+      "paragraphs": [
+        "Chile taxes the import of pets. Total cost is approximately 35% over CIF value + commercial value of the 2nd and 3rd pet."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Home delivery in Metro Santiago de Chile",
+      "paragraphs": [
+        "Delivery of 3 pets to boarding facility in Santiago metro area."
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Comments",
+      "paragraphs": [
+        "1 -This price does not include cost of insurance of the animal.",
+        "2 -Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "3 - Payment: 100% in advance, 3 days prior to shipment."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "title": "cot_impo_bra_gig_3",
+  "country": "brasil",
+  "location": "gig",
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Brasil GIG 3 pets.xls",
+    "relative_path": "BRASIL/GIG/Cot IMPO en Brasil GIG 3 pets.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Plan1",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "GIG, Brazil",
+    "quotation_date": "2024-01-31",
+    "trip_date": "To be confirmed",
+    "animals": "3 dogs",
+    "title": "Brazil taxes the import of pets. Total cost is approximately 60% over CIF value + commercial value of the pet."
+  },
+  "quoted_items": [],
+  "total": null,
+  "descriptions": [
+    {
+      "item_number": 4,
+      "title": "Mandatory Import taxes",
+      "paragraphs": [
+        "Mandatory import taxes charged by Receita Federal."
+      ]
+    },
+    {
+      "item_number": 5,
+      "title": "Home delivery in Metro Rio de Janeiro",
+      "paragraphs": [
+        "LATAM personnel will transport 3 pets from GIG airport to client´s residence in Metro Rio de Janeiro",
+        "Conditions of contract:",
+        "This price does not include cost of insurance of the animal.",
+        "Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "Payment: 100% in advance"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "general",
+      "paragraphs": [
+        "There are legal exemptions for foreigners or for Brazilian that return after having lived abroad."
+      ]
+    },
+    {
+      "title": "general",
+      "paragraphs": [
+        "Please, read the attached file \"Import Taxes\" and inform LATAM about your tax status."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}

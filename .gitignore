@@ -7,5 +7,4 @@ tmp-*.txt
 *.xlsx
 __pycache__/
 *.pyc
-src/database/jsons/**/*.json
-!src/database/jsons/crate_tariffs_by_country.json
+src/database/infojsons/**/*.json

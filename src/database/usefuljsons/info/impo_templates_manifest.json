@@ -1,0 +1,910 @@
+{
+  "argentina": {
+    "title": "argentina",
+    "templates": {
+      "1_pet_notice": {
+        "file_name": "cot_impo_arg_1_notice.json",
+        "relative_path": "templates/cot_impo_arg_1_notice.json",
+        "source_file_name": "cot IMPO en Argentina 1 pet  CON NOTICE .xlsx",
+        "source_relative_path": "ARGENTINA/cot IMPO en Argentina 1 pet  CON NOTICE .xlsx",
+        "source_extension": "xlsx",
+        "animal_count": 1,
+        "variants": [
+          "notice"
+        ],
+        "situation_key": "1_pet_notice"
+      },
+      "1_pet": {
+        "file_name": "cot_impo_arg_1.json",
+        "relative_path": "templates/cot_impo_arg_1.json",
+        "source_file_name": "cot IMPO en Argentina 1 pet.xlsx",
+        "source_relative_path": "ARGENTINA/cot IMPO en Argentina 1 pet.xlsx",
+        "source_extension": "xlsx",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_arg_2.json",
+        "relative_path": "templates/cot_impo_arg_2.json",
+        "source_file_name": "cot IMPO en Argentina 2 pets.xls",
+        "source_relative_path": "ARGENTINA/cot IMPO en Argentina 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_arg_3.json",
+        "relative_path": "templates/cot_impo_arg_3.json",
+        "source_file_name": "cot IMPO en Argentina 3 pets.xls",
+        "source_relative_path": "ARGENTINA/cot IMPO en Argentina 3 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      },
+      "4_pets": {
+        "file_name": "cot_impo_arg_4.json",
+        "relative_path": "templates/cot_impo_arg_4.json",
+        "source_file_name": "cot IMPO en Argentina 4 pets.xls",
+        "source_relative_path": "ARGENTINA/cot IMPO en Argentina 4 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 4,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "4_pets"
+      },
+      "esp": {
+        "file_name": "cot_impo_arg_esp.json",
+        "relative_path": "templates/cot_impo_arg_esp.json",
+        "source_file_name": "cot IMPO en Argentina esp.xls",
+        "source_relative_path": "ARGENTINA/cot IMPO en Argentina esp.xls",
+        "source_extension": "xls",
+        "animal_count": null,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "esp"
+      }
+    }
+  },
+  "brasil": {
+    "title": "brasil",
+    "locations": {
+      "gig": {
+        "1_pet": {
+          "file_name": "cot_impo_bra_gig_1.json",
+          "relative_path": "templates/cot_impo_bra_gig_1.json",
+          "source_file_name": "Cot IMPO en Brasil GIG 1 pet.xls",
+          "source_relative_path": "BRASIL/GIG/Cot IMPO en Brasil GIG 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "gig"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_bra_gig_2.json",
+          "relative_path": "templates/cot_impo_bra_gig_2.json",
+          "source_file_name": "Cot IMPO en Brasil GIG 2 pets.xls",
+          "source_relative_path": "BRASIL/GIG/Cot IMPO en Brasil GIG 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "gig"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_bra_gig_3.json",
+          "relative_path": "templates/cot_impo_bra_gig_3.json",
+          "source_file_name": "Cot IMPO en Brasil GIG 3 pets.xls",
+          "source_relative_path": "BRASIL/GIG/Cot IMPO en Brasil GIG 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "gig"
+        },
+        "esp": {
+          "file_name": "cot_impo_bra_gig_esp.json",
+          "relative_path": "templates/cot_impo_bra_gig_esp.json",
+          "source_file_name": "cot IMPO en Brasil GIG esp.xls",
+          "source_relative_path": "BRASIL/GIG/cot IMPO en Brasil GIG esp.xls",
+          "source_extension": "xls",
+          "animal_count": null,
+          "variants": [
+            "esp"
+          ],
+          "situation_key": "esp",
+          "location": "gig"
+        }
+      },
+      "gru": {
+        "1_pet": {
+          "file_name": "cot_impo_bra_gru_1.json",
+          "relative_path": "templates/cot_impo_bra_gru_1.json",
+          "source_file_name": "Cot IMPO en Brasil GRU 1 pet.xls",
+          "source_relative_path": "BRASIL/GRU/Cot IMPO en Brasil GRU 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "gru"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_bra_gru_2.json",
+          "relative_path": "templates/cot_impo_bra_gru_2.json",
+          "source_file_name": "Cot IMPO en Brasil GRU 2 pets.xls",
+          "source_relative_path": "BRASIL/GRU/Cot IMPO en Brasil GRU 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "gru"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_bra_gru_3.json",
+          "relative_path": "templates/cot_impo_bra_gru_3.json",
+          "source_file_name": "Cot IMPO en Brasil GRU 3 pets.xls",
+          "source_relative_path": "BRASIL/GRU/Cot IMPO en Brasil GRU 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "gru"
+        },
+        "esp": {
+          "file_name": "cot_impo_bra_gru_esp.json",
+          "relative_path": "templates/cot_impo_bra_gru_esp.json",
+          "source_file_name": "cot IMPO en Brasil GRU esp.xls",
+          "source_relative_path": "BRASIL/GRU/cot IMPO en Brasil GRU esp.xls",
+          "source_extension": "xls",
+          "animal_count": null,
+          "variants": [
+            "esp"
+          ],
+          "situation_key": "esp",
+          "location": "gru"
+        }
+      },
+      "vcp": {
+        "2_pets": {
+          "file_name": "cot_impo_bra_vcp_2.json",
+          "relative_path": "templates/cot_impo_bra_vcp_2.json",
+          "source_file_name": "Cot IMPO en Brasil VCP 2.xls",
+          "source_relative_path": "BRASIL/VCP/Cot IMPO en Brasil VCP 2.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "vcp"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_bra_vcp_3.json",
+          "relative_path": "templates/cot_impo_bra_vcp_3.json",
+          "source_file_name": "Cot IMPO en Brasil VCP 3.xls",
+          "source_relative_path": "BRASIL/VCP/Cot IMPO en Brasil VCP 3.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "vcp"
+        },
+        "1_pet": {
+          "file_name": "cot_impo_bra_vcp_1.json",
+          "relative_path": "templates/cot_impo_bra_vcp_1.json",
+          "source_file_name": "cot IMPO en Brasil VCP 1.xls",
+          "source_relative_path": "BRASIL/VCP/cot IMPO en Brasil VCP 1.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "vcp"
+        }
+      }
+    }
+  },
+  "chile": {
+    "title": "chile",
+    "templates": {
+      "1_pet_esp": {
+        "file_name": "cot_impo_chl_1_esp.json",
+        "relative_path": "templates/cot_impo_chl_1_esp.json",
+        "source_file_name": "Cot IMPO en Chile 1 pet - Esp.xls",
+        "source_relative_path": "CHILE/Cot IMPO en Chile 1 pet - Esp.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "1_pet_esp"
+      },
+      "1_pet": {
+        "file_name": "cot_impo_chl_1.json",
+        "relative_path": "templates/cot_impo_chl_1.json",
+        "source_file_name": "Cot IMPO en Chile 1 pet.xls",
+        "source_relative_path": "CHILE/Cot IMPO en Chile 1 pet.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_chl_2.json",
+        "relative_path": "templates/cot_impo_chl_2.json",
+        "source_file_name": "Cot IMPO en Chile 2 pets.xls",
+        "source_relative_path": "CHILE/Cot IMPO en Chile 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_chl_3.json",
+        "relative_path": "templates/cot_impo_chl_3.json",
+        "source_file_name": "Cot IMPO en Chile 3 pets.xls",
+        "source_relative_path": "CHILE/Cot IMPO en Chile 3 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      }
+    }
+  },
+  "colombia": {
+    "title": "colombia",
+    "locations": {
+      "bog": {
+        "1_pet": {
+          "file_name": "cot_impo_col_bog_1.json",
+          "relative_path": "templates/cot_impo_col_bog_1.json",
+          "source_file_name": "cot IMPO en Colombia BOG 1 pet.xls",
+          "source_relative_path": "COLOMBIA/BOG/cot IMPO en Colombia BOG 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "bog"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_col_bog_2.json",
+          "relative_path": "templates/cot_impo_col_bog_2.json",
+          "source_file_name": "cot IMPO en Colombia BOG 2 pets.xls",
+          "source_relative_path": "COLOMBIA/BOG/cot IMPO en Colombia BOG 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "bog"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_col_bog_3.json",
+          "relative_path": "templates/cot_impo_col_bog_3.json",
+          "source_file_name": "cot IMPO en Colombia BOG 3 pets.xls",
+          "source_relative_path": "COLOMBIA/BOG/cot IMPO en Colombia BOG 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "bog"
+        },
+        "esp": {
+          "file_name": "cot_impo_col_bog_esp.json",
+          "relative_path": "templates/cot_impo_col_bog_esp.json",
+          "source_file_name": "cot IMPO en Colombia esp.xls",
+          "source_relative_path": "COLOMBIA/BOG/cot IMPO en Colombia esp.xls",
+          "source_extension": "xls",
+          "animal_count": null,
+          "variants": [
+            "esp"
+          ],
+          "situation_key": "esp",
+          "location": "bog"
+        }
+      },
+      "clo": {
+        "1_pet": {
+          "file_name": "cot_impo_col_clo_1.json",
+          "relative_path": "templates/cot_impo_col_clo_1.json",
+          "source_file_name": "cot IMPO en Colombia CLO 1 pet.xls",
+          "source_relative_path": "COLOMBIA/CLO/cot IMPO en Colombia CLO 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "clo"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_col_clo_2.json",
+          "relative_path": "templates/cot_impo_col_clo_2.json",
+          "source_file_name": "cot IMPO en Colombia CLO 2 pets.xls",
+          "source_relative_path": "COLOMBIA/CLO/cot IMPO en Colombia CLO 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "clo"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_col_clo_3.json",
+          "relative_path": "templates/cot_impo_col_clo_3.json",
+          "source_file_name": "cot IMPO en Colombia CLO 3 pets.xls",
+          "source_relative_path": "COLOMBIA/CLO/cot IMPO en Colombia CLO 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "clo"
+        },
+        "esp": {
+          "file_name": "cot_impo_col_clo_esp.json",
+          "relative_path": "templates/cot_impo_col_clo_esp.json",
+          "source_file_name": "cot IMPO en Colombia CLO esp.xls",
+          "source_relative_path": "COLOMBIA/CLO/cot IMPO en Colombia CLO esp.xls",
+          "source_extension": "xls",
+          "animal_count": null,
+          "variants": [
+            "esp"
+          ],
+          "situation_key": "esp",
+          "location": "clo"
+        }
+      }
+    }
+  },
+  "costa_rica": {
+    "title": "costa_rica",
+    "templates": {
+      "1_pet_esp": {
+        "file_name": "cot_impo_cri_1_esp.json",
+        "relative_path": "templates/cot_impo_cri_1_esp.json",
+        "source_file_name": "Cot IMPO en Costa Rica 1 pet - ESP.xls",
+        "source_relative_path": "COSTA RICA/Cot IMPO en Costa Rica 1 pet - ESP.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "1_pet_esp"
+      },
+      "1_pet": {
+        "file_name": "cot_impo_cri_1.json",
+        "relative_path": "templates/cot_impo_cri_1.json",
+        "source_file_name": "Cot IMPO en Costa Rica 1 pet.xls",
+        "source_relative_path": "COSTA RICA/Cot IMPO en Costa Rica 1 pet.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_cri_2.json",
+        "relative_path": "templates/cot_impo_cri_2.json",
+        "source_file_name": "Cot IMPO en Costa Rica 2 pets.xls",
+        "source_relative_path": "COSTA RICA/Cot IMPO en Costa Rica 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_cri_3.json",
+        "relative_path": "templates/cot_impo_cri_3.json",
+        "source_file_name": "Cot IMPO en Costa Rica 3 perros.xls",
+        "source_relative_path": "COSTA RICA/Cot IMPO en Costa Rica 3 perros.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      }
+    }
+  },
+  "ecuador": {
+    "title": "ecuador",
+    "templates": {
+      "1_pet": {
+        "file_name": "cot_impo_ecu_1.json",
+        "relative_path": "templates/cot_impo_ecu_1.json",
+        "source_file_name": "Cot IMPO en Ecuador 1 pet.xls",
+        "source_relative_path": "ECUADOR/Cot IMPO en Ecuador 1 pet.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_ecu_2.json",
+        "relative_path": "templates/cot_impo_ecu_2.json",
+        "source_file_name": "Cot IMPO en Ecuador 2 pets.xls",
+        "source_relative_path": "ECUADOR/Cot IMPO en Ecuador 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_ecu_3.json",
+        "relative_path": "templates/cot_impo_ecu_3.json",
+        "source_file_name": "Cot IMPO en Ecuador 3 pets.xls",
+        "source_relative_path": "ECUADOR/Cot IMPO en Ecuador 3 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      },
+      "esp": {
+        "file_name": "cot_impo_ecu_esp.json",
+        "relative_path": "templates/cot_impo_ecu_esp.json",
+        "source_file_name": "cot IMPO en Ecuador esp.xls",
+        "source_relative_path": "ECUADOR/cot IMPO en Ecuador esp.xls",
+        "source_extension": "xls",
+        "animal_count": null,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "esp"
+      }
+    }
+  },
+  "honduras": {
+    "title": "honduras",
+    "locations": {
+      "sap": {
+        "default": {
+          "file_name": "cot_impo_hnd_sap.json",
+          "relative_path": "templates/cot_impo_hnd_sap.json",
+          "source_file_name": "Honduras - SAP.msg",
+          "source_relative_path": "HONDURAS/Honduras - SAP.msg",
+          "source_extension": "msg",
+          "animal_count": null,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "default",
+          "location": "sap"
+        }
+      }
+    }
+  },
+  "miami": {
+    "title": "miami",
+    "locations": {
+      "mia": {
+        "1_pet": {
+          "file_name": "cot_impo_mia_mia_1.json",
+          "relative_path": "templates/cot_impo_mia_mia_1.json",
+          "source_file_name": "Cot  IMPO en USA MIA 1 pet.xls",
+          "source_relative_path": "MIAMI/Cot  IMPO en USA MIA 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "mia"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_mia_mia_2.json",
+          "relative_path": "templates/cot_impo_mia_mia_2.json",
+          "source_file_name": "Cot  IMPO en USA MIA 2 pets.xls",
+          "source_relative_path": "MIAMI/Cot  IMPO en USA MIA 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "mia"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_mia_mia_3.json",
+          "relative_path": "templates/cot_impo_mia_mia_3.json",
+          "source_file_name": "Cot  IMPO en USA MIA 3 pets.xls",
+          "source_relative_path": "MIAMI/Cot  IMPO en USA MIA 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "mia"
+        }
+      }
+    }
+  },
+  "mexico": {
+    "title": "mexico",
+    "locations": {
+      "cun": {
+        "1_pet_esp": {
+          "file_name": "cot_impo_mex_cun_1_esp.json",
+          "relative_path": "templates/cot_impo_mex_cun_1_esp.json",
+          "source_file_name": "cot IMPO USA en Mexico CUN 1 pet - ESP.xls",
+          "source_relative_path": "MÉXICO/CUN/cot IMPO USA en Mexico CUN 1 pet - ESP.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "esp"
+          ],
+          "situation_key": "1_pet_esp",
+          "location": "cun"
+        },
+        "1_pet": {
+          "file_name": "cot_impo_mex_cun_1.json",
+          "relative_path": "templates/cot_impo_mex_cun_1.json",
+          "source_file_name": "cot IMPO USA en Mexico CUN 1 pet.xls",
+          "source_relative_path": "MÉXICO/CUN/cot IMPO USA en Mexico CUN 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "cun"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_mex_cun_2.json",
+          "relative_path": "templates/cot_impo_mex_cun_2.json",
+          "source_file_name": "cot IMPO USA en Mexico CUN 2 pets.xls",
+          "source_relative_path": "MÉXICO/CUN/cot IMPO USA en Mexico CUN 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "cun"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_mex_cun_3.json",
+          "relative_path": "templates/cot_impo_mex_cun_3.json",
+          "source_file_name": "cot IMPO USA en Mexico CUN 3 pets.xls",
+          "source_relative_path": "MÉXICO/CUN/cot IMPO USA en Mexico CUN 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "cun"
+        }
+      },
+      "mex": {
+        "1_pet_esp": {
+          "file_name": "cot_impo_mex_mex_1_esp.json",
+          "relative_path": "templates/cot_impo_mex_mex_1_esp.json",
+          "source_file_name": "Cot IMPO en Mexico 1 pet - ESP.xls",
+          "source_relative_path": "MÉXICO/MEX/Cot IMPO en Mexico 1 pet - ESP.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "esp"
+          ],
+          "situation_key": "1_pet_esp",
+          "location": "mex"
+        },
+        "1_pet": {
+          "file_name": "cot_impo_mex_mex_1.json",
+          "relative_path": "templates/cot_impo_mex_mex_1.json",
+          "source_file_name": "Cot IMPO en Mexico 1 pet.xls",
+          "source_relative_path": "MÉXICO/MEX/Cot IMPO en Mexico 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "1_pet",
+          "location": "mex"
+        },
+        "2_pets": {
+          "file_name": "cot_impo_mex_mex_2.json",
+          "relative_path": "templates/cot_impo_mex_mex_2.json",
+          "source_file_name": "Cot IMPO en Mexico 2 pets.xls",
+          "source_relative_path": "MÉXICO/MEX/Cot IMPO en Mexico 2 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 2,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "2_pets",
+          "location": "mex"
+        },
+        "3_pets": {
+          "file_name": "cot_impo_mex_mex_3.json",
+          "relative_path": "templates/cot_impo_mex_mex_3.json",
+          "source_file_name": "Cot IMPO en Mexico 3 pets.xls",
+          "source_relative_path": "MÉXICO/MEX/Cot IMPO en Mexico 3 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 3,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "3_pets",
+          "location": "mex"
+        },
+        "4_pets": {
+          "file_name": "cot_impo_mex_mex_4.json",
+          "relative_path": "templates/cot_impo_mex_mex_4.json",
+          "source_file_name": "Cot IMPO en Mexico 4 pets.xls",
+          "source_relative_path": "MÉXICO/MEX/Cot IMPO en Mexico 4 pets.xls",
+          "source_extension": "xls",
+          "animal_count": 4,
+          "variants": [
+            "default"
+          ],
+          "situation_key": "4_pets",
+          "location": "mex"
+        },
+        "1_pet_puppy": {
+          "file_name": "cot_impo_mex_mex_1_puppy.json",
+          "relative_path": "templates/cot_impo_mex_mex_1_puppy.json",
+          "source_file_name": "Cot IMPO en Mexico PUPPY 1 pet.xls",
+          "source_relative_path": "MÉXICO/MEX/Cot IMPO en Mexico PUPPY 1 pet.xls",
+          "source_extension": "xls",
+          "animal_count": 1,
+          "variants": [
+            "puppy"
+          ],
+          "situation_key": "1_pet_puppy",
+          "location": "mex"
+        }
+      }
+    }
+  },
+  "panama": {
+    "title": "panama",
+    "templates": {
+      "1_pet": {
+        "file_name": "cot_impo_pan_1.json",
+        "relative_path": "templates/cot_impo_pan_1.json",
+        "source_file_name": "Cot IMPO en Panama 1.xls",
+        "source_relative_path": "PANAMA/Cot IMPO en Panama 1.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_pan_2.json",
+        "relative_path": "templates/cot_impo_pan_2.json",
+        "source_file_name": "Cot IMPO en Panama 2.xls",
+        "source_relative_path": "PANAMA/Cot IMPO en Panama 2.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_pan_3.json",
+        "relative_path": "templates/cot_impo_pan_3.json",
+        "source_file_name": "Cot IMPO en Panama 3.xls",
+        "source_relative_path": "PANAMA/Cot IMPO en Panama 3.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      }
+    }
+  },
+  "paraguay": {
+    "title": "paraguay",
+    "templates": {
+      "1_pet": {
+        "file_name": "cot_impo_pry_1.json",
+        "relative_path": "templates/cot_impo_pry_1.json",
+        "source_file_name": "cot IMPO XXX en Paraguay 1 pet.xls",
+        "source_relative_path": "PARAGUAY/cot IMPO XXX en Paraguay 1 pet.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_pry_2.json",
+        "relative_path": "templates/cot_impo_pry_2.json",
+        "source_file_name": "cot IMPO XXX en Paraguay 2 pets.xls",
+        "source_relative_path": "PARAGUAY/cot IMPO XXX en Paraguay 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_pry_3.json",
+        "relative_path": "templates/cot_impo_pry_3.json",
+        "source_file_name": "cot IMPO XXX en Paraguay 3 pets.xls",
+        "source_relative_path": "PARAGUAY/cot IMPO XXX en Paraguay 3 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      },
+      "esp": {
+        "file_name": "cot_impo_pry_esp.json",
+        "relative_path": "templates/cot_impo_pry_esp.json",
+        "source_file_name": "cot IMPO en Paraguay esp.xls",
+        "source_relative_path": "PARAGUAY/cot IMPO en Paraguay esp.xls",
+        "source_extension": "xls",
+        "animal_count": null,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "esp"
+      }
+    }
+  },
+  "peru": {
+    "title": "peru",
+    "templates": {
+      "1_pet": {
+        "file_name": "cot_impo_per_1.json",
+        "relative_path": "templates/cot_impo_per_1.json",
+        "source_file_name": "Cot IMPO en Peru 1 pet.xls",
+        "source_relative_path": "PERU/Cot IMPO en Peru 1 pet.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_per_2.json",
+        "relative_path": "templates/cot_impo_per_2.json",
+        "source_file_name": "Cot IMPO en Peru 2 pets.xls",
+        "source_relative_path": "PERU/Cot IMPO en Peru 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_per_3.json",
+        "relative_path": "templates/cot_impo_per_3.json",
+        "source_file_name": "Cot IMPO en Peru 3 pets.xls",
+        "source_relative_path": "PERU/Cot IMPO en Peru 3 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      },
+      "esp": {
+        "file_name": "cot_impo_per_esp.json",
+        "relative_path": "templates/cot_impo_per_esp.json",
+        "source_file_name": "cot IMPO en Peru esp.xls",
+        "source_relative_path": "PERU/cot IMPO en Peru esp.xls",
+        "source_extension": "xls",
+        "animal_count": null,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "esp"
+      }
+    }
+  },
+  "uruguay": {
+    "title": "uruguay",
+    "templates": {
+      "1_pet": {
+        "file_name": "cot_impo_ury_1.json",
+        "relative_path": "templates/cot_impo_ury_1.json",
+        "source_file_name": "Cot IMPO en Uruguay 1 pet.xls",
+        "source_relative_path": "URUGUAY/Cot IMPO en Uruguay 1 pet.xls",
+        "source_extension": "xls",
+        "animal_count": 1,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "1_pet"
+      },
+      "3_pets": {
+        "file_name": "cot_impo_ury_3.json",
+        "relative_path": "templates/cot_impo_ury_3.json",
+        "source_file_name": "Cot IMPO en Uruguay 3 pets.xls",
+        "source_relative_path": "URUGUAY/Cot IMPO en Uruguay 3 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 3,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "3_pets"
+      },
+      "esp": {
+        "file_name": "cot_impo_ury_esp.json",
+        "relative_path": "templates/cot_impo_ury_esp.json",
+        "source_file_name": "cot IMPO en Uruguay esp.xls",
+        "source_relative_path": "URUGUAY/cot IMPO en Uruguay esp.xls",
+        "source_extension": "xls",
+        "animal_count": null,
+        "variants": [
+          "esp"
+        ],
+        "situation_key": "esp"
+      },
+      "2_pets": {
+        "file_name": "cot_impo_ury_2.json",
+        "relative_path": "templates/cot_impo_ury_2.json",
+        "source_file_name": "cot impo en Uruguay 2 pets.xls",
+        "source_relative_path": "URUGUAY/cot impo en Uruguay 2 pets.xls",
+        "source_extension": "xls",
+        "animal_count": 2,
+        "variants": [
+          "default"
+        ],
+        "situation_key": "2_pets"
+      }
+    }
+  }
+}

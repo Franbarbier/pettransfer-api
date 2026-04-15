@@ -8,7 +8,14 @@ import type { PoolClient } from "pg";
 
 import { getPool, requireDatabaseUrl } from "../database/pool";
 
-const JSON_2025_DIR = path.join(process.cwd(), "src", "database", "jsons", "2025");
+const JSON_2025_DIR = path.join(
+  process.cwd(),
+  "src",
+  "database",
+  "infojsons",
+  "jsons",
+  "2025",
+);
 
 type AnyRecord = Record<string, unknown>;
 

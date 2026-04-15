@@ -12,6 +12,7 @@ export const QUOTES_CLEAN_JSON_PATH = path.join(
   process.cwd(),
   "src",
   "database",
+  "infojsons",
   "jsons",
   "2025",
   "quotes_clean.json",
@@ -58,7 +59,7 @@ export type QuoteItemRow = {
 };
 
 /**
- * Objeto raíz de `database/jsons/2025/quotes_clean.json`.
+ * Objeto raíz de `database/infojsons/jsons/2025/quotes_clean.json`.
  *
  * Alineado a un barrido del archivo (2283 filas): mismas claves de primer nivel en todas
  * las filas. Campos opcionales en el tipo = tolerancia si un export futuro omite algo.

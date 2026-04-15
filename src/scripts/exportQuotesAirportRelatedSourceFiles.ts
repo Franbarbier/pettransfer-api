@@ -152,6 +152,7 @@ async function main(): Promise<void> {
     process.cwd(),
     "src",
     "database",
+    "infojsons",
     "jsons",
     "quotes_source_files_airport_related.json",
   );

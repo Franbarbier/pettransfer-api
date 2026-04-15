@@ -1,0 +1,18 @@
+{
+  "title": "cot_impo_hnd_sap",
+  "country": "honduras",
+  "location": "sap",
+  "animal_count": null,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Honduras - SAP.msg",
+    "relative_path": "HONDURAS/Honduras - SAP.msg",
+    "extension": "msg"
+  },
+  "parser_status": "unsupported",
+  "quoted_items": [],
+  "descriptions": [],
+  "notes": []
+}

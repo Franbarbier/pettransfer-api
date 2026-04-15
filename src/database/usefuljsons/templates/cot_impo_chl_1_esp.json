@@ -1,0 +1,67 @@
+{
+  "title": "cot_impo_chl_1_esp",
+  "country": "chile",
+  "location": null,
+  "animal_count": 1,
+  "variants": [
+    "esp"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Chile 1 pet - Esp.xls",
+    "relative_path": "CHILE/Cot IMPO en Chile 1 pet - Esp.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Hoja1",
+  "metadata": {},
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Liberacion de aduana",
+      "amount": 980,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Impuestos de Importacion",
+      "amount": 0,
+      "note": "30% del valor CIF se aplicara"
+    },
+    {
+      "item_number": 3,
+      "label": "Traslado a domicilio en Metro Santiago",
+      "amount": 180,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total",
+    "amount": 1160,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Liberacion de Aduana - Aeropuerto SCL",
+      "paragraphs": [
+        "Incluye nuestros cargos, los cargos de nuestro agente y los impuestos de SAG",
+        "IMPORTANTE: Si la liberacion se realiza fuera de hora, se adicionara costo."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Impuestos de Importacion",
+      "paragraphs": [
+        "Chile cobra un impuesto por la importacion de mascotas. El total de este impuesto es el 30 % del CIF value + el valor de la mascota"
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Entrega en el domicilio Metro Santiago de Chile",
+      "paragraphs": [
+        "Entrega de la mascota en el domicilio del cliente dentro del área metropolitana."
+      ]
+    }
+  ],
+  "notes": []
+}

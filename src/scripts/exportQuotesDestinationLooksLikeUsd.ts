@@ -34,6 +34,7 @@ async function main(): Promise<void> {
     process.cwd(),
     "src",
     "database",
+    "infojsons",
     "jsons",
     "quotes_destination_looks_like_usd.json",
   );

@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 import { Router } from "express";
 
-import crateTariffsByCountry from "../database/jsons/crate_tariffs_by_country.json";
+import crateTariffsByCountry from "../database/usefuljsons/info/crate_tariffs_by_country.json";
 import { getPool, requireDatabaseUrl } from "../database/pool";
 import {
   formatDestination,

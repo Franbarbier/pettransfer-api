@@ -1,0 +1,91 @@
+{
+  "title": "cot_impo_col_clo_1",
+  "country": "colombia",
+  "location": "clo",
+  "animal_count": 1,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "cot IMPO en Colombia CLO 1 pet.xls",
+    "relative_path": "COLOMBIA/CLO/cot IMPO en Colombia CLO 1 pet.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Cotizac",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "CLO, Colombia",
+    "quotation_date": "2025-09-03",
+    "arrival_date": "Not confirmed",
+    "animals": "1 pet"
+  },
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Cargo Clearance CLO airport",
+      "amount": 1150,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Import taxes in Colombia",
+      "amount": 0,
+      "note": "35% CIF value declared on the AWB"
+    },
+    {
+      "item_number": 3,
+      "label": "Home delivery in Cali metro area",
+      "amount": 200,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total services",
+    "amount": 1350,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Cargo Clearance CLO airport",
+      "paragraphs": [
+        "Includes our charges, our customs agent's charges and ICA´s fees."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Import taxes in Colombia",
+      "paragraphs": [
+        "Colombia taxes the import of pet animals. Total cost is approximately 35% over CIF value."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Home delivery in Cali metro area",
+      "paragraphs": [
+        "Home delivery to owner´s residence within city limits."
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Conditions of contract",
+      "paragraphs": [
+        "a This price does not include cost of insurance of the animal.",
+        "b Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "c Payment: Wire transfer al least 10 days before arrival date."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}

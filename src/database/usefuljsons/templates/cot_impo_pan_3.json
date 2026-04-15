@@ -1,0 +1,93 @@
+{
+  "title": "cot_impo_pan_3",
+  "country": "panama",
+  "location": null,
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Panama 3.xls",
+    "relative_path": "PANAMA/Cot IMPO en Panama 3.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Plan1",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "PTY, Panama",
+    "quotation_date": null,
+    "trip_date": "To be confirmed",
+    "animals": "2 pets"
+  },
+  "quoted_items": [],
+  "total": null,
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Customs Clearance PTY airport",
+      "paragraphs": []
+    },
+    {
+      "item_number": 2,
+      "title": "Home quarantine",
+      "paragraphs": []
+    },
+    {
+      "item_number": 3,
+      "title": "Home delivery in Panama metro area",
+      "paragraphs": [
+        "Total charges 1582"
+      ]
+    },
+    {
+      "item_number": 1,
+      "title": "Customs Clearance PTY airport",
+      "paragraphs": [
+        "Includes our charges, our customs agent's charges and MINSA/MIDA´s fees.",
+        "IMPORTANT: USD 250 extra fees Will apply for flight arrival after 4:30 pm"
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Home quarantine",
+      "paragraphs": [
+        "Authorization issued by MINSA for home quarantine."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Home delivery in Panama metro area",
+      "paragraphs": [
+        "Home delivery to owner´s residence within city limits.",
+        "Conditions of contract:",
+        "This price does not include cost of insurance of the animal.",
+        "Prices charged by third parties may vary, in which case we will inform if there are any variation in the customer's charges.",
+        "Payment: 100% in advance"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "general",
+      "paragraphs": [
+        "Impo cargo Panama"
+      ]
+    },
+    {
+      "title": "general",
+      "paragraphs": [
+        "USD total"
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Mariela Gherghi",
+        "mariela@latampettransport.com"
+      ]
+    }
+  ]
+}

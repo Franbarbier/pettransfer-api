@@ -1,0 +1,133 @@
+{
+  "title": "cot_impo_ecu_3",
+  "country": "ecuador",
+  "location": null,
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Ecuador 3 pets.xls",
+    "relative_path": "ECUADOR/Cot IMPO en Ecuador 3 pets.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Cotizac",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "UIO, Ecuador",
+    "quotation_date": "2023-06-09",
+    "arrival_date": "To be confirmed",
+    "animals": "3 dogs",
+    "title": "Import into Ecuador - 3 pets"
+  },
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Customs clearance in UIO",
+      "amount": 990,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Import taxes in Ecuador",
+      "amount": 0,
+      "note": "43 % of airfreight and pet value on AWB"
+    },
+    {
+      "item_number": 3,
+      "label": "Import Formalities",
+      "amount": 370,
+      "note": null
+    },
+    {
+      "item_number": 4,
+      "label": "Warehouse",
+      "amount": 150,
+      "note": null
+    },
+    {
+      "item_number": 5,
+      "label": "Health Authorities fees (Agrocalidad)",
+      "amount": 230,
+      "note": null
+    },
+    {
+      "item_number": 6,
+      "label": "Home delivery",
+      "amount": 310,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total services",
+    "amount": 2050,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Customs clearance in UIO",
+      "paragraphs": [
+        "Includes our charges, our customs agent's charges and Agrocalidad´s fees.",
+        "It does not include the Ecuadorian Customs´ import tax for the animal´s import.",
+        "(for this charge, please read point 3)",
+        "IMPORTANT: to clear customs in a timely and appropiate manner we have to receive all the requested",
+        "documents and information 48 hs before pets arrival."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Import taxes in Ecuador",
+      "paragraphs": [
+        "Ecuador taxes the import of pet animals. Total cost is approximately 43% of CIF value."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Import Formalities",
+      "paragraphs": []
+    },
+    {
+      "item_number": 4,
+      "title": "Warehouse",
+      "paragraphs": [
+        "Pet(s) will be placed in airport's warehouse during custom clearance."
+      ]
+    },
+    {
+      "item_number": 5,
+      "title": "Health Authorities fees - Agrocalidad",
+      "paragraphs": [
+        "Fees charged by Heatlh Authorities at the airport."
+      ]
+    },
+    {
+      "item_number": 6,
+      "title": "Home delivery",
+      "paragraphs": [
+        "Pick up from UIO airport and delivery to owner´s residence in Quito metro area."
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Conditions of contract",
+      "paragraphs": [
+        "a This price does not include cost of insurance of the animal.",
+        "b Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "c Payment: Wire transfer al least 10 days before arrival date."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "cot_impo_bra_vcp_1",
+  "country": "brasil",
+  "location": "vcp",
+  "animal_count": 1,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "cot IMPO en Brasil VCP 1.xls",
+    "relative_path": "BRASIL/VCP/cot IMPO en Brasil VCP 1.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Plan1",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "VCP, Brazil",
+    "quotation_date": "2021-12-13",
+    "trip_date": "To be confirmed",
+    "animals": "1 pet",
+    "title": "Brazil taxes the import of pets. Total cost is approximately 60% over CIF value + commercial value of the pet."
+  },
+  "quoted_items": [],
+  "total": null,
+  "descriptions": [
+    {
+      "item_number": 4,
+      "title": "Mandatory Import taxes",
+      "paragraphs": [
+        "Mandatory import taxes charged by Receita Federal."
+      ]
+    },
+    {
+      "item_number": 5,
+      "title": "Home delivery",
+      "paragraphs": [
+        "Home delivery to owner´s residence within city limits.",
+        "Conditions of contract:",
+        "This price does not include cost of insurance of the animal.",
+        "Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "Payment: 100% in advance"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "general",
+      "paragraphs": [
+        "There are legal exemptions for foreigners or for Brazilian that return after having lived abroad."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Mariela Gherghi",
+        "mariela@latampettransport.com"
+      ]
+    }
+  ]
+}

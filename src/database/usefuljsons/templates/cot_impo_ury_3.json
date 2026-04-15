@@ -1,0 +1,95 @@
+{
+  "title": "cot_impo_ury_3",
+  "country": "uruguay",
+  "location": null,
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Uruguay 3 pets.xls",
+    "relative_path": "URUGUAY/Cot IMPO en Uruguay 3 pets.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Cotizac",
+  "metadata": {
+    "customer": null,
+    "destination": "MVD, Uruguay",
+    "quotation_date": "2024-06-11",
+    "trip_date": "To be confirmed",
+    "animals": "3 pets"
+  },
+  "quoted_items": [],
+  "total": null,
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Customs Clearance MVD airport",
+      "paragraphs": []
+    },
+    {
+      "item_number": 2,
+      "title": "Import taxes MVD",
+      "paragraphs": []
+    },
+    {
+      "item_number": 3,
+      "title": "Home delivery in Montevideo",
+      "paragraphs": [
+        "Total 1730"
+      ]
+    },
+    {
+      "item_number": 1,
+      "title": "Customs Clearance. MVD airport.",
+      "paragraphs": [
+        "Includes our charges, our customs agent's charges and MGAP´s fees.",
+        "It does not include the Uurguay Customs´ import tax for the animal´s import.",
+        "Quoted based on arrivals from Monday to Friday until 1:30 pm. Extra charges will apply on after hour and weekends.",
+        "arrivals."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Import taxes in Uruguay",
+      "paragraphs": [
+        "35% of the CIF value is a must and will apply."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Home delivery in Montevideo",
+      "paragraphs": [
+        "Pick up from MVD airport and delivery to owner´s residence in Montevideo metro.",
+        "Conditions of contract:",
+        "a This price does not include cost of insurance of the animal.",
+        "b Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "c Payment: 100% in advance, 15 days prior to shipment."
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "general",
+      "paragraphs": [
+        "3 pet(s) as Cargo (unaccompanied)"
+      ]
+    },
+    {
+      "title": "general",
+      "paragraphs": [
+        "TOTAL"
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}

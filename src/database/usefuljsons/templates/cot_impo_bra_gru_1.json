@@ -1,0 +1,63 @@
+{
+  "title": "cot_impo_bra_gru_1",
+  "country": "brasil",
+  "location": "gru",
+  "animal_count": 1,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Brasil GRU 1 pet.xls",
+    "relative_path": "BRASIL/GRU/Cot IMPO en Brasil GRU 1 pet.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Plan1",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "GRU, Brazil",
+    "quotation_date": "2025-04-01",
+    "trip_date": "To be confirmed",
+    "animals": "1 dog",
+    "title": "Brazil taxes the import of pets. Total cost is approximately 60% over CIF value + commercial value of the pet."
+  },
+  "quoted_items": [],
+  "total": null,
+  "descriptions": [
+    {
+      "item_number": 4,
+      "title": "Home delivery in Metro Sao Paulo",
+      "paragraphs": [
+        "Home delivery to owner´s residence within Sao Paulo city limits.",
+        "Conditions of contract:",
+        "This price does not include cost of insurance of the animal.",
+        "Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "Payment: 100% in advance"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "general",
+      "paragraphs": [
+        "There are legal exemptions for foreigners or for Brazilian that return after having lived abroad."
+      ]
+    },
+    {
+      "title": "general",
+      "paragraphs": [
+        "Please, read the attached file \"Import Taxes\" and inform LATAM about your tax status."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}

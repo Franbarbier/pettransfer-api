@@ -1,0 +1,571 @@
+{
+  "title": "cot_impo_cri_3",
+  "country": "costa_rica",
+  "location": null,
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Costa Rica 3 perros.xls",
+    "relative_path": "COSTA RICA/Cot IMPO en Costa Rica 3 perros.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Cotizac",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "SJO, Costa Rica",
+    "quotation_date": "2023-06-14",
+    "arrival_date": "To be confirmed",
+    "animals": "3 pets"
+  },
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Customs Clearance",
+      "amount": 880,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Senasa fees",
+      "amount": 180,
+      "note": null
+    },
+    {
+      "item_number": 3,
+      "label": "Import taxes",
+      "amount": 0,
+      "note": "Final confirmation once we receive final AWB."
+    },
+    {
+      "item_number": 4,
+      "label": "Home delivery in San Jose metro",
+      "amount": 220,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total services",
+    "amount": 1280,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Cargo Clearance. SJO airport.",
+      "paragraphs": [
+        "Includes our charges, our customs agent's charges and Senasa´s fees.",
+        "It does not include the Costa Rican Customs´ import tax for the animal´s import.",
+        "IMPORTANT: if clearance is outside normal working days and hours, we will need to add a surcharge between USD 50 and",
+        "USD 200."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Senasa fees",
+      "paragraphs": [
+        "Senasa charges for the import of live animals and vet inspection upon arrival."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Import taxes",
+      "paragraphs": [
+        "24,5% of the CIF value reflected on the AWB"
+      ]
+    },
+    {
+      "item_number": 4,
+      "title": "Home delivery in San Jose metro.",
+      "paragraphs": [
+        "LATAM Pet Transport will transport 3 pets from SJO airport to client´s residence in San Jose metro area."
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Conditions of contract",
+      "paragraphs": [
+        "a This price does not include cost of insurance of the animal.",
+        "b Prices charged by third parties may vary, in which case we will inform if there are",
+        "any variation in the customer´s charges.",
+        "c Payment: Wire transfer al least 15 days before arrival date."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ],
+  "calculation": {
+    "sheet_name": "Cálculo",
+    "currencies": [
+      "USD",
+      "Pesos",
+      "USD",
+      "Pesos",
+      "USD",
+      "Pesos"
+    ],
+    "items": [
+      {
+        "label": "Senasa dos pets",
+        "values": [
+          26,
+          0,
+          26,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cargo terminal",
+        "values": [
+          60,
+          60,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios y gastos despachante",
+        "values": [
+          100,
+          100,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Gastos Almacenaje, etc",
+        "values": [
+          0,
+          150,
+          0,
+          150,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Adicionales pets 3 y 4",
+        "values": [
+          60,
+          0,
+          60,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Derechos de importación",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Costo Flete EZE-Domicilio",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Recargo fuera hora/demoras",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios viajante",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Gastos varios viajante",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios Las Lunas",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Alquiler 1 d camioneta",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Nafta",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios las Lunas",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Alquiler de jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Venta de jaulas",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Flete Cargo",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "EB Gato 2",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "EB Perro",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios Las Lunas",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cobertura",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cliente",
+        "values": [
+          "Vagn Pedersen"
+        ]
+      },
+      {
+        "label": "Destino",
+        "values": [
+          "Buenos Aires, Argentina (EZE)"
+        ]
+      },
+      {
+        "label": "Fecha:",
+        "values": [
+          "Not specified"
+        ]
+      },
+      {
+        "label": "# animales:",
+        "values": [
+          "4 dogs"
+        ]
+      },
+      {
+        "label": "Precio cotizado",
+        "values": []
+      },
+      {
+        "label": "Pesos",
+        "values": [
+          "Dólares",
+          "Dólares"
+        ]
+      },
+      {
+        "label": "Cargo Clearance",
+        "values": [
+          236,
+          414,
+          495.37931034482756
+        ]
+      },
+      {
+        "label": "Import tariff",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado EZE-Destino",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado BS As - Interior",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "P a P otro destino",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Provisión jaulas",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Extra Baggage",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Margen",
+        "values": []
+      },
+      {
+        "label": "Pesos",
+        "values": [
+          "Dólares",
+          "Dólares"
+        ]
+      },
+      {
+        "label": "Cargo Clearance",
+        "values": [
+          0,
+          254,
+          254,
+          1
+        ]
+      },
+      {
+        "label": "Import tariff",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado EZE-Destino",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado BS As - Interior",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "P a P otro destino",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Provisión jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Extra Baggage",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "subtotals": [
+      {
+        "label": "Sub total Cargo Clearance",
+        "values": [
+          160,
+          236,
+          414,
+          236,
+          254,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Import Tariff",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Traslado EZE-Domicilio",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Traslado Bs As-interior",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total P a P Mendoza",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Extrabaggage",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Total",
+        "values": [
+          236,
+          414,
+          495.37931034482756
+        ]
+      },
+      {
+        "label": "Total",
+        "values": [
+          0,
+          254,
+          254,
+          1
+        ]
+      }
+    ]
+  }
+}

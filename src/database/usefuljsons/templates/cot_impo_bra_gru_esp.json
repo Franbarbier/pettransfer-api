@@ -1,0 +1,763 @@
+{
+  "title": "cot_impo_bra_gru_esp",
+  "country": "brasil",
+  "location": "gru",
+  "animal_count": null,
+  "variants": [
+    "esp"
+  ],
+  "source_template": {
+    "file_name": "cot IMPO en Brasil GRU esp.xls",
+    "relative_path": "BRASIL/GRU/cot IMPO en Brasil GRU esp.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Cotizac",
+  "metadata": {},
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Liberación de aduana",
+      "amount": 0,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Impuestos de importación",
+      "amount": 0,
+      "note": null
+    },
+    {
+      "item_number": 3,
+      "label": "Impuestos obligatorios",
+      "amount": 0,
+      "note": null
+    },
+    {
+      "item_number": 4,
+      "label": "Entrega en el domicilio",
+      "amount": 0,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total",
+    "amount": 0,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Liberación de aduana",
+      "paragraphs": [
+        "Proceso de aprobación de la importación de animales vivos por parte de Receita Federal.",
+        "Cotizado para arribos dentro del horario laboral de 8 am a 5 pm."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Impuestos de importación",
+      "paragraphs": [
+        "Impuestos a cobrar de acuerdo al valor declarado en la guía aérea (60%). Pueden ser eximidos presentando la documentación",
+        "correspondiente previa llegada de la mascota."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Impuestos obligatorios",
+      "paragraphs": [
+        "Impuestos obligatorios recaudados por Receita Federal."
+      ]
+    },
+    {
+      "item_number": 4,
+      "title": "Entrega en el domicilio",
+      "paragraphs": [
+        "Entrega de la mascota en el domicilio del cliente dentro del área metropolitana.",
+        "Condiciones de contratación:",
+        "a No incluye cobertura por riesgos durante el acarreo de la mascota.",
+        "b Los precios cotizados por otras organizaciones (aerolíneas, embajadas, Lazareto",
+        "o impuestos) pueden variar, en cuyo caso lo informaremos.",
+        "Condiciones de pago: 100% adelantado, 10 días antes del viaje.",
+        "Contacto:",
+        "LATAM PET TRANSPORT",
+        "Mariela Gherghi",
+        "mariela@latampettransport.com"
+      ]
+    }
+  ],
+  "notes": [],
+  "calculation": {
+    "sheet_name": "Cálculo",
+    "currencies": [
+      "USD",
+      "Pesos",
+      "USD",
+      "Pesos",
+      "USD",
+      "Pesos"
+    ],
+    "items": [
+      {
+        "label": "Honorarios viajante",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Hotel base",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Flete a Ezeiza",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Gas Oil Rosario",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Almuerzos",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "EB Cajas Ida",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "EB Perros",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Pasaje aéreo",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios LL",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Alquiler camioneta (2 d)",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Nafta",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios P a P",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Subtotal Puerta a Puerta",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cert. Veterinario",
+        "values": [
+          25,
+          0,
+          25,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Lazareto",
+        "values": [
+          26.4,
+          0,
+          26.4,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tests",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Viáticos",
+        "values": [
+          50,
+          0,
+          50,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Chip",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Consulado fee Import Permit",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Min RR. EE",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Extracción de sangre",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "RNATT Senasa",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Microchip",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios LL",
+        "values": [
+          200,
+          0,
+          200
+        ]
+      },
+      {
+        "label": "Hospedaje en Las Lunas (4 d)",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Alquiler de jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Venta de jaulas",
+        "values": [
+          280.5,
+          420,
+          0,
+          139.5
+        ]
+      },
+      {
+        "label": "Flete aéreo",
+        "values": [
+          512,
+          0,
+          512,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Gastos expediente",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Derechos",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Senasa",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honotarios LL",
+        "values": [
+          500,
+          0,
+          500,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios TPACK",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Recargo fuera horario",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Reserva imprevistos",
+        "values": [
+          50,
+          50,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tasa aeropuerto EZE",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tasa aeropuerto destino",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tasas cabotaje exterior",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Pasaje Bs As exterior",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Pasaje doméstico en exterior",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tax",
+        "values": []
+      },
+      {
+        "label": "Subtotal pasajes y tax",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cliente",
+        "values": [
+          "Andrés Devoto"
+        ]
+      },
+      {
+        "label": "Destino",
+        "values": [
+          "Miami, USA (MIA)"
+        ]
+      },
+      {
+        "label": "Fecha:",
+        "values": [
+          "S/D"
+        ]
+      },
+      {
+        "label": "# animales:",
+        "values": [
+          "1 perro"
+        ]
+      },
+      {
+        "label": "Precio cotizado",
+        "values": []
+      },
+      {
+        "label": "Pesos",
+        "values": [
+          "Dólares",
+          "Dólares"
+        ]
+      },
+      {
+        "label": "Ezeiza",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Trámites del animal",
+        "values": [
+          301.4,
+          0,
+          103.93103448275862
+        ]
+      },
+      {
+        "label": "Hospedaje",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Provisión jaulas",
+        "values": [
+          420,
+          0,
+          144.82758620689657
+        ]
+      },
+      {
+        "label": "Extrabaggage animal",
+        "values": [
+          0,
+          1062,
+          1062
+        ]
+      },
+      {
+        "label": "Tasas aeropuertos",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Pasajes aéreos y Tax",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Margen",
+        "values": []
+      },
+      {
+        "label": "Pesos",
+        "values": [
+          "Dólares",
+          "Dólares"
+        ]
+      },
+      {
+        "label": "Honorarios y fletes",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Trámites del animal",
+        "values": [
+          200,
+          0,
+          68.96551724137932,
+          0.11176306230790724
+        ]
+      },
+      {
+        "label": "Hospedaje",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Provisión jaulas",
+        "values": [
+          139.5,
+          0,
+          48.10344827586207,
+          0.07795473595976529
+        ]
+      },
+      {
+        "label": "Extrabaggage animal",
+        "values": [
+          0,
+          500,
+          500,
+          0.8102822017323275
+        ]
+      },
+      {
+        "label": "Tasas aeropuertos",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Pasajes aéreos y Tax",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "subtotals": [
+      {
+        "label": "Sub total honorarios y flete",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total trámites",
+        "values": [
+          0,
+          101.4,
+          0,
+          301.4,
+          0,
+          200
+        ]
+      },
+      {
+        "label": "Sub total hospedaje",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total jaulas",
+        "values": [
+          0,
+          280.5,
+          0,
+          420,
+          0,
+          139.5
+        ]
+      },
+      {
+        "label": "Sub total CARGO",
+        "values": [
+          562,
+          0,
+          1062,
+          0,
+          500,
+          0
+        ]
+      },
+      {
+        "label": "Sub total tasas aeropuertos",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Total",
+        "values": [
+          721.4,
+          1062,
+          1310.7586206896551
+        ]
+      },
+      {
+        "label": "Total",
+        "values": [
+          339.5,
+          500,
+          617.0689655172414,
+          1
+        ]
+      }
+    ]
+  }
+}

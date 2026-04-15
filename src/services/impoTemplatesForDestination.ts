@@ -3,12 +3,11 @@ import path from "path";
 
 import { sameFormattedLocation, tokenNorm } from "./formatOrigin";
 
-/** Carpeta de modelos IMPO (relativa a `cwd` del proceso API). */
-export const IMPO_MODELS_DIR = path.join(
+/** Carpeta de JSON útiles para IMPO (relativa a `cwd` del proceso API). */
+export const USEFUL_JSONS_DIR = path.join(
   "src",
   "database",
-  "drive_files",
-  "Modelos de cotizaciones IMPO VIGENTES (1)",
+  "usefuljsons",
 );
 
 export type ImpoQuotedItemOut = {
@@ -400,7 +399,12 @@ export function listImpoTemplatesForDestination(
     };
   }
 
-  const manifestPath = path.join(cwd, IMPO_MODELS_DIR, "impo_templates_manifest.json");
+  const manifestPath = path.join(
+    cwd,
+    USEFUL_JSONS_DIR,
+    "info",
+    "impo_templates_manifest.json",
+  );
   if (!fs.existsSync(manifestPath)) {
     return {
       templates: [],
@@ -426,7 +430,7 @@ export function listImpoTemplatesForDestination(
   }
 
   const relPaths = collectRelativePaths(manifest);
-  const baseDir = path.join(cwd, IMPO_MODELS_DIR);
+  const baseDir = path.join(cwd, USEFUL_JSONS_DIR);
   const out: ImpoTemplateMatchOut[] = [];
 
   for (const rel of relPaths) {

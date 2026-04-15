@@ -44,6 +44,7 @@ const QUOTES_CLEAN_2024_PATH = path.join(
   process.cwd(),
   "src",
   "database",
+  "infojsons",
   "jsons",
   "2024",
   "quotes_clean.json",

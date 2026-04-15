@@ -1,0 +1,579 @@
+{
+  "title": "cot_impo_mex_mex_1_esp",
+  "country": "mexico",
+  "location": "mex",
+  "animal_count": 1,
+  "variants": [
+    "esp"
+  ],
+  "source_template": {
+    "file_name": "Cot IMPO en Mexico 1 pet - ESP.xls",
+    "relative_path": "MÉXICO/MEX/Cot IMPO en Mexico 1 pet - ESP.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Cotizac",
+  "metadata": {},
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Liberacion de Aduana en Aeropuerto de MEX",
+      "amount": 1200,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Impuestos de Importacion Mexico",
+      "amount": 0,
+      "note": "Se aplicará el 20% del valor CIF"
+    },
+    {
+      "item_number": 3,
+      "label": "Impuesto IGI",
+      "amount": 0,
+      "note": "16% Aplicable; exento solo con certificado válido de EE. UU., Canadá, Reino Unido o Europa"
+    },
+    {
+      "item_number": 4,
+      "label": "Impuesto a la aerolinea transferencia a nuestra propia bodega",
+      "amount": 180,
+      "note": null
+    },
+    {
+      "item_number": 5,
+      "label": "Acceso a la bodega",
+      "amount": 120,
+      "note": null
+    },
+    {
+      "item_number": 6,
+      "label": "Entrega en Domicilio",
+      "amount": 280,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total",
+    "amount": 1780,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Liberacion de Aduana en Aeropuerto de MEX",
+      "paragraphs": [
+        "Incluye nuestos costos, los costos de nuestro agente y los costos de SENASICA.",
+        "No incluye los costos de aduana de Mexico por importacion de animales."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Impuestos de Importacion Mexico",
+      "paragraphs": [
+        "México grava la importación de mascotas. El costo total es aproximadamente un 20% superior al valor CIF más el valor comercial de la mascota."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Impuesto IGI",
+      "paragraphs": [
+        "16% Aplicable; exento solo con certificado válido de EE. UU., Canadá, Reino Unido o Europa"
+      ]
+    },
+    {
+      "item_number": 4,
+      "title": "Impuesto a la aerolinea transferencia a nuestra propia bodega",
+      "paragraphs": [
+        "Impuesto a la aerolinea transferencia a nuestra propia bodega"
+      ]
+    },
+    {
+      "item_number": 5,
+      "title": "Acceso a la bodega",
+      "paragraphs": [
+        "La mascota permanecera en la bodega hasta que se complete la liberacion de aduana."
+      ]
+    },
+    {
+      "item_number": 6,
+      "title": "Entrega en Domicilio",
+      "paragraphs": [
+        "Nuestro personal entregará 1 mascota en la casa del cliente en Ciudad de México",
+        "Condiciones de contratación:",
+        "a No incluye cobertura por riesgos durante el acarreo de la mascota.",
+        "b Los precios cotizados por otras organizaciones (aerolíneas, embajadas, Lazareto",
+        "o impuestos) pueden variar, en cuyo caso lo informaremos.",
+        "c Condiciones de pago: 100% adelantado, 10 días antes del viaje.",
+        "Contacto:",
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ],
+  "notes": [],
+  "calculation": {
+    "sheet_name": "Cálculo",
+    "currencies": [
+      "USD",
+      "Pesos",
+      "USD",
+      "Pesos",
+      "USD",
+      "Pesos"
+    ],
+    "items": [
+      {
+        "label": "Senasa dos pets",
+        "values": [
+          26,
+          0,
+          26,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cargo terminal",
+        "values": [
+          60,
+          60,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios y gastos despachante",
+        "values": [
+          100,
+          100,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Gastos Almacenaje, etc",
+        "values": [
+          0,
+          150,
+          0,
+          150,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Adicionales pets 3 y 4",
+        "values": [
+          60,
+          0,
+          60,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Derechos de importación",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Costo Flete EZE-Domicilio",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Recargo fuera hora/demoras",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios viajante",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Gastos varios viajante",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios Las Lunas",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Alquiler 1 d camioneta",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Nafta",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios las Lunas",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Alquiler de jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Venta de jaulas",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Flete Cargo",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "EB Gato 2",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "EB Perro",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Honorarios Las Lunas",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cobertura",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Cliente",
+        "values": [
+          "Vagn Pedersen"
+        ]
+      },
+      {
+        "label": "Destino",
+        "values": [
+          "Buenos Aires, Argentina (EZE)"
+        ]
+      },
+      {
+        "label": "Fecha:",
+        "values": [
+          "Not specified"
+        ]
+      },
+      {
+        "label": "# animales:",
+        "values": [
+          "4 dogs"
+        ]
+      },
+      {
+        "label": "Precio cotizado",
+        "values": []
+      },
+      {
+        "label": "Pesos",
+        "values": [
+          "Dólares",
+          "Dólares"
+        ]
+      },
+      {
+        "label": "Cargo Clearance",
+        "values": [
+          236,
+          414,
+          495.37931034482756
+        ]
+      },
+      {
+        "label": "Import tariff",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado EZE-Destino",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado BS As - Interior",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "P a P otro destino",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Provisión jaulas",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Extra Baggage",
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Margen",
+        "values": []
+      },
+      {
+        "label": "Pesos",
+        "values": [
+          "Dólares",
+          "Dólares"
+        ]
+      },
+      {
+        "label": "Cargo Clearance",
+        "values": [
+          0,
+          254,
+          254,
+          1
+        ]
+      },
+      {
+        "label": "Import tariff",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado EZE-Destino",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Traslado BS As - Interior",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "P a P otro destino",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Provisión jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Extra Baggage",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "subtotals": [
+      {
+        "label": "Sub total Cargo Clearance",
+        "values": [
+          160,
+          236,
+          414,
+          236,
+          254,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Import Tariff",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Traslado EZE-Domicilio",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Traslado Bs As-interior",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total P a P Mendoza",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total jaulas",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Sub total Extrabaggage",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Total",
+        "values": [
+          236,
+          414,
+          495.37931034482756
+        ]
+      },
+      {
+        "label": "Total",
+        "values": [
+          0,
+          254,
+          254,
+          1
+        ]
+      }
+    ]
+  }
+}

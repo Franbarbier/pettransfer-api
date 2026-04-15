@@ -1,0 +1,93 @@
+{
+  "title": "cot_impo_pry_3",
+  "country": "paraguay",
+  "location": null,
+  "animal_count": 3,
+  "variants": [
+    "default"
+  ],
+  "source_template": {
+    "file_name": "cot IMPO XXX en Paraguay 3 pets.xls",
+    "relative_path": "PARAGUAY/cot IMPO XXX en Paraguay 3 pets.xls",
+    "extension": "xls"
+  },
+  "parser_status": "parsed",
+  "sheet_name": "Hoja1",
+  "metadata": {
+    "customer": null,
+    "origin": null,
+    "destination": "ASU,Paraguay",
+    "quotation_date": "2020-12-02",
+    "trip_date": "To be confirmed",
+    "animals": "3 pets"
+  },
+  "quoted_items": [
+    {
+      "item_number": 1,
+      "label": "Customs Clearance ASU airport",
+      "amount": 1410,
+      "note": null
+    },
+    {
+      "item_number": 2,
+      "label": "Import taxes Paraguay",
+      "amount": 350,
+      "note": null
+    },
+    {
+      "item_number": 3,
+      "label": "Home delivery",
+      "amount": 180,
+      "note": null
+    }
+  ],
+  "total": {
+    "label": "Total",
+    "amount": 1940,
+    "note": null
+  },
+  "descriptions": [
+    {
+      "item_number": 1,
+      "title": "Customs Clearance. ASU airport.",
+      "paragraphs": [
+        "Includes our charges, our customs agent's charges and SENACSA' fees.",
+        "It does not include the Paraguay's Customs´ import tax for the animal´s import.",
+        "If clearance is outside normal working hours from M-F from 8:00 to 17:00 hrs. USD1400 extra fees will apply."
+      ]
+    },
+    {
+      "item_number": 2,
+      "title": "Import taxes Paraguay",
+      "paragraphs": [
+        "Paraguay taxes the import of pet animals with a fix amount."
+      ]
+    },
+    {
+      "item_number": 3,
+      "title": "Home Delivery",
+      "paragraphs": [
+        "LATAM Pet Transport will deliver 3 pets to owner`s residence within city limits",
+        "Quoted in normal working hours from Monday to Friday from 9:00 to 17:00 hs"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Comments",
+      "paragraphs": [
+        "1 -This price does not include cost of insurance of the animal.",
+        "2 -Prices charged by third parties may vary, in which case we will inform if there are any variation in the customer's charges.",
+        "3 - Payment: 100% in advance, 15 days prior to shipment."
+      ]
+    },
+    {
+      "title": "Contact:",
+      "paragraphs": [
+        "LATAM PET TRANSPORT",
+        "Manuel Leunda",
+        "mleunda@latampettransport.com"
+      ]
+    }
+  ]
+}
