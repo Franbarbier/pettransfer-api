@@ -28,6 +28,10 @@ type QuoteSearchRow = {
   formatted_quotation_date: string | null;
   travel_date_raw: string | null;
   formatted_travel_date: string | null;
+  /** Texto de import (ej. raza/cantidad); ver también `animals_description`. */
+  animals_raw: string | null;
+  animals_count: number | null;
+  animals_description: string | null;
   quoted_total_raw: string | null;
   quoted_total_amount: string | null;
   currency: string | null;
@@ -485,6 +489,9 @@ quotesExploreRouter.get("/quotes/search", (req: Request, res: Response) => {
           formatted_quotation_date,
           travel_date_raw,
           formatted_travel_date,
+          animals_raw,
+          animals_count,
+          animals_description,
           quoted_total_raw,
           quoted_total_amount,
           currency,

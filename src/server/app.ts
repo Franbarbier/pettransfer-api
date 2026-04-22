@@ -3,6 +3,7 @@ import express from "express";
 import { healthRouter } from "../controllers/health.controller";
 import { quotesExploreRouter } from "../controllers/quotesExplore.controller";
 import { quotesSeedRouter } from "../controllers/quotesSeed.controller";
+import { salespeopleRouter } from "../controllers/salespeople.controller";
 import { settings } from "../settings";
 
 export function createApp(): express.Express {
@@ -19,6 +20,7 @@ export function createApp(): express.Express {
   app.use(healthRouter);
   app.use(quotesExploreRouter);
   app.use(quotesSeedRouter);
+  app.use(salespeopleRouter);
 
   return app;
 }

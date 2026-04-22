@@ -22,6 +22,7 @@
     "db:migrate:formatted-travel-date": "tsx src/scripts/applyMigration009FormattedTravelDate.ts",
     "db:migrate:quote-date-columns": "npm run db:migrate:formatted-quotation-date && npm run db:migrate:formatted-travel-date",
     "db:migrate:impo-quote-templates": "tsx src/scripts/applyMigration010ImpoQuoteTemplates.ts",
+    "db:migrate:salespeople": "tsx src/scripts/applyMigration011Salespeople.ts",
     "db:backfill:formatted-quote-dates": "tsx src/scripts/backfillFormattedQuotationDates.ts",
     "db:analyze:quotation-date-formats": "tsx src/scripts/analyzeQuotationDateRawFormats.ts",
     "db:analyze:travel-date-formats": "tsx src/scripts/analyzeQuotationDateRawFormats.ts --travel",
