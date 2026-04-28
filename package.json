@@ -29,7 +29,10 @@
     "db:backfill:formatted-destination": "tsx src/scripts/backfillFormattedDestination.ts",
     "db:export:bad-destination-usd": "tsx src/scripts/exportQuotesDestinationLooksLikeUsd.ts",
     "db:export:airport-source-files": "tsx src/scripts/exportQuotesAirportRelatedSourceFiles.ts",
-    "db:apply:destination-fixes": "tsx src/scripts/applyQuotesDestinationFixes.ts"
+    "db:apply:destination-fixes": "tsx src/scripts/applyQuotesDestinationFixes.ts",
+    "db:import:crate-tariffs-by-country": "tsx src/scripts/importCrateTariffsByCountry.ts",
+    "db:import:expo-items": "tsx src/scripts/importExpoItemsByOrigin.ts",
+    "db:import:expo-descriptions": "tsx src/scripts/importExpoDescriptions.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",

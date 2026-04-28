@@ -1,5 +1,7 @@
 import cors from "cors";
 import express from "express";
+import { adminRouter } from "../controllers/admin.controller";
+import { expoRouter } from "../controllers/expo.controller";
 import { healthRouter } from "../controllers/health.controller";
 import { quotesExploreRouter } from "../controllers/quotesExplore.controller";
 import { quotesSeedRouter } from "../controllers/quotesSeed.controller";
@@ -18,6 +20,8 @@ export function createApp(): express.Express {
   );
 
   app.use(healthRouter);
+  app.use(adminRouter);
+  app.use(expoRouter);
   app.use(quotesExploreRouter);
   app.use(quotesSeedRouter);
   app.use(salespeopleRouter);
