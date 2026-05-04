@@ -139,7 +139,7 @@ export function canonicalCountryOrPlace(s: string): string {
 /**
  * IATA ya presente: 3 letras mayúsculas + separador (coma, punto, guión o espacios) + resto.
  */
-const IATA_PREFIX = /^([A-Z]{3})(\s*[,.\s\-]+\s*)(.+)$/;
+const IATA_PREFIX = /^([A-Z]{3})(\s*[,.\s-]+\s*)(.+)$/;
 
 export function formatOrigin(raw: string | null | undefined): string | null {
   if (raw == null) return null;

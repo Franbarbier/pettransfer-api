@@ -58,7 +58,6 @@ quotesCreateRouter.post(
         totalAmount,
         status,
         emailSentTo,
-        salespersonName,
       } = parsed.data;
 
       const importKey = `demo-coti-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -100,7 +99,7 @@ quotesCreateRouter.post(
         const quoteId = quoteRes.rows[0]?.id;
 
         for (let i = 0; i < items.length; i++) {
-          const item = items[i]!;
+          const item = items[i];
           const priceAmount = parseFloat(item.price) || 0;
           const itemId = `${importKey}-item-${i}`;
           await client.query(

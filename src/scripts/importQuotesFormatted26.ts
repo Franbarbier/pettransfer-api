@@ -22,13 +22,43 @@ import { getPool, requireDatabaseUrl } from "../database/pool";
 
 const DEFAULT_JSON = "/Users/fran/Downloads/formatted26/quotes_clean.json";
 
+function stringFromUnknown(value: unknown): string {
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value);
+  }
+  return "";
+}
+
+function optionalStringFromUnknown(value: unknown): string | null {
+  if (value === null || value === undefined) return null;
+  const str = stringFromUnknown(value);
+  return str === "" ? null : str;
+}
+
+function numberFromUnknown(value: unknown, fallback: number): number {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  const raw = stringFromUnknown(value).trim();
+  if (raw === "") return fallback;
+  const parsed = Number.parseFloat(raw);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+function intFromUnknown(value: unknown, fallback: number): number {
+  if (typeof value === "number" && Number.isFinite(value)) return Math.trunc(value);
+  const raw = stringFromUnknown(value).trim();
+  if (raw === "") return fallback;
+  const parsed = Number.parseInt(raw, 10);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
+
 function normalizeDetails(raw: unknown): string[] {
   if (!Array.isArray(raw)) return [];
   return raw
     .map((d) => {
       if (typeof d === "string") return d;
       if (d && typeof d === "object" && "detail_text" in d) {
-        return String((d as { detail_text: unknown }).detail_text);
+        return stringFromUnknown((d as { detail_text: unknown }).detail_text);
       }
       return "";
     })
@@ -40,35 +70,35 @@ function normalizeFormatted26Item(
   it: Record<string, unknown>,
   fallbackQuoteId: string,
 ): QuoteCleanJsonItemRecord {
-  const quote_item_id = String(it.quote_item_id ?? it.id ?? "").trim();
-  const quote_id = String(it.quote_id ?? fallbackQuoteId).trim();
+  const quote_item_id = stringFromUnknown(it.quote_item_id ?? it.id).trim();
+  const quote_id = stringFromUnknown(it.quote_id ?? fallbackQuoteId).trim();
   const priceRaw = it.price_raw;
   const price_raw =
     priceRaw === null || priceRaw === undefined
       ? ""
       : typeof priceRaw === "number"
         ? String(priceRaw)
-        : String(priceRaw);
+        : stringFromUnknown(priceRaw);
   const displayOrder =
     typeof it.display_order === "number"
       ? it.display_order
-      : Number.parseInt(String(it.display_order ?? "0"), 10) || 0;
+      : intFromUnknown(it.display_order, 0);
   let itemNum: number | null = null;
   if (typeof it.item_number === "number") {
     itemNum = it.item_number;
   } else if (
     it.item_number !== null &&
     it.item_number !== undefined &&
-    String(it.item_number).trim() !== ""
+    stringFromUnknown(it.item_number).trim() !== ""
   ) {
-    const n = Number.parseInt(String(it.item_number), 10);
+    const n = intFromUnknown(it.item_number, Number.NaN);
     itemNum = Number.isFinite(n) ? n : null;
   }
-  const nameRaw = String(it.item_name_raw ?? "");
+  const nameRaw = stringFromUnknown(it.item_name_raw);
   const displayName =
-    String(it.item_display_name ?? "").trim() ||
+    stringFromUnknown(it.item_display_name).trim() ||
     nameRaw.trim() ||
-    String(it.item_name_normalized ?? "").trim();
+    stringFromUnknown(it.item_name_normalized).trim();
 
   return {
     quote_item_id,
@@ -76,25 +106,19 @@ function normalizeFormatted26Item(
     item_number: itemNum,
     display_order: displayOrder,
     item_name_raw: nameRaw,
-    item_catalog_id: String(it.item_catalog_id ?? ""),
+    item_catalog_id: stringFromUnknown(it.item_catalog_id),
     item_display_name: displayName || nameRaw.trim(),
     price_raw,
-    price_amount:
-      typeof it.price_amount === "number"
-        ? it.price_amount
-        : Number.parseFloat(String(it.price_amount ?? "0")) || 0,
-    currency: String(it.currency ?? ""),
-    inline_note:
-      it.inline_note === null || it.inline_note === undefined
-        ? null
-        : String(it.inline_note),
+    price_amount: numberFromUnknown(it.price_amount, 0),
+    currency: stringFromUnknown(it.currency),
+    inline_note: optionalStringFromUnknown(it.inline_note),
     is_zero_priced: Boolean(it.is_zero_priced),
     details: normalizeDetails(it.details),
   };
 }
 
 function normalizeFormatted26Quote(r: Record<string, unknown>): QuoteCleanJsonRecord {
-  const quote_id = String(r.quote_id ?? r.id ?? "").trim();
+  const quote_id = stringFromUnknown(r.quote_id ?? r.id).trim();
   const itemsRaw = r.items;
   const items = Array.isArray(itemsRaw)
     ? itemsRaw
@@ -110,52 +134,30 @@ function normalizeFormatted26Quote(r: Record<string, unknown>): QuoteCleanJsonRe
       ? null
       : typeof qtr === "number"
         ? String(qtr)
-        : String(qtr);
+        : stringFromUnknown(qtr);
   const qta = r.quoted_total_amount;
   const quoted_total_amount =
     typeof qta === "number"
       ? qta
       : qta === null || qta === undefined
         ? null
-        : Number.parseFloat(String(qta));
+        : numberFromUnknown(qta, Number.NaN);
 
   return {
     quote_id,
-    source_filename: String(r.source_filename ?? ""),
-    source_sheet: String(r.source_sheet ?? "Hoja1"),
-    customer_name:
-      r.customer_name === null || r.customer_name === undefined
-        ? null
-        : String(r.customer_name),
-    origin:
-      r.origin === null || r.origin === undefined ? null : String(r.origin),
-    destination:
-      r.destination === null || r.destination === undefined
-        ? null
-        : String(r.destination),
+    source_filename: stringFromUnknown(r.source_filename),
+    source_sheet: stringFromUnknown(r.source_sheet ?? "Hoja1"),
+    customer_name: optionalStringFromUnknown(r.customer_name),
+    origin: optionalStringFromUnknown(r.origin),
+    destination: optionalStringFromUnknown(r.destination),
     via: null,
-    quotation_date_raw:
-      r.quotation_date_raw === null || r.quotation_date_raw === undefined
-        ? null
-        : String(r.quotation_date_raw),
-    travel_date_raw:
-      r.travel_date_raw === null || r.travel_date_raw === undefined
-        ? null
-        : String(r.travel_date_raw),
-    animals_raw:
-      r.animals_raw === null || r.animals_raw === undefined
-        ? null
-        : String(r.animals_raw),
+    quotation_date_raw: optionalStringFromUnknown(r.quotation_date_raw),
+    travel_date_raw: optionalStringFromUnknown(r.travel_date_raw),
+    animals_raw: optionalStringFromUnknown(r.animals_raw),
     animals_count:
       typeof r.animals_count === "number" ? r.animals_count : null,
-    shipment_mode:
-      r.shipment_mode === null || r.shipment_mode === undefined
-        ? null
-        : String(r.shipment_mode),
-    currency:
-      r.currency === null || r.currency === undefined
-        ? null
-        : String(r.currency),
+    shipment_mode: optionalStringFromUnknown(r.shipment_mode),
+    currency: optionalStringFromUnknown(r.currency),
     quoted_total_raw,
     quoted_total_amount,
     items,
@@ -186,9 +188,10 @@ async function main(): Promise<void> {
     throw new Error("Se esperaba un array JSON.");
   }
 
+  const rows = parsed as unknown[];
   const records: QuoteCleanJsonRecord[] = [];
-  for (let i = 0; i < parsed.length; i++) {
-    const row = parsed[i];
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
     if (!row || typeof row !== "object") {
       console.warn("Omitiendo fila", i, "(no objeto)");
       continue;

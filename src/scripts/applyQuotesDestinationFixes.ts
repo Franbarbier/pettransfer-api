@@ -80,7 +80,7 @@ async function main(): Promise<void> {
   for (const fix of fixes) {
     const dest = fix.destination_fixed.trim();
     const exact = allQuotes.filter((q) => q.source_filename === fix.source_filename);
-    let candidates =
+    const candidates =
       exact.length > 0
         ? exact
         : (byNorm.get(normalizeForMatch(fix.source_filename)) ?? []);

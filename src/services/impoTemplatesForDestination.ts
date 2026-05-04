@@ -58,6 +58,20 @@ export type ImpoTemplatesForDestinationResult = {
 
 type ManifestEntry = { relative_path?: string };
 
+function stringFromUnknown(value: unknown): string {
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value);
+  }
+  return "";
+}
+
+function optionalTrimmedStringFromUnknown(value: unknown): string | null {
+  if (value === null || value === undefined) return null;
+  const str = stringFromUnknown(value).trim();
+  return str === "" ? null : str;
+}
+
 function collectRelativePaths(manifest: Record<string, unknown>): string[] {
   const paths: string[] = [];
   for (const countryBlock of Object.values(manifest)) {
@@ -75,8 +89,8 @@ function collectRelativePaths(manifest: Record<string, unknown>): string[] {
       for (const loc of Object.values(cb.locations)) {
         if (!loc || typeof loc !== "object") continue;
         for (const t of Object.values(loc)) {
-          if (typeof (t as ManifestEntry)?.relative_path === "string") {
-            paths.push((t as ManifestEntry).relative_path!);
+          if (typeof t?.relative_path === "string") {
+            paths.push(t.relative_path);
           }
         }
       }
@@ -232,9 +246,7 @@ function templateMatchesDestination(
   if (!country) return false;
 
   const loc =
-    data.location === null || data.location === undefined
-      ? null
-      : String(data.location).trim();
+    optionalTrimmedStringFromUnknown(data.location);
 
   const t = tokenNorm(d);
   if (!countryMatches(t, country)) return false;
@@ -255,8 +267,8 @@ function parseDescriptionBlocksFromData(
     const n =
       typeof num === "number" && Number.isFinite(num)
         ? num
-        : num != null && String(num).trim() !== ""
-          ? Number(String(num).trim())
+        : num != null && stringFromUnknown(num).trim() !== ""
+          ? Number(stringFromUnknown(num).trim())
           : NaN;
     if (!Number.isFinite(n)) continue;
     const title = typeof o.title === "string" ? o.title.trim() : "";
@@ -324,7 +336,7 @@ function parseQuotedItemNumber(
   const raw = x.item_number;
   if (raw == null) return null;
   const n =
-    typeof raw === "number" ? raw : Number(String(raw).trim());
+    typeof raw === "number" ? raw : Number(stringFromUnknown(raw).trim());
   if (!Number.isFinite(n)) return null;
   return Math.trunc(n);
 }
@@ -340,7 +352,7 @@ function parseQuotedItems(
     if (!it || typeof it !== "object") continue;
     const x = it as Record<string, unknown>;
     const item_number = parseQuotedItemNumber(x);
-    const label = typeof x.label === "string" ? x.label : String(x.label ?? "");
+    const label = typeof x.label === "string" ? x.label : stringFromUnknown(x.label);
     const block = resolveDescriptionBlock(
       descriptionBlocks,
       item_number,
@@ -352,8 +364,8 @@ function parseQuotedItems(
     const amount =
       typeof amountRaw === "number"
         ? amountRaw
-        : amountRaw != null && String(amountRaw).trim() !== ""
-          ? Number(amountRaw)
+        : amountRaw != null && stringFromUnknown(amountRaw).trim() !== ""
+          ? Number(stringFromUnknown(amountRaw).trim())
           : null;
     const noteRaw = x.note;
     const note =
@@ -361,7 +373,7 @@ function parseQuotedItems(
         ? noteRaw
         : noteRaw == null
           ? null
-          : String(noteRaw);
+          : stringFromUnknown(noteRaw);
     out.push({
       item_number,
       label,
@@ -462,8 +474,8 @@ export function listImpoTemplatesForDestination(
     let animal_count: number | null =
       typeof animalCountRaw === "number"
         ? animalCountRaw
-        : animalCountRaw != null && String(animalCountRaw).trim() !== ""
-          ? Number(animalCountRaw)
+        : animalCountRaw != null && stringFromUnknown(animalCountRaw).trim() !== ""
+          ? Number(stringFromUnknown(animalCountRaw).trim())
           : null;
     if (animal_count == null || !Number.isFinite(animal_count)) {
       animal_count = inferAnimalCountFromFileName(path.basename(rel));
@@ -471,16 +483,13 @@ export function listImpoTemplatesForDestination(
 
     const description_blocks = parseDescriptionBlocksFromData(data);
     out.push({
-      title: String(data.title ?? path.basename(rel, ".json")),
+      title: stringFromUnknown(data.title ?? path.basename(rel, ".json")),
       country: typeof data.country === "string" ? data.country : "",
-      location:
-        data.location === null || data.location === undefined
-          ? null
-          : String(data.location),
+      location: optionalTrimmedStringFromUnknown(data.location),
       file_name: path.basename(rel),
       relative_path: rel.replace(/\\/g, "/"),
-      animal_count: Number.isFinite(animal_count as number)
-        ? (animal_count as number)
+      animal_count: animal_count != null && Number.isFinite(animal_count)
+        ? animal_count
         : null,
       variants,
       metadata: meta,
