@@ -1,106 +1,180 @@
 import "dotenv/config";
+import fs from "fs";
+import path from "path";
+
 import { getPool, requireDatabaseUrl } from "../database/pool";
 
-type DescRow = { country: string; item_key: string; description_en: string; description_es: string };
+type DescRow = {
+  country: string;
+  item_key: string;
+  description_en: string;
+  description_es: string;
+};
 
-const FLETE_EN_BASE = (authority: string) =>
-  `This charge includes the air freight charged by the airline under the CARGO modality. Includes, also, all fees and taxes charged by the airline and by the official offices as well, such as Customs, ${authority}.\nIncludes agent fees needed to export the animals.\nIMPORTANT:\nThe air freight has been estimated on this basis:\n[cantidad de jaulas] crates [tamaño de jaulas].\nIn case these estimations vary, we will have to re-estimate the air freight.\nRouting: [codigo origen] - (posibles escalas, manual) - [codigo destino] on [aerolinea]'s flight\nETA: TBC\nFrequency: TBC`;
+const DEFAULT_CSV_PATH = path.resolve(
+  process.cwd(),
+  "..",
+  "Downloads",
+  "Profit LATAM Pet Trasnport TODOS PAISES MENOS ARG .xlsx - Hoja1 (1).csv",
+);
 
-const FLETE_ES_BASE = (authority: string) =>
-  `Este cargo incluye el flete aéreo cobrado por la aerolínea bajo la modalidad CARGO. Incluye también todas las tasas e impuestos cobrados por la aerolínea y por las entidades oficiales, como Aduanas y ${authority}.\nIncluye los honorarios del agente necesarios para exportar los animales.\nIMPORTANTE:\nEl flete aéreo se ha estimado sobre esta base: [cantidad de jaulas] jaulas [tamaño de jaulas]. En caso de que estas estimaciones varíen, tendremos que reestimar el flete aéreo.\nRuta: [codigo origen] - (posibles escalas, manual) - [codigo destino] en el vuelo de [aerolinea].\nETA: Por confirmar.\nFrecuencia: Por confirmar.`;
+const COUNTRY_MAP: Record<string, string> = {
+  colombia: "colombia",
+  ecuador: "ecuador",
+  brasil: "brasil",
+  brazil: "brasil",
+  mexico: "mexico",
+  méxico: "mexico",
+  chile: "chile",
+  "costa rica": "costa_rica",
+  "c rica": "costa_rica",
+};
 
-const JAULAS_EN = "LATAM Pet Transport will provide a [tamaño] travel container.\nCrate meets IATA regulations.";
-const JAULAS_ES = "LATAM Pet Transport proporcionará una jaula de [tamaño].\nLa jaula cumple con la normativa IATA.";
-
-const PRE_ENTREGA_EN = "Pre-delivery of the crate in [ORIGEN].";
-const PRE_ENTREGA_ES = "Pre-entrega de la jaula en [ORIGEN].";
-
-const RNATT_EN = "Microchip implantation and Rabies Neutralising Rabies Titre Test.";
-const RNATT_ES = "Implantación de microchip y prueba de titulación de anticuerpos neutralizantes de la rabia.";
-
-const VET_EN = "Vet visit, health certificate and de-worming treatment.";
-const VET_ES = "Visita al veterinario, certificado de salud y tratamiento de desparasitación.";
-
-const RETIRO_EN = "Collection from owner's residence and transport to [codigo aeropuerto] airport.";
-const RETIRO_ES = "Recogida en la residencia del propietario y transporte al aeropuerto [codigo aeropuerto].";
-
-const TENDER_EN = "Tender to the airline at [codigo aeropuerto] airport.";
-const TENDER_ES = "Entrega a la aerolínea en el aeropuerto [código aeropuerto].";
-
-const CERT_EN = (country: string, authority: string) =>
-  `All legal paperwork issued in ${authority} to enter the pet(s) from ${country} into [destino].\nIncludes:\n - International health certificate issued by ${authority}.`;
-
-const CERT_ES = (country: string, authority: string) =>
-  `Todo el papeleo legal para ingresar la(s) mascota(s) de ${country} al [destino].\nIncluye:\n - Certificado de salud internacional emitido por ${authority}.`;
-
-const rows: DescRow[] = [
-  // ─── Colombia ──────────────────────────────────────────────────────────────
-  { country: "colombia", item_key: "jaulas",                             description_en: JAULAS_EN,    description_es: JAULAS_ES },
-  { country: "colombia", item_key: "pre_entrega_de_la_jaula",            description_en: PRE_ENTREGA_EN, description_es: PRE_ENTREGA_ES },
-  { country: "colombia", item_key: "rnatt",                              description_en: RNATT_EN,     description_es: RNATT_ES },
-  { country: "colombia", item_key: "vet_fees",                           description_en: VET_EN,       description_es: VET_ES },
-  { country: "colombia", item_key: "certificado_internacional_de_viaje", description_en: CERT_EN("Colombia", "ICA"), description_es: CERT_ES("Colombia", "ICA") },
-  { country: "colombia", item_key: "retiro",                             description_en: RETIRO_EN,    description_es: RETIRO_ES },
-  { country: "colombia", item_key: "tender",                             description_en: TENDER_EN,    description_es: TENDER_ES },
-  { country: "colombia", item_key: "flete",                              description_en: FLETE_EN_BASE("ICA"), description_es: FLETE_ES_BASE("ICA") },
-
-  // ─── Ecuador ───────────────────────────────────────────────────────────────
-  { country: "ecuador", item_key: "jaulas",                             description_en: JAULAS_EN,    description_es: JAULAS_ES },
-  { country: "ecuador", item_key: "pre_entrega_de_la_jaula",            description_en: PRE_ENTREGA_EN, description_es: PRE_ENTREGA_ES },
-  { country: "ecuador", item_key: "rnatt",                              description_en: RNATT_EN,     description_es: RNATT_ES },
-  { country: "ecuador", item_key: "vet_fees",                           description_en: VET_EN,       description_es: VET_ES },
-  { country: "ecuador", item_key: "certificado_internacional_de_viaje", description_en: CERT_EN("Ecuador", "Agrocalidad"), description_es: CERT_ES("Ecuador", "Agrocalidad") },
-  { country: "ecuador", item_key: "retiro",                             description_en: RETIRO_EN,    description_es: RETIRO_ES },
-  { country: "ecuador", item_key: "tender",                             description_en: TENDER_EN,    description_es: TENDER_ES },
-  { country: "ecuador", item_key: "flete",                              description_en: FLETE_EN_BASE("health authorities"), description_es: FLETE_ES_BASE("autoridades sanitarias") },
-
-  // ─── Brasil ────────────────────────────────────────────────────────────────
-  { country: "brasil", item_key: "jaulas",                             description_en: JAULAS_EN,    description_es: JAULAS_ES },
-  { country: "brasil", item_key: "pre_entrega_de_la_jaula",            description_en: PRE_ENTREGA_EN, description_es: PRE_ENTREGA_ES },
-  { country: "brasil", item_key: "rnatt",                              description_en: RNATT_EN,     description_es: RNATT_ES },
-  { country: "brasil", item_key: "vet_fees",                           description_en: VET_EN,       description_es: VET_ES },
-  { country: "brasil", item_key: "certificado_internacional_de_viaje", description_en: CERT_EN("Brazil", "MAPA"), description_es: CERT_ES("Brasil", "MAPA") },
-  { country: "brasil", item_key: "retiro",                             description_en: RETIRO_EN,    description_es: RETIRO_ES },
-  { country: "brasil", item_key: "tender",                             description_en: TENDER_EN,    description_es: TENDER_ES },
-  { country: "brasil", item_key: "export_customs_clearance",           description_en: "Includes our charges, our customs agent's charges and MAPA's fees.", description_es: "Incluye nuestros cargos, los cargos de nuestro agente de aduanas y los honorarios de MAPA." },
-  { country: "brasil", item_key: "flete",                              description_en: FLETE_EN_BASE("MAPA"), description_es: FLETE_ES_BASE("MAPA") },
-
-  // ─── Mexico ────────────────────────────────────────────────────────────────
-  { country: "mexico", item_key: "jaulas",                             description_en: JAULAS_EN,    description_es: JAULAS_ES },
-  { country: "mexico", item_key: "pre_entrega_de_la_jaula",            description_en: PRE_ENTREGA_EN, description_es: PRE_ENTREGA_ES },
-  { country: "mexico", item_key: "rnatt",                              description_en: RNATT_EN,     description_es: RNATT_ES },
-  { country: "mexico", item_key: "vet_fees",                           description_en: VET_EN,       description_es: VET_ES },
-  { country: "mexico", item_key: "certificado_internacional_de_viaje_destino_america", description_en: CERT_EN("Mexico", "SENASICA"), description_es: CERT_ES("México", "SENASICA") },
-  { country: "mexico", item_key: "pick_up",                            description_en: RETIRO_EN,    description_es: RETIRO_ES },
-  { country: "mexico", item_key: "reception_from_domestic_flight_and_transport_to_our_boarding", description_en: "Our personnel will pick up [cantidad y tipo de mascotas] at MEX Airport and transport to boarding facility in Mexico City.", description_es: "Nuestro personal recogerá [cantidad y tipo de mascotas] en el Aeropuerto MEX y las transportará a la guardería en la Ciudad de México." },
-  { country: "mexico", item_key: "tender",                             description_en: TENDER_EN,    description_es: TENDER_ES },
-  { country: "mexico", item_key: "export_customs_clearance",           description_en: "Includes our charges, our customs agent's charges and SENASICA's fees.", description_es: "Incluye nuestros cargos, los cargos de nuestro agente de aduanas y los honorarios de SENASICA." },
-  { country: "mexico", item_key: "flete",                              description_en: FLETE_EN_BASE("SENASICA"), description_es: FLETE_ES_BASE("SENASICA") },
-
-  // ─── Chile ─────────────────────────────────────────────────────────────────
-  { country: "chile", item_key: "jaulas",                             description_en: JAULAS_EN,    description_es: JAULAS_ES },
-  { country: "chile", item_key: "pre_entrega_de_la_jaula",            description_en: PRE_ENTREGA_EN, description_es: PRE_ENTREGA_ES },
-  { country: "chile", item_key: "rnatt",                              description_en: RNATT_EN,     description_es: RNATT_ES },
-  { country: "chile", item_key: "vet_fees",                           description_en: VET_EN,       description_es: VET_ES },
-  { country: "chile", item_key: "certificado_internacional_de_viaje_destino_america", description_en: CERT_EN("Chile", "SAG"), description_es: CERT_ES("Chile", "SAG") },
-  { country: "chile", item_key: "retiro",                             description_en: RETIRO_EN,    description_es: RETIRO_ES },
-  { country: "chile", item_key: "tender",                             description_en: TENDER_EN,    description_es: TENDER_ES },
-  { country: "chile", item_key: "flete",                              description_en: FLETE_EN_BASE("SAG"), description_es: FLETE_ES_BASE("SAG") },
-
-  // ─── Costa Rica ────────────────────────────────────────────────────────────
-  { country: "costa_rica", item_key: "jaulas",                             description_en: JAULAS_EN,    description_es: JAULAS_ES },
-  { country: "costa_rica", item_key: "pre_entrega_de_la_jaula",            description_en: PRE_ENTREGA_EN, description_es: PRE_ENTREGA_ES },
-  { country: "costa_rica", item_key: "rnatt",                              description_en: RNATT_EN,     description_es: RNATT_ES },
-  { country: "costa_rica", item_key: "vet_fees",                           description_en: VET_EN,       description_es: VET_ES },
-  { country: "costa_rica", item_key: "certificado_internacional_de_viaje_destino_america", description_en: CERT_EN("Costa Rica", "SENASA"), description_es: CERT_ES("Costa Rica", "SENASA") },
-  { country: "costa_rica", item_key: "retiro",                             description_en: RETIRO_EN,    description_es: RETIRO_ES },
-  { country: "costa_rica", item_key: "tender",                             description_en: TENDER_EN,    description_es: TENDER_ES },
-  { country: "costa_rica", item_key: "export_customs_clearance",           description_en: "Includes our charges, our customs agent's charges and SENASA's fees.", description_es: "Incluye nuestros cargos, los cargos de nuestro agente de aduanas y los honorarios de SENASA." },
-  { country: "costa_rica", item_key: "flete",                              description_en: FLETE_EN_BASE("SENASA"), description_es: FLETE_ES_BASE("SENASA") },
+const ITEM_KEY_MAP: Array<{ match: RegExp; key: string }> = [
+  { match: /pre-?entrega de la jaula/i, key: "pre_entrega_de_la_jaula" },
+  { match: /\bjaulas?\b/i, key: "jaulas" },
+  { match: /\brnatt\b/i, key: "rnatt" },
+  { match: /\bvet fees\b/i, key: "vet_fees" },
+  {
+    match: /certificado internacional de viaje.*destino america/i,
+    key: "certificado_internacional_de_viaje_destino_america",
+  },
+  {
+    match: /certificado internacional de viaje/i,
+    key: "certificado_internacional_de_viaje",
+  },
+  { match: /\bpick up\b/i, key: "pick_up" },
+  {
+    match: /reception from domestic flight and transport to our boarding/i,
+    key: "reception_from_domestic_flight_and_transport_to_our_boarding",
+  },
+  { match: /\bretiro\b/i, key: "retiro" },
+  { match: /\btender\b/i, key: "tender" },
+  { match: /export customs clearance/i, key: "export_customs_clearance" },
+  { match: /\bflete\b/i, key: "flete" },
 ];
+
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let cell = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+
+    if (inQuotes) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') {
+          cell += '"';
+          i += 1;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        cell += ch;
+      }
+      continue;
+    }
+
+    if (ch === '"') {
+      inQuotes = true;
+      continue;
+    }
+
+    if (ch === ",") {
+      row.push(cell);
+      cell = "";
+      continue;
+    }
+
+    if (ch === "\n") {
+      row.push(cell);
+      rows.push(row);
+      row = [];
+      cell = "";
+      continue;
+    }
+
+    if (ch !== "\r") {
+      cell += ch;
+    }
+  }
+
+  if (cell.length > 0 || row.length > 0) {
+    row.push(cell);
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+function cleanText(value: string): string {
+  return value.replace(/\u00a0/g, " ").replace(/\s+\n/g, "\n").trim();
+}
+
+function normalizeKey(value: string): string {
+  return cleanText(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function mapCountry(rawCountry: string): string | null {
+  const normalized = normalizeKey(rawCountry);
+  return COUNTRY_MAP[normalized] ?? null;
+}
+
+function mapItemKey(rawLabel: string): string | null {
+  const label = cleanText(rawLabel);
+  for (const entry of ITEM_KEY_MAP) {
+    if (entry.match.test(label)) {
+      return entry.key;
+    }
+  }
+  return null;
+}
+
+function collectRowsFromCsv(text: string): DescRow[] {
+  const parsed = parseCsv(text);
+  const rows: DescRow[] = [];
+
+  for (const line of parsed) {
+    const country = mapCountry(line[0] ?? "");
+    const rawLabel = cleanText(line[1] ?? "");
+    const descriptionEn = cleanText(line[2] ?? "");
+    const descriptionEs = cleanText(line[3] ?? "");
+
+    if (!country || !rawLabel || !descriptionEn || !descriptionEs) continue;
+
+    const itemKey = mapItemKey(rawLabel);
+    if (!itemKey) continue;
+
+    rows.push({
+      country,
+      item_key: itemKey,
+      description_en: descriptionEn,
+      description_es: descriptionEs,
+    });
+  }
+
+  const deduped = new Map<string, DescRow>();
+  for (const row of rows) {
+    deduped.set(`${row.country}::${row.item_key}`, row);
+  }
+  return [...deduped.values()];
+}
 
 async function main() {
   requireDatabaseUrl();
+
+  const csvPath = process.argv[2] ? path.resolve(process.argv[2]) : DEFAULT_CSV_PATH;
+  const csvText = fs.readFileSync(csvPath, "utf8");
+  const rows = collectRowsFromCsv(csvText);
+
+  console.log(`Leyendo descripciones EXPO desde: ${csvPath}`);
+  console.log(`Filas útiles encontradas: ${rows.length}`);
+
   const pool = getPool();
   let updated = 0;
   let notFound = 0;
@@ -112,11 +186,12 @@ async function main() {
        WHERE country = $1 AND item_key = $2`,
       [row.country, row.item_key, row.description_en, row.description_es],
     );
+
     if ((result.rowCount ?? 0) > 0) {
-      updated++;
+      updated += 1;
       console.log(`  ✓ ${row.country} / ${row.item_key}`);
     } else {
-      notFound++;
+      notFound += 1;
       console.warn(`  ✗ NOT FOUND: ${row.country} / ${row.item_key}`);
     }
   }

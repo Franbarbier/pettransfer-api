@@ -32,7 +32,12 @@
     "db:apply:destination-fixes": "tsx src/scripts/applyQuotesDestinationFixes.ts",
     "db:import:crate-tariffs-by-country": "tsx src/scripts/importCrateTariffsByCountry.ts",
     "db:import:expo-items": "tsx src/scripts/importExpoItemsByOrigin.ts",
-    "db:import:expo-descriptions": "tsx src/scripts/importExpoDescriptions.ts"
+    "db:import:expo-descriptions": "tsx src/scripts/importExpoDescriptions.ts",
+    "db:migrate:quote-status": "tsx src/scripts/applyMigration016QuoteStatus.ts",
+    "db:migrate:brachycephalic-breeds": "tsx src/scripts/applyMigration017BrachycephalicBreeds.ts",
+    "db:import:brachycephalic-breeds": "tsx src/scripts/importBrachycephalicBreeds.ts",
+    "db:migrate:lar82-breeds": "tsx src/scripts/applyMigration018Lar82Breeds.ts",
+    "db:import:lar82-breeds": "tsx src/scripts/importLar82Breeds.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",

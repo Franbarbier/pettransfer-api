@@ -22,7 +22,8 @@ type ExpoItemRow = { id: string; country: string; item_key: string; note: string
 /**
  * GET /expo/items-by-origin?origin=<raw_origin>
  * Devuelve los ítems del país que coincide con el origen dado (fuzzy).
- * Si no hay match, responde 404.
+ * Si no hay match, responde 200 con `match: null` para evitar ruido en consola
+ * mientras el usuario tipea orígenes parciales.
  */
 expoRouter.get("/expo/items-by-origin", (_req: Request, res: Response) => {
   const req = _req;
@@ -50,7 +51,7 @@ expoRouter.get("/expo/items-by-origin", (_req: Request, res: Response) => {
 
       const matched = origins.find((o) => originMatchesCountry(originRaw, o.label));
       if (!matched) {
-        res.status(404).json({ match: null });
+        res.json({ match: null, items: [] });
         return;
       }
 
