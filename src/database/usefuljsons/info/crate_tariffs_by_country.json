@@ -60,6 +60,17 @@
         "cost_amount": 735,
         "cost_currency": "USD",
         "notes": null
+      },
+      {
+        "id": "br-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ],
     "chile": [
@@ -152,6 +163,17 @@
         "cost_amount": 700,
         "cost_currency": "USD",
         "notes": null
+      },
+      {
+        "id": "cl-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ],
     "costa_rica": [
@@ -225,6 +247,17 @@
         "cost_currency": "USD",
         "cost_label": "desde USD 280 según tamaño",
         "notes": "Para razas peligrosas."
+      },
+      {
+        "id": "cr-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ],
     "argentina": [
@@ -308,6 +341,17 @@
         "cost_amount": 500,
         "cost_currency": "USD",
         "notes": null
+      },
+      {
+        "id": "ar-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ],
     "mexico": [
@@ -360,6 +404,17 @@
         "cost_amount": 460,
         "cost_currency": "USD",
         "notes": "LAR82 USD 750. Madera 700 ~750 USD según tamaño."
+      },
+      {
+        "id": "mx-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ],
     "colombia": [
@@ -428,6 +483,17 @@
         "cost_currency": "USD",
         "cost_label": "USD 450",
         "notes": "Desde ~40 kg mascota"
+      },
+      {
+        "id": "co-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ],
     "ecuador": [
@@ -496,6 +562,17 @@
         "cost_currency": "USD",
         "cost_label": "USD 590",
         "notes": "Desde ~40 kg mascota"
+      },
+      {
+        "id": "ec-lar82",
+        "size_code": "LAR 82",
+        "pet_scope": "Dog",
+        "measures_cm": null,
+        "weight_vol_kg": null,
+        "cost_amount": null,
+        "cost_currency": "USD",
+        "cost_label": null,
+        "notes": "Precio a confirmar."
       }
     ]
   }
