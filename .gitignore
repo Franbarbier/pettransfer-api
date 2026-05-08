@@ -8,3 +8,4 @@ tmp-*.txt
 __pycache__/
 *.pyc
 src/database/infojsons/**/*.json
+src/database/infojsons/**/*.csv
