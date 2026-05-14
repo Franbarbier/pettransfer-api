@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS expo_items_by_origin CASCADE;
+DROP TABLE IF EXISTS expo_origins CASCADE;

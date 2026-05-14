@@ -11,3 +11,9 @@ const envSchema = z.object({
 export type Settings = z.infer<typeof envSchema>;
 
 export const settings: Settings = envSchema.parse(process.env);
+
+export function getAllowedCorsOrigins(): string[] {
+  return settings.CORS_ORIGIN.split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+}

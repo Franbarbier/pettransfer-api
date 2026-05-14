@@ -1,7 +1,6 @@
 import type { Request, Response } from "express";
 import { Router } from "express";
 
-import crateTariffsByCountry from "../database/usefuljsons/info/crate_tariffs_by_country.json";
 import { getPool, requireDatabaseUrl } from "../database/pool";
 import {
   formatDestination,
@@ -10,7 +9,6 @@ import {
   sameFormattedLocation,
   tokenNorm,
 } from "../services/formatOrigin";
-import { listImpoTemplatesForDestination } from "../services/impoTemplatesForDestination";
 
 export const quotesExploreRouter = Router();
 
@@ -194,46 +192,41 @@ quotesExploreRouter.get(
   },
 );
 
-/** Tarifas de jaulas por país (JSON en repo; sin DB). */
+type CrateTariffRow = {
+  id: string; country: string; size_code: string; pet_scope: string;
+  measures_cm: string | null; weight_vol_kg: string | null;
+  cost_amount: string | null; cost_currency: string;
+  cost_label: string | null; notes: string | null;
+};
+
+/** Tarifas de jaulas por país (desde DB). */
 quotesExploreRouter.get(
   "/quotes/crate-tariffs-by-country",
-  (_req: Request, res: Response) => {
-    res.json(crateTariffsByCountry);
+  (req: Request, res: Response) => {
+    void (async () => {
+      try { requireDatabaseUrl(); } catch { res.status(503).json({ error: "Base de datos no disponible" }); return; }
+      const pool = getPool();
+      const { rows } = await pool.query<CrateTariffRow>(
+        `SELECT id, country, size_code, pet_scope, measures_cm, weight_vol_kg,
+                cost_amount::text, cost_currency, cost_label, notes
+         FROM crate_tariffs_by_country
+         ORDER BY country ASC, sort_order ASC`,
+      );
+      const countries: Record<string, object[]> = {};
+      for (const r of rows) {
+        if (!countries[r.country]) countries[r.country] = [];
+        countries[r.country].push({
+          id: r.id, size_code: r.size_code, pet_scope: r.pet_scope,
+          measures_cm: r.measures_cm, weight_vol_kg: r.weight_vol_kg,
+          cost_amount: r.cost_amount != null ? Number(r.cost_amount) : null,
+          cost_currency: r.cost_currency, cost_label: r.cost_label, notes: r.notes,
+        });
+      }
+      res.json({ countries });
+    })().catch((e: unknown) => { res.status(500).json({ error: e instanceof Error ? e.message : String(e) }); });
   },
 );
 
-/**
- * Templates IMPO (JSON en repo): mercado de **importación** = destino del envío.
- * Coincide `metadata.destination` y/o país + location del template con el destino elegido.
- */
-quotesExploreRouter.get(
-  "/quotes/impo-templates/for-destination",
-  (req: Request, res: Response) => {
-    try {
-      const destination =
-        typeof req.query.destination === "string"
-          ? req.query.destination.trim()
-          : "";
-      if (destination.length === 0) {
-        res.status(400).json({ error: "Parámetro destination requerido." });
-        return;
-      }
-      const petsRaw = req.query.pets;
-      let pets = 1;
-      if (typeof petsRaw === "string" && petsRaw.trim() !== "") {
-        const p = Number.parseInt(petsRaw, 10);
-        if (Number.isFinite(p) && p >= 1) pets = p;
-      }
-      const result = listImpoTemplatesForDestination(destination, process.cwd(), {
-        pets,
-      });
-      res.json(result);
-    } catch (e: unknown) {
-      const message = e instanceof Error ? e.message : String(e);
-      res.status(500).json({ error: message });
-    }
-  },
-);
 
 /**
  * Todos los `origin` distintos con conteo y `formatted_origin` calculado (reglas en formatOrigin.ts).

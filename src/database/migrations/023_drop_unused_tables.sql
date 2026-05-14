@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS quote_template_item_details CASCADE;
+DROP TABLE IF EXISTS quote_template_items CASCADE;
+DROP TABLE IF EXISTS quote_template_sections CASCADE;
+DROP TABLE IF EXISTS quote_templates CASCADE;
+DROP TABLE IF EXISTS quote_template_item_catalog CASCADE;
+DROP TABLE IF EXISTS quote_template_groups CASCADE;
+DROP TABLE IF EXISTS item_price_history CASCADE;
+DROP TABLE IF EXISTS brachycephalic_breeds CASCADE;
+DROP TABLE IF EXISTS lar82_breeds CASCADE;
