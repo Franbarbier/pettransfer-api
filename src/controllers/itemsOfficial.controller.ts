@@ -6,9 +6,10 @@ export const itemsOfficialRouter = Router();
 
 type OfficialItem = {
   id: string;
-  operation_type: string;
+  uuid: string;
+  operation_type: string | null;
   airport: string | null;
-  country: string;
+  country: string | null;
   item_en: string;
   item_es: string;
   price_ref: string | null;
@@ -36,6 +37,10 @@ function fuzzyMatch(text: string, country: string): boolean {
 /**
  * GET /items-official/by-operation
  * ?tipo=expo|impo|ambas&origin=...&destination=...
+ *
+ * Devuelve también `orphan` siempre: ítems con operation_type IS NULL,
+ * sin filtrar por país. Estos no se auto-aplican; se usan desde el select
+ * de "agregar manualmente".
  */
 itemsOfficialRouter.get(
   "/items-official/by-operation",
@@ -70,13 +75,13 @@ itemsOfficialRouter.get(
 
         if (tipo === "expo" || tipo === "ambas") {
           const { rows: countries } = await pool.query<{ country: string }>(
-            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'EXPO' ORDER BY country`,
+            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'EXPO' AND country IS NOT NULL ORDER BY country`,
           );
           const matched = countries.find((r) => fuzzyMatch(origin, r.country));
           if (matched) {
             expoPais = matched.country;
             const { rows } = await pool.query<OfficialItem>(
-              `SELECT id::text, operation_type, airport, country, item_en, item_es,
+              `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
                       price_ref, description_en, description_es, notes
                FROM items_official WHERE operation_type = 'EXPO' AND country = $1 ORDER BY id`,
               [matched.country],
@@ -87,13 +92,13 @@ itemsOfficialRouter.get(
 
         if (tipo === "impo" || tipo === "ambas") {
           const { rows: countries } = await pool.query<{ country: string }>(
-            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'IMPO' ORDER BY country`,
+            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'IMPO' AND country IS NOT NULL ORDER BY country`,
           );
           const matched = countries.find((r) => fuzzyMatch(destination, r.country));
           if (matched) {
             impoPais = matched.country;
             const { rows } = await pool.query<OfficialItem>(
-              `SELECT id::text, operation_type, airport, country, item_en, item_es,
+              `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
                       price_ref, description_en, description_es, notes
                FROM items_official WHERE operation_type = 'IMPO' AND country = $1 ORDER BY id`,
               [matched.country],
@@ -102,12 +107,103 @@ itemsOfficialRouter.get(
           }
         }
 
+        const { rows: orphanRows } = await pool.query<OfficialItem>(
+          `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
+                  price_ref, description_en, description_es, notes
+           FROM items_official WHERE operation_type IS NULL ORDER BY id`,
+        );
+
         res.json({
           expo: expoItems,
           impo: impoItems,
           expo_pais: expoPais,
           impo_pais: impoPais,
+          orphan: orphanRows,
         });
+      } catch (e: unknown) {
+        res.status(500).json({ error: e instanceof Error ? e.message : String(e) });
+      }
+    })();
+  },
+);
+
+/**
+ * POST /items-official
+ * Crea un nuevo ítem oficial. `operation_type` y `country` son opcionales:
+ * si vienen null/undefined el ítem queda como "huérfano" y no se auto-aplica
+ * según la dirección de operación.
+ */
+itemsOfficialRouter.post(
+  "/items-official",
+  (_req: Request, res: Response) => {
+    const req = _req;
+    void (async () => {
+      try {
+        requireDatabaseUrl();
+      } catch (e: unknown) {
+        res.status(503).json({ error: e instanceof Error ? e.message : String(e) });
+        return;
+      }
+
+      const {
+        operation_type,
+        airport,
+        country,
+        item_en,
+        item_es,
+        price_ref,
+        description_en,
+        description_es,
+        notes,
+      } = req.body as {
+        operation_type?: string | null;
+        airport?: string | null;
+        country?: string | null;
+        item_en?: string;
+        item_es?: string;
+        price_ref?: string | null;
+        description_en?: string | null;
+        description_es?: string | null;
+        notes?: string | null;
+      };
+
+      const validTypes = ["EXPO", "IMPO", "TRANSITO"];
+      const normalizedOp =
+        operation_type == null || operation_type.trim() === ""
+          ? null
+          : operation_type.toUpperCase();
+      if (normalizedOp !== null && !validTypes.includes(normalizedOp)) {
+        res.status(400).json({
+          error: "operation_type debe ser EXPO, IMPO, TRANSITO o null.",
+        });
+        return;
+      }
+      if (!item_en?.trim() && !item_es?.trim()) {
+        res.status(400).json({ error: "Al menos item_en o item_es es requerido." });
+        return;
+      }
+
+      try {
+        const pool = getPool();
+        const { rows } = await pool.query<OfficialItem>(
+          `INSERT INTO items_official
+             (operation_type, airport, country, item_en, item_es, price_ref, description_en, description_es, notes)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+           RETURNING id::text, uuid::text, operation_type, airport, country, item_en, item_es,
+                     price_ref, description_en, description_es, notes`,
+          [
+            normalizedOp,
+            airport?.trim() || null,
+            country?.trim() || null,
+            item_en?.trim() || "",
+            item_es?.trim() || "",
+            price_ref?.trim() || null,
+            description_en?.trim() || null,
+            description_es?.trim() || null,
+            notes?.trim() || null,
+          ],
+        );
+        res.status(201).json(rows[0]);
       } catch (e: unknown) {
         res.status(500).json({ error: e instanceof Error ? e.message : String(e) });
       }
