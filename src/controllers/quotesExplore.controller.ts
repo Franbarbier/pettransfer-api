@@ -2,13 +2,37 @@ import type { Request, Response } from "express";
 import { Router } from "express";
 
 import { getPool, requireDatabaseUrl } from "../database/pool";
-import {
-  formatDestination,
-  formatOrigin,
-  locationNormKey,
-  sameFormattedLocation,
-  tokenNorm,
-} from "../services/formatOrigin";
+import { formatLocationDisplay, locationIdentityKey } from "../services/formatLocationDisplay";
+import { citySearchAliases, countrySearchAliases, parseLocation } from "../services/parseLocation";
+
+function tokenNorm(s: string): string {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+/**
+ * Haystack para matching del autocomplete: label visible + IATA + ISO2 + nombre EN +
+ * todos los aliases textuales conocidos del país/ciudad (USA, UK, England, Brazil, NY, etc.).
+ */
+function buildSearchHaystack(input: {
+  label: string;
+  iata: string | null;
+  country_iso2: string | null;
+  country_name_en: string | null;
+  city: string | null;
+}): string {
+  const parts: string[] = [input.label];
+  if (input.iata) parts.push(input.iata);
+  if (input.country_iso2) {
+    parts.push(input.country_iso2);
+    parts.push(countrySearchAliases(input.country_iso2));
+  }
+  if (input.country_name_en) parts.push(input.country_name_en);
+  if (input.city) {
+    parts.push(input.city);
+    parts.push(citySearchAliases(input.city));
+  }
+  return tokenNorm(parts.join(" "));
+}
 
 export const quotesExploreRouter = Router();
 
@@ -19,7 +43,7 @@ type QuoteSearchRow = {
   customer_name: string | null;
   origin: string | null;
   destination: string | null;
-  /** Misma normalización que en sugerencias; coincide con lo que el usuario eligió. */
+  /** Display canónico construido desde airports/countries/origin_city. */
   formatted_origin: string | null;
   formatted_destination: string | null;
   quotation_date_raw: string | null;
@@ -36,6 +60,117 @@ type QuoteSearchRow = {
   shipment_mode: string | null;
   created_at: Date;
 };
+
+/** Fila plana con las FKs joinadas — la consume el `formatLocationDisplay` y el matching del search. */
+type QuoteWithLocationsRow = {
+  import_key: string;
+  source_filename: string;
+  source_sheet: string | null;
+  customer_name: string | null;
+  origin: string | null;
+  destination: string | null;
+  origin_iata: string | null;
+  origin_country_iso2: string | null;
+  origin_country_name_es: string | null;
+  origin_city: string | null;
+  destination_iata: string | null;
+  destination_country_iso2: string | null;
+  destination_country_name_es: string | null;
+  destination_city: string | null;
+  quotation_date_raw: string | null;
+  formatted_quotation_date: string | null;
+  travel_date_raw: string | null;
+  formatted_travel_date: string | null;
+  animals_raw: string | null;
+  animals_count: number | null;
+  animals_description: string | null;
+  quoted_total_raw: string | null;
+  quoted_total_amount: string | null;
+  currency: string | null;
+  shipment_mode: string | null;
+  created_at: Date;
+};
+
+const QUOTE_WITH_LOCATIONS_SELECT = `
+  q.import_key,
+  q.source_filename,
+  q.source_sheet,
+  q.customer_name,
+  q.origin,
+  q.destination,
+  oa.iata AS origin_iata,
+  oc.iso2 AS origin_country_iso2,
+  oc.name_es AS origin_country_name_es,
+  q.origin_city,
+  da.iata AS destination_iata,
+  dc.iso2 AS destination_country_iso2,
+  dc.name_es AS destination_country_name_es,
+  q.destination_city,
+  q.quotation_date_raw,
+  q.formatted_quotation_date,
+  q.travel_date_raw,
+  q.formatted_travel_date,
+  q.animals_raw,
+  q.animals_count,
+  q.animals_description,
+  q.quoted_total_raw,
+  q.quoted_total_amount::text AS quoted_total_amount,
+  q.currency,
+  q.shipment_mode,
+  q.created_at
+FROM quotes q
+LEFT JOIN countries oc ON oc.id = q.origin_country_id
+LEFT JOIN airports  oa ON oa.id = q.origin_airport_id
+LEFT JOIN countries dc ON dc.id = q.destination_country_id
+LEFT JOIN airports  da ON da.id = q.destination_airport_id
+`;
+
+function toQuoteSearchRow(r: QuoteWithLocationsRow): QuoteSearchRow {
+  return {
+    import_key: r.import_key,
+    source_filename: r.source_filename,
+    source_sheet: r.source_sheet,
+    customer_name: r.customer_name,
+    origin: r.origin,
+    destination: r.destination,
+    formatted_origin: formatLocationDisplay({
+      iata: r.origin_iata,
+      country_name_es: r.origin_country_name_es,
+      city: r.origin_city,
+      raw: r.origin,
+    }),
+    formatted_destination: formatLocationDisplay({
+      iata: r.destination_iata,
+      country_name_es: r.destination_country_name_es,
+      city: r.destination_city,
+      raw: r.destination,
+    }),
+    quotation_date_raw: r.quotation_date_raw,
+    formatted_quotation_date: r.formatted_quotation_date,
+    travel_date_raw: r.travel_date_raw,
+    formatted_travel_date: r.formatted_travel_date,
+    animals_raw: r.animals_raw,
+    animals_count: r.animals_count,
+    animals_description: r.animals_description,
+    quoted_total_raw: r.quoted_total_raw,
+    quoted_total_amount: r.quoted_total_amount,
+    currency: r.currency,
+    shipment_mode: r.shipment_mode,
+    created_at: r.created_at,
+  };
+}
+
+function originIdentity(r: QuoteWithLocationsRow): string | null {
+  return locationIdentityKey({ iata: r.origin_iata, country_iso2: r.origin_country_iso2, city: r.origin_city });
+}
+function destinationIdentity(r: QuoteWithLocationsRow): string | null {
+  return locationIdentityKey({ iata: r.destination_iata, country_iso2: r.destination_country_iso2, city: r.destination_city });
+}
+
+function identityFromInput(raw: string): string | null {
+  const p = parseLocation(raw);
+  return locationIdentityKey({ iata: p.iata, country_iso2: p.country_iso2, city: p.city });
+}
 
 type ItemRow = {
   quote_item_id: string;
@@ -117,28 +252,44 @@ quotesExploreRouter.get(
       try {
         const pool = getPool();
         const needle = tokenNorm(q);
-        const { rows: distinctOrigins } = await pool.query<{ origin: string }>(
-          `SELECT DISTINCT origin FROM quotes WHERE origin IS NOT NULL`,
+        const { rows } = await pool.query<{
+          iata: string | null;
+          country_iso2: string | null;
+          country_name_es: string | null;
+          country_name_en: string | null;
+          city: string | null;
+        }>(
+          `SELECT DISTINCT oa.iata, oc.iso2 AS country_iso2,
+                  oc.name_es AS country_name_es, oc.name_en AS country_name_en,
+                  q.origin_city AS city
+             FROM quotes q
+             LEFT JOIN airports  oa ON oa.id = q.origin_airport_id
+             LEFT JOIN countries oc ON oc.id = q.origin_country_id
+             WHERE q.origin_country_id IS NOT NULL OR q.origin_airport_id IS NOT NULL`,
         );
-        const matchedRaw = distinctOrigins.filter((r) => {
-          const canon = formatOrigin(r.origin) ?? "";
-          const hay = tokenNorm(`${r.origin} ${canon}`);
-          return hay.includes(needle);
-        });
-        const byNorm = new Map<string, { value: string; label: string }>();
-        for (const r of matchedRaw) {
-          const raw = r.origin;
-          const nk = locationNormKey(raw);
-          if (nk === null) continue;
-          const label = formatOrigin(raw) ?? raw;
-          if (!byNorm.has(nk)) {
-            byNorm.set(nk, { value: label, label });
-          }
+        const byKey = new Map<string, { value: string; label: string }>();
+        for (const r of rows) {
+          const label = formatLocationDisplay({
+            iata: r.iata,
+            country_name_es: r.country_name_es,
+            city: r.city,
+            raw: null,
+          });
+          if (label == null) continue;
+          const key = locationIdentityKey({ iata: r.iata, country_iso2: r.country_iso2, city: r.city });
+          if (key == null) continue;
+          const haystack = buildSearchHaystack({
+            label,
+            iata: r.iata,
+            country_iso2: r.country_iso2,
+            country_name_en: r.country_name_en,
+            city: r.city,
+          });
+          if (!haystack.includes(needle)) continue;
+          if (!byKey.has(key)) byKey.set(key, { value: label, label });
         }
-        const origins = [...byNorm.values()]
-          .sort((a, b) =>
-            a.label.localeCompare(b.label, "es", { sensitivity: "base" }),
-          )
+        const origins = [...byKey.values()]
+          .sort((a, b) => a.label.localeCompare(b.label, "es", { sensitivity: "base" }))
           .slice(0, 50);
         res.json({ origins });
       } catch (e: unknown) {
@@ -229,8 +380,9 @@ quotesExploreRouter.get(
 
 
 /**
- * Todos los `origin` distintos con conteo y `formatted_origin` calculado (reglas en formatOrigin.ts).
- * Tras migración 006 + backfill, comparar con la columna persistida si hace falta.
+ * Todos los `origin` distintos con conteo y `formatted_origin` reconstruido desde las FKs
+ * (migración 033: countries+airports+origin_city). El campo `formatted_origin` se mantiene
+ * en la respuesta por compatibilidad con el FE.
  */
 quotesExploreRouter.get("/quotes/origins/report", (req: Request, res: Response) => {
   void (async () => {
@@ -246,44 +398,35 @@ quotesExploreRouter.get("/quotes/origins/report", (req: Request, res: Response) 
       const pool = getPool();
       const { rows } = await pool.query<{
         origin: string | null;
+        iata: string | null;
+        country_iso2: string | null;
+        country_name_es: string | null;
+        city: string | null;
         count: string;
       }>(
-        `SELECT origin, count(*)::text AS count
-         FROM quotes
-         GROUP BY origin
-         ORDER BY count(*) DESC NULLS LAST`,
+        `SELECT q.origin,
+                MAX(oa.iata) AS iata,
+                MAX(oc.iso2) AS country_iso2,
+                MAX(oc.name_es) AS country_name_es,
+                MAX(q.origin_city) AS city,
+                count(*)::text AS count
+           FROM quotes q
+           LEFT JOIN airports  oa ON oa.id = q.origin_airport_id
+           LEFT JOIN countries oc ON oc.id = q.origin_country_id
+           GROUP BY q.origin
+           ORDER BY count(*) DESC NULLS LAST`,
       );
 
-      const includeStored =
-        req.query.includeStoredColumn === "1" ||
-        req.query.includeStoredColumn === "true";
-
-      let storedMap = new Map<string | null, string | null>();
-      if (includeStored) {
-        const { rows: sr } = await pool.query<{
-          origin: string | null;
-          formatted_origin: string | null;
-        }>(
-          `SELECT origin, max(formatted_origin) AS formatted_origin
-           FROM quotes
-           GROUP BY origin`,
-        );
-        storedMap = new Map(sr.map((r) => [r.origin, r.formatted_origin]));
-      }
-
-      const origins = rows.map((r) => {
-        const computed = formatOrigin(r.origin);
-        const base = {
-          origin: r.origin,
-          formatted_origin: computed,
-          count: Number.parseInt(r.count, 10) || 0,
-        };
-        if (!includeStored) return base;
-        return {
-          ...base,
-          stored_formatted_origin: storedMap.get(r.origin) ?? null,
-        };
-      });
+      const origins = rows.map((r) => ({
+        origin: r.origin,
+        formatted_origin: formatLocationDisplay({
+          iata: r.iata,
+          country_name_es: r.country_name_es,
+          city: r.city,
+          raw: r.origin,
+        }),
+        count: Number.parseInt(r.count, 10) || 0,
+      }));
 
       res.json({ origins });
     } catch (e: unknown) {
@@ -317,46 +460,35 @@ quotesExploreRouter.get(
         const pool = getPool();
         const { rows } = await pool.query<{
           destination: string | null;
+          iata: string | null;
+          country_iso2: string | null;
+          country_name_es: string | null;
+          city: string | null;
           count: string;
         }>(
-          `SELECT destination, count(*)::text AS count
-           FROM quotes
-           GROUP BY destination
-           ORDER BY count(*) DESC NULLS LAST`,
+          `SELECT q.destination,
+                  MAX(da.iata) AS iata,
+                  MAX(dc.iso2) AS country_iso2,
+                  MAX(dc.name_es) AS country_name_es,
+                  MAX(q.destination_city) AS city,
+                  count(*)::text AS count
+             FROM quotes q
+             LEFT JOIN airports  da ON da.id = q.destination_airport_id
+             LEFT JOIN countries dc ON dc.id = q.destination_country_id
+             GROUP BY q.destination
+             ORDER BY count(*) DESC NULLS LAST`,
         );
 
-        const includeStored =
-          req.query.includeStoredColumn === "1" ||
-          req.query.includeStoredColumn === "true";
-
-        let storedMap = new Map<string | null, string | null>();
-        if (includeStored) {
-          const { rows: sr } = await pool.query<{
-            destination: string | null;
-            formatted_destination: string | null;
-          }>(
-            `SELECT destination, max(formatted_destination) AS formatted_destination
-             FROM quotes
-             GROUP BY destination`,
-          );
-          storedMap = new Map(
-            sr.map((r) => [r.destination, r.formatted_destination]),
-          );
-        }
-
-        const destinations = rows.map((r) => {
-          const computed = formatDestination(r.destination);
-          const base = {
-            destination: r.destination,
-            formatted_destination: computed,
-            count: Number.parseInt(r.count, 10) || 0,
-          };
-          if (!includeStored) return base;
-          return {
-            ...base,
-            stored_formatted_destination: storedMap.get(r.destination) ?? null,
-          };
-        });
+        const destinations = rows.map((r) => ({
+          destination: r.destination,
+          formatted_destination: formatLocationDisplay({
+            iata: r.iata,
+            country_name_es: r.country_name_es,
+            city: r.city,
+            raw: r.destination,
+          }),
+          count: Number.parseInt(r.count, 10) || 0,
+        }));
 
         res.json({ destinations });
       } catch (e: unknown) {
@@ -395,30 +527,44 @@ quotesExploreRouter.get(
       try {
         const pool = getPool();
         const needle = tokenNorm(q);
-        const { rows: destRows } = await pool.query<{
-          destination: string;
+        const { rows } = await pool.query<{
+          iata: string | null;
+          country_iso2: string | null;
+          country_name_es: string | null;
+          country_name_en: string | null;
+          city: string | null;
         }>(
-          `SELECT DISTINCT destination FROM quotes WHERE destination IS NOT NULL`,
+          `SELECT DISTINCT da.iata, dc.iso2 AS country_iso2,
+                  dc.name_es AS country_name_es, dc.name_en AS country_name_en,
+                  q.destination_city AS city
+             FROM quotes q
+             LEFT JOIN airports  da ON da.id = q.destination_airport_id
+             LEFT JOIN countries dc ON dc.id = q.destination_country_id
+             WHERE q.destination_country_id IS NOT NULL OR q.destination_airport_id IS NOT NULL`,
         );
-        const destMatches = destRows.filter((r) => {
-          const canon = formatDestination(r.destination) ?? "";
-          const hay = tokenNorm(`${r.destination} ${canon}`);
-          return hay.includes(needle);
-        });
-        const byNorm = new Map<string, { value: string; label: string }>();
-        for (const r of destMatches) {
-          const raw = r.destination;
-          const nk = locationNormKey(raw);
-          if (nk === null) continue;
-          const label = formatDestination(raw) ?? raw;
-          if (!byNorm.has(nk)) {
-            byNorm.set(nk, { value: label, label });
-          }
+        const byKey = new Map<string, { value: string; label: string }>();
+        for (const r of rows) {
+          const label = formatLocationDisplay({
+            iata: r.iata,
+            country_name_es: r.country_name_es,
+            city: r.city,
+            raw: null,
+          });
+          if (label == null) continue;
+          const key = locationIdentityKey({ iata: r.iata, country_iso2: r.country_iso2, city: r.city });
+          if (key == null) continue;
+          const haystack = buildSearchHaystack({
+            label,
+            iata: r.iata,
+            country_iso2: r.country_iso2,
+            country_name_en: r.country_name_en,
+            city: r.city,
+          });
+          if (!haystack.includes(needle)) continue;
+          if (!byKey.has(key)) byKey.set(key, { value: label, label });
         }
-        const destinations = [...byNorm.values()]
-          .sort((a, b) =>
-            a.label.localeCompare(b.label, "es", { sensitivity: "base" }),
-          )
+        const destinations = [...byKey.values()]
+          .sort((a, b) => a.label.localeCompare(b.label, "es", { sensitivity: "base" }))
           .slice(0, 50);
         res.json({ destinations });
       } catch (e: unknown) {
@@ -465,52 +611,24 @@ quotesExploreRouter.get("/quotes/search", (req: Request, res: Response) => {
       const includeItems =
         req.query.includeItems !== "0" && req.query.includeItems !== "false";
 
-      type QuoteRowDb = Omit<
-        QuoteSearchRow,
-        "formatted_origin" | "formatted_destination"
-      >;
+      const originIdent = identityFromInput(origin);
+      const destIdent = hasDest ? identityFromInput(destination) : null;
+      if (originIdent == null) {
+        res.json([]);
+        return;
+      }
 
-      const { rows: allRows } = await pool.query<QuoteRowDb>(
-        `SELECT
-          import_key,
-          source_filename,
-          source_sheet,
-          customer_name,
-          origin,
-          destination,
-          quotation_date_raw,
-          formatted_quotation_date,
-          travel_date_raw,
-          formatted_travel_date,
-          animals_raw,
-          animals_count,
-          animals_description,
-          quoted_total_raw,
-          quoted_total_amount,
-          currency,
-          shipment_mode,
-          created_at
-        FROM quotes
-        WHERE origin IS NOT NULL
-        ORDER BY created_at DESC NULLS LAST`,
+      const { rows: allRows } = await pool.query<QuoteWithLocationsRow>(
+        `SELECT ${QUOTE_WITH_LOCATIONS_SELECT}
+         WHERE q.origin IS NOT NULL
+         ORDER BY q.created_at DESC NULLS LAST`,
       );
 
-      // Filtro por origen/destino canónicos (misma lógica que el dropdown).
-      const rows: QuoteSearchRow[] = allRows
-        .filter((q) => sameFormattedLocation(q.origin, origin))
-        .filter(
-          (q) =>
-            !hasDest ||
-            (q.destination != null &&
-              sameFormattedLocation(q.destination, destination)),
-        )
-        .slice(0, limit)
-        .map((q) => ({
-          ...q,
-          formatted_origin: formatOrigin(q.origin),
-          formatted_destination:
-            q.destination == null ? null : formatDestination(q.destination),
-        }));
+      const filtered = allRows
+        .filter((r) => originIdentity(r) === originIdent)
+        .filter((r) => !hasDest || (destIdent != null && destinationIdentity(r) === destIdent))
+        .slice(0, limit);
+      const rows: QuoteSearchRow[] = filtered.map(toQuoteSearchRow);
 
       let payload: unknown[] = rows;
 

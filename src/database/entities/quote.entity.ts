@@ -112,6 +112,10 @@ export function quoteRawHeaderFromClean(
 /**
  * Tabla `quotes` (persistencia). Origen: mapeo desde {@link QuoteCleanJsonRecord} nivel raíz.
  *
+ * Ubicación normalizada (migración 033): `{origin,destination}_country_id` (FK → countries),
+ * `{origin,destination}_airport_id` (FK → airports, nullable), `{origin,destination}_city`
+ * (texto libre, **fallback** sólo cuando no hay airport).
+ *
  * | Columna | Origen JSON |
  * |---------|-------------|
  * | `import_key` | `quote_id` (único estable; fallback futuro: filename+sheet) |
@@ -127,6 +131,12 @@ export type Quote = {
   customer_name: string | null;
   origin: string | null;
   destination: string | null;
+  origin_country_id: UUID | null;
+  origin_airport_id: UUID | null;
+  origin_city: string | null;
+  destination_country_id: UUID | null;
+  destination_airport_id: UUID | null;
+  destination_city: string | null;
   quotation_date_raw: string | null;
   /** `dd/mm/yyyy`; día `00` = solo mes+año. Derivado de `quotation_date_raw`. */
   formatted_quotation_date: string | null;
@@ -144,6 +154,23 @@ export type Quote = {
   raw_header_json: QuoteRawHeaderJson | null;
   created_at: Date;
   updated_at: Date;
+};
+
+export type Country = {
+  id: UUID;
+  iso2: string;
+  iso3: string | null;
+  name_es: string;
+  name_en: string;
+  created_at: Date;
+};
+
+export type Airport = {
+  id: UUID;
+  iata: string;
+  city: string;
+  country_id: UUID;
+  created_at: Date;
 };
 
 /**
