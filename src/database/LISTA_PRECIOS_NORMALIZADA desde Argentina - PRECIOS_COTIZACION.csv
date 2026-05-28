@@ -1,0 +1,36 @@
+ID_PRECIO,DESTINO,REGION,TIPO_MASCOTA,ORIGEN_MASCOTA,CANTIDAD_MASCOTAS,PRECIO_USD,NOTAS
+1,BOLIVIA,AMERICA,TODOS,ARGENTINA,1,$305,Extra mascota: +USD 50. Si vacunar: +USD 59 vacuna completa + USD 50 traslado a vet
+2,BOLIVIA,AMERICA,TODOS,ARGENTINA,2,$432,Extra mascota: +USD 50. Si vacunar: +USD 59 vacuna completa + USD 50 traslado a vet
+3,BRASIL,AMERICA,TODOS,ARGENTINA,1,$305,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+4,BRASIL,AMERICA,TODOS,ARGENTINA,2,$432,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+5,CHILE,AMERICA,TODOS,ARGENTINA,1,$313,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+6,CHILE,AMERICA,TODOS,ARGENTINA,2,$448,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+7,COLOMBIA,AMERICA,TODOS,ARGENTINA,1,$275,Extra mascota: +USD 50. Si vacunar: +USD 25 vacuna completa + USD 50 traslado a vet
+8,COLOMBIA,AMERICA,TODOS,ARGENTINA,2,$372,Extra mascota: +USD 50. Si vacunar: +USD 25 vacuna completa + USD 50 traslado a vet
+9,ECUADOR,AMERICA,TODOS,ARGENTINA,1,$313,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica
+10,ECUADOR,AMERICA,TODOS,ARGENTINA,2,$448,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica
+11,GUATEMALA,AMERICA,TODOS,ARGENTINA,1,$313,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+12,GUATEMALA,AMERICA,TODOS,ARGENTINA,2,$448,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+13,MEXICO,AMERICA,TODOS,ARGENTINA,1,$363,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+14,MEXICO,AMERICA,TODOS,ARGENTINA,2,$548,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+15,MEXICO,AMERICA,TODOS,ARGENTINA,3,$731,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+16,PANAMA,AMERICA,TODOS,ARGENTINA,1,$275,Requiere legalización consular. Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+17,PANAMA,AMERICA,TODOS,ARGENTINA,2,$372,Requiere legalización consular. Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+18,PARAGUAY,AMERICA,TODOS,ARGENTINA,1,$305,Extra mascota: +USD 50. Si vacunar: +USD 59 vacuna completa + USD 50 traslado a vet
+19,PARAGUAY,AMERICA,TODOS,ARGENTINA,2,$432,Extra mascota: +USD 50. Si vacunar: +USD 59 vacuna completa + USD 50 traslado a vet
+20,PERU,AMERICA,TODOS,ARGENTINA,1,$363,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+21,PERU,AMERICA,TODOS,ARGENTINA,2,$548,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+22,URUGUAY,AMERICA,TODOS,ARGENTINA,1,$410,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+23,URUGUAY,AMERICA,TODOS,ARGENTINA,2,$667,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+24,URUGUAY,AMERICA,TODOS,ARGENTINA,3,$554,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+25,USA / CANADA / PUERTO RICO,AMERICA,TODOS,ARGENTINA,1,$305,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+26,USA / CANADA / PUERTO RICO,AMERICA,TODOS,ARGENTINA,2,$432,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+27,USA / CANADA / PUERTO RICO,AMERICA,TODOS,ARGENTINA,3,$559,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+28,VENEZUELA,AMERICA,TODOS,ARGENTINA,1,$305,Extra mascota: +USD 50. Si vacunar: +USD 59 vacuna completa + USD 50 traslado a vet
+29,VENEZUELA,AMERICA,TODOS,ARGENTINA,2,$432,Extra mascota: +USD 50. Si vacunar: +USD 59 vacuna completa + USD 50 traslado a vet
+30,COSTA RICA,AMERICA,TODOS,ARGENTINA,1,$275,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+31,COSTA RICA,AMERICA,TODOS,ARGENTINA,2,$372,Extra mascota: +USD 50. Si vacunar: +USD 25 antirrábica + USD 50 traslado a vet
+32,UNION EUROPEA,EUROPA,TODOS,ARGENTINA,1,$650,No se incluye desparasitación (salvo UK). Viáticos Bradley solo si Bradley va a domicilio en vez de nosotros trasladar.
+33,UNION EUROPEA,EUROPA,TODOS,ARGENTINA,2,$1.010,No se incluye desparasitación (salvo UK). Viáticos Bradley solo si Bradley va a domicilio en vez de nosotros trasladar.
+34,UNION EUROPEA,EUROPA,TODOS,ARGENTINA,3,$1.209,No se incluye desparasitación (salvo UK). Viáticos Bradley solo si Bradley va a domicilio en vez de nosotros trasladar.
+35,UNION EUROPEA,EUROPA,TODOS,ARGENTINA,4,$1.822,No se incluye desparasitación (salvo UK). Viáticos Bradley solo si Bradley va a domicilio en vez de nosotros trasladar.

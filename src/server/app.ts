@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import { adminRouter } from "../controllers/admin.controller";
+import { argExpoPreciosRouter } from "../controllers/argExpoPrecios.controller";
 import { breedsRouter } from "../controllers/breeds.controller";
 import { itemsOfficialRouter } from "../controllers/itemsOfficial.controller";
 import { healthRouter } from "../controllers/health.controller";
@@ -32,6 +33,7 @@ export function createApp(): express.Express {
 
   app.use(healthRouter);
   app.use(adminRouter);
+  app.use(argExpoPreciosRouter);
   app.use(breedsRouter);
   app.use(itemsOfficialRouter);
   app.use(quotesExploreRouter);

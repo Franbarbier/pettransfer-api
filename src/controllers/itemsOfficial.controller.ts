@@ -13,6 +13,10 @@ type OfficialItem = {
   item_en: string;
   item_es: string;
   price_ref: string | null;
+  price_1: string | null;
+  price_2: string | null;
+  price_3: string | null;
+  price_4: string | null;
   description_en: string | null;
   description_es: string | null;
   notes: string | null;
@@ -82,7 +86,8 @@ itemsOfficialRouter.get(
             expoPais = matched.country;
             const { rows } = await pool.query<OfficialItem>(
               `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
-                      price_ref, description_en, description_es, notes
+                      price_ref, price_1::text, price_2::text, price_3::text, price_4::text,
+                      description_en, description_es, notes
                FROM items_official WHERE operation_type = 'EXPO' AND country = $1 ORDER BY id`,
               [matched.country],
             );
@@ -99,7 +104,8 @@ itemsOfficialRouter.get(
             impoPais = matched.country;
             const { rows } = await pool.query<OfficialItem>(
               `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
-                      price_ref, description_en, description_es, notes
+                      price_ref, price_1::text, price_2::text, price_3::text, price_4::text,
+                      description_en, description_es, notes
                FROM items_official WHERE operation_type = 'IMPO' AND country = $1 ORDER BY id`,
               [matched.country],
             );
@@ -152,6 +158,10 @@ itemsOfficialRouter.post(
         item_en,
         item_es,
         price_ref,
+        price_1,
+        price_2,
+        price_3,
+        price_4,
         description_en,
         description_es,
         notes,
@@ -162,6 +172,10 @@ itemsOfficialRouter.post(
         item_en?: string;
         item_es?: string;
         price_ref?: string | null;
+        price_1?: number | null;
+        price_2?: number | null;
+        price_3?: number | null;
+        price_4?: number | null;
         description_en?: string | null;
         description_es?: string | null;
         notes?: string | null;
@@ -187,10 +201,13 @@ itemsOfficialRouter.post(
         const pool = getPool();
         const { rows } = await pool.query<OfficialItem>(
           `INSERT INTO items_official
-             (operation_type, airport, country, item_en, item_es, price_ref, description_en, description_es, notes)
-           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+             (operation_type, airport, country, item_en, item_es, price_ref,
+              price_1, price_2, price_3, price_4,
+              description_en, description_es, notes)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
            RETURNING id::text, uuid::text, operation_type, airport, country, item_en, item_es,
-                     price_ref, description_en, description_es, notes`,
+                     price_ref, price_1::text, price_2::text, price_3::text, price_4::text,
+                     description_en, description_es, notes`,
           [
             normalizedOp,
             airport?.trim() || null,
@@ -198,6 +215,10 @@ itemsOfficialRouter.post(
             item_en?.trim() || "",
             item_es?.trim() || "",
             price_ref?.trim() || null,
+            price_1 ?? null,
+            price_2 ?? null,
+            price_3 ?? null,
+            price_4 ?? null,
             description_en?.trim() || null,
             description_es?.trim() || null,
             notes?.trim() || null,
