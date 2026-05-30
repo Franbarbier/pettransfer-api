@@ -3,6 +3,7 @@ import express from "express";
 import { adminRouter } from "../controllers/admin.controller";
 import { argExpoPreciosRouter } from "../controllers/argExpoPrecios.controller";
 import { breedsRouter } from "../controllers/breeds.controller";
+import { emailTemplatesRouter } from "../controllers/emailTemplates.controller";
 import { itemsOfficialRouter } from "../controllers/itemsOfficial.controller";
 import { healthRouter } from "../controllers/health.controller";
 import { quotesCreateRouter } from "../controllers/quotesCreate.controller";
@@ -33,6 +34,7 @@ export function createApp(): express.Express {
 
   app.use(healthRouter);
   app.use(adminRouter);
+  app.use(emailTemplatesRouter);
   app.use(argExpoPreciosRouter);
   app.use(breedsRouter);
   app.use(itemsOfficialRouter);

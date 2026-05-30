@@ -42,7 +42,8 @@
     "db:migrate:lar82-breeds": "tsx src/scripts/applyMigration018Lar82Breeds.ts",
     "db:import:lar82-breeds": "tsx src/scripts/importLar82Breeds.ts",
     "db:migrate:breeds": "tsx src/scripts/applyMigration020Breeds.ts",
-    "db:import:breeds": "tsx src/scripts/importBreeds.ts"
+    "db:import:breeds": "tsx src/scripts/importBreeds.ts",
+    "db:migrate:email-templates": "tsx src/scripts/applyMigration038EmailTemplates.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",
