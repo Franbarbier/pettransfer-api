@@ -43,6 +43,8 @@ type QuoteSearchRow = {
   customer_name: string | null;
   origin: string | null;
   destination: string | null;
+  fwd: string | null;
+  notes: string | null;
   /** Display canónico construido desde airports/countries/origin_city. */
   formatted_origin: string | null;
   formatted_destination: string | null;
@@ -69,6 +71,8 @@ type QuoteWithLocationsRow = {
   customer_name: string | null;
   origin: string | null;
   destination: string | null;
+  fwd: string | null;
+  notes: string | null;
   origin_iata: string | null;
   origin_country_iso2: string | null;
   origin_country_name_es: string | null;
@@ -98,6 +102,8 @@ const QUOTE_WITH_LOCATIONS_SELECT = `
   q.customer_name,
   q.origin,
   q.destination,
+  q.fwd,
+  q.notes,
   oa.iata AS origin_iata,
   oc.iso2 AS origin_country_iso2,
   oc.name_es AS origin_country_name_es,
@@ -133,6 +139,8 @@ function toQuoteSearchRow(r: QuoteWithLocationsRow): QuoteSearchRow {
     customer_name: r.customer_name,
     origin: r.origin,
     destination: r.destination,
+    fwd: r.fwd,
+    notes: r.notes,
     formatted_origin: formatLocationDisplay({
       iata: r.origin_iata,
       country_name_es: r.origin_country_name_es,

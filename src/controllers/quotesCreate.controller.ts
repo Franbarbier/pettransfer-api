@@ -18,6 +18,8 @@ const CreateQuoteBodySchema = z.object({
   customerName: z.string(),
   origin: z.string(),
   destination: z.string(),
+  fwd: z.string().optional(),
+  notes: z.string().optional(),
   quotedDate: z.string(),
   travelDate: z.string(),
   animalsCount: z.number().int().min(0),
@@ -50,6 +52,8 @@ quotesCreateRouter.post(
         customerName,
         origin,
         destination,
+        fwd,
+        notes,
         quotedDate,
         travelDate,
         animalsCount,
@@ -71,12 +75,12 @@ quotesCreateRouter.post(
         const quoteRes = await client.query<{ id: string }>(
           `INSERT INTO quotes (
             import_key, source_filename,
-            customer_name, origin, destination,
+            customer_name, origin, destination, fwd, notes,
             quotation_date_raw, travel_date_raw,
             animals_count, animals_description,
             quoted_total_amount, quoted_total_raw, currency,
             status, email_sent_to
-          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
           RETURNING id`,
           [
             importKey,
@@ -84,6 +88,8 @@ quotesCreateRouter.post(
             customerName || null,
             origin || null,
             destination || null,
+            fwd?.trim() ? fwd.trim() : null,
+            notes?.trim() ? notes.trim() : null,
             quotedDate || null,
             travelDate || null,
             animalsCount,

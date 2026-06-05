@@ -48,7 +48,7 @@ INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Bandog', 'B
 INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Ca de Bou / Perro de Presa Mallorquín', 'Ca de Bou (Majorcan Mastiff)', 'perro', false, true);
 INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Labrador Retriever', 'Labrador Retriever', 'perro', false, false);
 INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Golden Retriever', 'Golden Retriever', 'perro', false, false);
-INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Pastor Alemán', 'German Shepherd', 'perro', false, false);
+INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Pastor/Ovejero Alemán', 'German Shepherd', 'perro', false, false);
 INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Caniche / Poodle', 'Poodle', 'perro', false, false);
 INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Beagle', 'Beagle', 'perro', false, false);
 INSERT INTO breeds (name_es, name_en, type, braqui, danger) VALUES ('Dachshund / Teckel', 'Dachshund', 'perro', false, false);
