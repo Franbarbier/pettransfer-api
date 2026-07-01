@@ -3,6 +3,7 @@ import { Router } from "express";
 
 import { getPool, requireDatabaseUrl } from "../database/pool";
 import { formatLocationDisplay, locationIdentityKey } from "../services/formatLocationDisplay";
+import { parseLocation, type ParsedLocation } from "../services/parseLocation";
 import {
   QUOTE_WITH_LOCATIONS_SELECT,
   attachItemsAndDetails,
@@ -371,6 +372,29 @@ quotesExploreRouter.get(
   },
 );
 
+/**
+ * Pre-filtro SQL para `/quotes/search`, construido a partir de los mismos componentes
+ * (`iata`/`country_iso2`) que ya calcula `parseLocation`. Solo acota por país o aeropuerto —
+ * nunca por ciudad (el texto libre en DB puede diferir en acentos/mayúsculas del alias parseado) —
+ * así que nunca puede excluir una fila que el matching exacto en JS (`originIdentity`/
+ * `destinationIdentity`) sí aceptaría. Reduce las filas que viajan de Postgres a Node antes de
+ * aplicar ese matching exacto, sin cambiar el resultado final.
+ */
+function locationSqlFilter(
+  airportCol: string,
+  countryCol: string,
+  parsed: ParsedLocation,
+  nextParamIndex: number,
+): { clause: string | null; params: unknown[] } {
+  if (parsed.iata) {
+    return { clause: `${airportCol} = $${nextParamIndex}`, params: [parsed.iata] };
+  }
+  if (parsed.country_iso2) {
+    return { clause: `${countryCol} = $${nextParamIndex}`, params: [parsed.country_iso2] };
+  }
+  return { clause: null, params: [] };
+}
+
 quotesExploreRouter.get("/quotes/search", (req: Request, res: Response) => {
   void (async () => {
     try {
@@ -409,10 +433,30 @@ quotesExploreRouter.get("/quotes/search", (req: Request, res: Response) => {
         return;
       }
 
+      const whereClauses = ["q.origin IS NOT NULL"];
+      const params: unknown[] = [];
+
+      const originParsed = parseLocation(origin);
+      const originFilter = locationSqlFilter("oa.iata", "oc.iso2", originParsed, params.length + 1);
+      if (originFilter.clause) {
+        whereClauses.push(originFilter.clause);
+        params.push(...originFilter.params);
+      }
+
+      if (hasDest) {
+        const destParsed = parseLocation(destination);
+        const destFilter = locationSqlFilter("da.iata", "dc.iso2", destParsed, params.length + 1);
+        if (destFilter.clause) {
+          whereClauses.push(destFilter.clause);
+          params.push(...destFilter.params);
+        }
+      }
+
       const { rows: allRows } = await pool.query<QuoteWithLocationsRow>(
         `SELECT ${QUOTE_WITH_LOCATIONS_SELECT}
-         WHERE q.origin IS NOT NULL
-         ORDER BY q.created_at DESC NULLS LAST`,
+         WHERE ${whereClauses.join(" AND ")}
+         ORDER BY q.created_at DESC NULLS LAST, q.import_key ASC`,
+        params,
       );
 
       const filtered = allRows
