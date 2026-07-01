@@ -1,43 +1,9 @@
 import type { Request, Response } from "express";
 import { Router } from "express";
 import { getPool, requireDatabaseUrl } from "../database/pool";
+import { findOfficialItemsByOperation, type OfficialItem } from "../services/itemsOfficialHelpers";
 
 export const itemsOfficialRouter = Router();
-
-type OfficialItem = {
-  id: string;
-  uuid: string;
-  operation_type: string | null;
-  airport: string | null;
-  country: string | null;
-  item_en: string;
-  item_es: string;
-  price_ref: string | null;
-  price_1: string | null;
-  price_2: string | null;
-  price_3: string | null;
-  price_4: string | null;
-  description_en: string | null;
-  description_es: string | null;
-  notes: string | null;
-  fwd_mode: string | null;
-};
-
-function norm(s: string): string {
-  return s
-    .trim()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/\s+/g, " ");
-}
-
-function fuzzyMatch(text: string, country: string): boolean {
-  const t = norm(text);
-  const c = norm(country);
-  if (!t || !c) return false;
-  return t === c || t.includes(c) || c.includes(t);
-}
 
 /**
  * GET /items-official/by-operation
@@ -94,61 +60,21 @@ itemsOfficialRouter.get(
         let fwdPais: string | null = null;
 
         if (tipo === "expo" || tipo === "ambas") {
-          const { rows: countries } = await pool.query<{ country: string }>(
-            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'EXPO' AND country IS NOT NULL ORDER BY country`,
-          );
-          const matched = countries.find((r) => fuzzyMatch(origin, r.country));
-          if (matched) {
-            expoPais = matched.country;
-            const { rows } = await pool.query<OfficialItem>(
-              `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
-                      price_ref, price_1::text, price_2::text, price_3::text, price_4::text,
-                      description_en, description_es, notes, fwd_mode
-               FROM items_official WHERE operation_type = 'EXPO' AND country = $1 ORDER BY id`,
-              [matched.country],
-            );
-            expoItems = rows;
-          }
+          const r = await findOfficialItemsByOperation(pool, "EXPO", origin);
+          expoPais = r.country;
+          expoItems = r.items;
         }
 
         if (tipo === "impo" || tipo === "ambas") {
-          const { rows: countries } = await pool.query<{ country: string }>(
-            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'IMPO' AND country IS NOT NULL ORDER BY country`,
-          );
-          const matched = countries.find((r) => fuzzyMatch(destination, r.country));
-          if (matched) {
-            impoPais = matched.country;
-            const { rows } = await pool.query<OfficialItem>(
-              `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
-                      price_ref, price_1::text, price_2::text, price_3::text, price_4::text,
-                      description_en, description_es, notes, fwd_mode
-               FROM items_official WHERE operation_type = 'IMPO' AND country = $1 ORDER BY id`,
-              [matched.country],
-            );
-            impoItems = rows;
-          }
+          const r = await findOfficialItemsByOperation(pool, "IMPO", destination);
+          impoPais = r.country;
+          impoItems = r.items;
         }
 
         if (fwdCountryParam && fwdMode) {
-          const { rows: countries } = await pool.query<{ country: string }>(
-            `SELECT DISTINCT country FROM items_official WHERE operation_type = 'FWD' AND country IS NOT NULL ORDER BY country`,
-          );
-          const matched = countries.find((r) => fuzzyMatch(fwdCountryParam, r.country));
-          if (matched) {
-            fwdPais = matched.country;
-            const { rows } = await pool.query<OfficialItem>(
-              `SELECT id::text, uuid::text, operation_type, airport, country, item_en, item_es,
-                      price_ref, price_1::text, price_2::text, price_3::text, price_4::text,
-                      description_en, description_es, notes, fwd_mode
-               FROM items_official
-               WHERE operation_type = 'FWD'
-                 AND country = $1
-                 AND (fwd_mode = $2 OR fwd_mode IS NULL)
-               ORDER BY id`,
-              [matched.country, fwdMode],
-            );
-            fwdItems = rows;
-          }
+          const r = await findOfficialItemsByOperation(pool, "FWD", fwdCountryParam, fwdMode);
+          fwdPais = r.country;
+          fwdItems = r.items;
         }
 
         const { rows: orphanRows } = await pool.query<OfficialItem>(

@@ -65,11 +65,17 @@ mismo comportamiento — solo movimiento de código.
 
 `npm run build` y `npm run lint` pasan limpio.
 
-### Fase C.2 — `itemsOfficial.controller.ts` (290 líneas)
+### Fase C.2 — `itemsOfficial.controller.ts` (290 líneas) — ✅ Hecho
 
-Extraer `norm`, `fuzzyMatch` y el bloque repetido de "matchear país + traer ítems" (se repite 3
-veces para expo/impo/fwd) a `services/itemsOfficialHelpers.ts`, dejando el controller solo con
-routing y parsing de query params.
+`norm`, `fuzzyMatch`, el tipo `OfficialItem` y el bloque repetido de "matchear país + traer ítems"
+(se repetía 3 veces para expo/impo/fwd) se extrajeron a `services/itemsOfficialHelpers.ts`, con
+una única función parametrizada `findOfficialItemsByOperation(pool, operationType, inputLocation, fwdMode?)`
+que cubre los 3 casos (el caso FWD agrega el filtro `fwd_mode = $mode OR fwd_mode IS NULL`).
+
+Métricas: `itemsOfficial.controller.ts` 290 → **216 líneas**; `services/itemsOfficialHelpers.ts` nuevo, 79 líneas.
+La query de `orphan` (columnas distintas, no repetida) quedó inline en el controller sin tocar.
+
+`npm run build` y `npm run lint` pasan limpio.
 
 ---
 
@@ -90,3 +96,4 @@ routing y parsing de query params.
 | 2026-06-25 | Fase A: `quotesExplore.controller.ts` 696 → 479 líneas. Helpers a `services/quotesExploreHelpers.ts`. Build/lint pasan. |
 | 2026-07-01 | Fase B: `parseLocation.ts` 745 → 438 líneas. Aliases a `services/locationAliases.ts`, helpers de texto a `services/locationTextUtils.ts`. Build/lint pasan. |
 | 2026-07-01 | Fase C.1: `admin.controller.ts` (381 líneas) partido en 3 controllers por recurso + `controllers/withDb.ts` compartido. `server/app.ts` actualizado. Build/lint pasan. |
+| 2026-07-01 | Fase C.2: `itemsOfficial.controller.ts` 290 → 216 líneas. Matching repetido a `services/itemsOfficialHelpers.ts`. Build/lint pasan. **Plan original (A/B/C) completo.** |
