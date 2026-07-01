@@ -3,6 +3,7 @@ import { Router } from "express";
 
 import { getPool, requireDatabaseUrl } from "../database/pool";
 import { formatLocationDisplay, locationIdentityKey } from "../services/formatLocationDisplay";
+import { getOrSetCache } from "../services/inMemoryCache";
 import { parseLocation, type ParsedLocation } from "../services/parseLocation";
 import {
   QUOTE_WITH_LOCATIONS_SELECT,
@@ -21,6 +22,23 @@ import {
 } from "../services/quotesExploreHelpers";
 
 export const quotesExploreRouter = Router();
+
+/**
+ * TTL del cache en memoria de `/quotes/suggest/origins` y `/quotes/suggest/destinations`.
+ * Estos endpoints se disparan en cada tecleo del autocomplete, pero la query base (antes de
+ * filtrar por el texto tipeado) casi no cambia entre requests — cachearla evita repetir el join
+ * completo contra `quotes` en cada letra. Efecto: una quote nueva puede tardar hasta este TTL en
+ * aparecer como sugerencia de origen/destino (aceptable para una herramienta interna).
+ */
+const SUGGEST_CACHE_TTL_MS = 60_000;
+
+type SuggestLocationRow = {
+  iata: string | null;
+  country_iso2: string | null;
+  country_name_es: string | null;
+  country_name_en: string | null;
+  city: string | null;
+};
 
 quotesExploreRouter.get(
   "/quotes/suggest/origins",
@@ -44,21 +62,18 @@ quotesExploreRouter.get(
       try {
         const pool = getPool();
         const needle = tokenNorm(q);
-        const { rows } = await pool.query<{
-          iata: string | null;
-          country_iso2: string | null;
-          country_name_es: string | null;
-          country_name_en: string | null;
-          city: string | null;
-        }>(
-          `SELECT DISTINCT oa.iata, oc.iso2 AS country_iso2,
-                  oc.name_es AS country_name_es, oc.name_en AS country_name_en,
-                  q.origin_city AS city
-             FROM quotes q
-             LEFT JOIN airports  oa ON oa.id = q.origin_airport_id
-             LEFT JOIN countries oc ON oc.id = q.origin_country_id
-             WHERE q.origin_country_id IS NOT NULL OR q.origin_airport_id IS NOT NULL`,
-        );
+        const rows = await getOrSetCache("quotes:suggest:origins:rows", SUGGEST_CACHE_TTL_MS, async () => {
+          const { rows: r } = await pool.query<SuggestLocationRow>(
+            `SELECT DISTINCT oa.iata, oc.iso2 AS country_iso2,
+                    oc.name_es AS country_name_es, oc.name_en AS country_name_en,
+                    q.origin_city AS city
+               FROM quotes q
+               LEFT JOIN airports  oa ON oa.id = q.origin_airport_id
+               LEFT JOIN countries oc ON oc.id = q.origin_country_id
+               WHERE q.origin_country_id IS NOT NULL OR q.origin_airport_id IS NOT NULL`,
+          );
+          return r;
+        });
         const byKey = new Map<string, { value: string; label: string }>();
         for (const r of rows) {
           const label = formatLocationDisplay({
@@ -319,21 +334,18 @@ quotesExploreRouter.get(
       try {
         const pool = getPool();
         const needle = tokenNorm(q);
-        const { rows } = await pool.query<{
-          iata: string | null;
-          country_iso2: string | null;
-          country_name_es: string | null;
-          country_name_en: string | null;
-          city: string | null;
-        }>(
-          `SELECT DISTINCT da.iata, dc.iso2 AS country_iso2,
-                  dc.name_es AS country_name_es, dc.name_en AS country_name_en,
-                  q.destination_city AS city
-             FROM quotes q
-             LEFT JOIN airports  da ON da.id = q.destination_airport_id
-             LEFT JOIN countries dc ON dc.id = q.destination_country_id
-             WHERE q.destination_country_id IS NOT NULL OR q.destination_airport_id IS NOT NULL`,
-        );
+        const rows = await getOrSetCache("quotes:suggest:destinations:rows", SUGGEST_CACHE_TTL_MS, async () => {
+          const { rows: r } = await pool.query<SuggestLocationRow>(
+            `SELECT DISTINCT da.iata, dc.iso2 AS country_iso2,
+                    dc.name_es AS country_name_es, dc.name_en AS country_name_en,
+                    q.destination_city AS city
+               FROM quotes q
+               LEFT JOIN airports  da ON da.id = q.destination_airport_id
+               LEFT JOIN countries dc ON dc.id = q.destination_country_id
+               WHERE q.destination_country_id IS NOT NULL OR q.destination_airport_id IS NOT NULL`,
+          );
+          return r;
+        });
         const byKey = new Map<string, { value: string; label: string }>();
         for (const r of rows) {
           const label = formatLocationDisplay({
