@@ -1,10 +1,12 @@
 import cors from "cors";
 import express from "express";
-import { adminRouter } from "../controllers/admin.controller";
 import { argExpoPreciosRouter } from "../controllers/argExpoPrecios.controller";
 import { breedsRouter } from "../controllers/breeds.controller";
+import { crateQuoteTariffsRouter } from "../controllers/crateQuoteTariffs.controller";
+import { crateTariffsByCountryRouter } from "../controllers/crateTariffsByCountry.controller";
 import { emailTemplatesRouter } from "../controllers/emailTemplates.controller";
 import { itemsOfficialRouter } from "../controllers/itemsOfficial.controller";
+import { itemsOfficialAdminRouter } from "../controllers/itemsOfficialAdmin.controller";
 import { healthRouter } from "../controllers/health.controller";
 import { quotesCreateRouter } from "../controllers/quotesCreate.controller";
 import { quotesExploreRouter } from "../controllers/quotesExplore.controller";
@@ -33,7 +35,9 @@ export function createApp(): express.Express {
   );
 
   app.use(healthRouter);
-  app.use(adminRouter);
+  app.use(crateQuoteTariffsRouter);
+  app.use(crateTariffsByCountryRouter);
+  app.use(itemsOfficialAdminRouter);
   app.use(emailTemplatesRouter);
   app.use(argExpoPreciosRouter);
   app.use(breedsRouter);

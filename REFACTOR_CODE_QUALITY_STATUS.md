@@ -37,13 +37,39 @@ Métricas: `quotesExplore.controller.ts` 696 → **479 líneas** (−217). El co
 
 `npm run build` y `npm run lint` pasan limpio.
 
-### Fase B — `parseLocation.ts` (745 líneas)
+### Fase B — `parseLocation.ts` (745 líneas) — ✅ Hecho
 
-Inspeccionar y romper por responsabilidad si tiene varias (probablemente: parser puro, aliases, normalización).
+Roto por responsabilidad en 3 archivos:
 
-### Fase C — `admin.controller.ts` / `itemsOfficial.controller.ts`
+- `services/locationTextUtils.ts` — helpers puros de normalización: `stripDiacritics`, `normKey`, `titleCase`, `cleanCity`, `splitFirstSegment`.
+- `services/locationAliases.ts` — tablas de datos/aliases: `COUNTRY_TEXT_TO_ISO2`, `IATA_ALIASES`, `CITIES_MULTI_AIRPORT`, `IATA_AMBIGUOUS_PER_COUNTRY`, `COUNTRY_3LETTER`, `CITY_TO_IATA`, `RAW_OVERRIDES`, `countrySearchAliases`, `citySearchAliases`.
+- `services/parseLocation.ts` — parser puro: tipos `Confidence`/`ParsedLocation`, lookups (`lookupAirport`, `lookupCountryExact`, `lookupCountryFromText`) y la función `parseLocation()`.
 
-Misma estrategia: helpers puros a services, tipos al lado del consumidor.
+Métricas: `parseLocation.ts` 745 → **438 líneas** (resto repartido en los dos archivos nuevos, 281 + 45).
+Se actualizó el import en `services/quotesExploreHelpers.ts` (`citySearchAliases`/`countrySearchAliases` ahora vienen de `locationAliases.ts`); `scripts/analyzeLocations.ts` y `scripts/backfillQuoteLocations.ts` no necesitaron cambios (solo usan `parseLocation`/`Confidence`/`ParsedLocation`, que siguen en el mismo archivo).
+
+`npm run build` y `npm run lint` pasan limpio.
+
+### Fase C.1 — `admin.controller.ts` (381 líneas) — ✅ Hecho
+
+Era un "god controller" con 3 recursos CRUD independientes mezclados. Partido en 3 controllers
+(uno por recurso), más un helper compartido:
+
+- `controllers/withDb.ts` — helper `withDb()` (chequeo de DB + manejo 503/500), antes duplicado inline en `admin.controller.ts`.
+- `controllers/crateQuoteTariffs.controller.ts` — CRUD `/admin/crate-quote-tariffs*`.
+- `controllers/crateTariffsByCountry.controller.ts` — CRUD `/admin/crate-tariffs-by-country*`.
+- `controllers/itemsOfficialAdmin.controller.ts` — CRUD `/admin/items-official*` (distinto de `itemsOfficialRouter`, que sirve las rutas públicas de lookup).
+
+`server/app.ts` ahora monta los 3 routers nuevos en vez de un único `adminRouter`. Mismos paths,
+mismo comportamiento — solo movimiento de código.
+
+`npm run build` y `npm run lint` pasan limpio.
+
+### Fase C.2 — `itemsOfficial.controller.ts` (290 líneas)
+
+Extraer `norm`, `fuzzyMatch` y el bloque repetido de "matchear país + traer ítems" (se repite 3
+veces para expo/impo/fwd) a `services/itemsOfficialHelpers.ts`, dejando el controller solo con
+routing y parsing de query params.
 
 ---
 
@@ -62,3 +88,5 @@ Misma estrategia: helpers puros a services, tipos al lado del consumidor.
 |---|---|
 | 2026-06-25 | Doc inicial. |
 | 2026-06-25 | Fase A: `quotesExplore.controller.ts` 696 → 479 líneas. Helpers a `services/quotesExploreHelpers.ts`. Build/lint pasan. |
+| 2026-07-01 | Fase B: `parseLocation.ts` 745 → 438 líneas. Aliases a `services/locationAliases.ts`, helpers de texto a `services/locationTextUtils.ts`. Build/lint pasan. |
+| 2026-07-01 | Fase C.1: `admin.controller.ts` (381 líneas) partido en 3 controllers por recurso + `controllers/withDb.ts` compartido. `server/app.ts` actualizado. Build/lint pasan. |

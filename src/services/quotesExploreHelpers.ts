@@ -1,5 +1,6 @@
 import { formatLocationDisplay, locationIdentityKey } from "./formatLocationDisplay";
-import { citySearchAliases, countrySearchAliases, parseLocation } from "./parseLocation";
+import { citySearchAliases, countrySearchAliases } from "./locationAliases";
+import { parseLocation } from "./parseLocation";
 
 export type QuoteSearchRow = {
   import_key: string;
