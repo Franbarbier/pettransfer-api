@@ -103,13 +103,23 @@ queries SQL), aunque el resultado observable por el cliente HTTP se mantiene igu
   ejecuciones por empates en `created_at` sin tiebreaker determinístico — esto sí es una mejora de
   comportamiento (resultados estables ante la misma búsqueda repetida), no solo performance.
 
-`npm run build` y `npm run lint` pasan limpio en D.1 y D.2.
+- **D.3 — `/quotes/suggest/origins` y `/quotes/suggest/destinations`**: estos endpoints hacen
+  matching por substring contra un "haystack" de aliases (label + IATA + alias de país/ciudad) que
+  no tiene equivalente directo en SQL sin duplicar ahí toda la lógica de aliases — no es un
+  pre-filtro trivial como en D.2. **Esta opción no está en `guias-maestras/`** (se evaluó y se
+  descartó ahí — LEDGRE usa Valkey/Redis como servicio de infra aparte, que sería migración de
+  stack); se implementó igual porque el usuario lo pidió explícitamente. Se cachea en memoria de
+  proceso, con TTL de 60s, el resultado de la query base (antes del filtro por texto tipeado) —
+  helper genérico nuevo `services/inMemoryCache.ts` (`getOrSetCache(key, ttlMs, load)`), usado en
+  ambos endpoints con keys separadas (`quotes:suggest:origins:rows` / `...:destinations:rows`).
+  El filtro por `needle` (lo que sí cambia en cada tecleo) se sigue calculando en cada request,
+  sobre las filas cacheadas. **Efecto observable real**: una quote nueva puede tardar hasta 60s en
+  aparecer como sugerencia de origen/destino — aceptable para esta herramienta interna, pero es un
+  cambio de comportamiento, no solo de performance.
+  Verificado manualmente contra la DB local: segunda llamada (cache hit) ~5x más rápida que la
+  primera (0.02s vs 0.11s), mismos resultados.
 
-**Pendiente, sin decidir todavía:** `/quotes/suggest/origins` y `/quotes/suggest/destinations`
-hacen matching por substring contra un "haystack" de aliases que no tiene equivalente directo en
-SQL sin duplicar la lógica de aliases ahí. La opción evaluada es cachear en memoria (TTL corto) el
-resultado de la query base — a diferencia de D.1/D.2, esto sí introduce estado nuevo, por eso se
-dejó para decidir aparte.
+`npm run build` y `npm run lint` pasan limpio en D.1, D.2 y D.3.
 
 ---
 
@@ -134,3 +144,4 @@ dejó para decidir aparte.
 | 2026-07-01 | Fase C.2: `itemsOfficial.controller.ts` 290 → 216 líneas. Matching repetido a `services/itemsOfficialHelpers.ts`. Build/lint pasan. **Plan original (A/B/C) completo.** |
 | 2026-07-01 | Fase D.1: `pool.ts` — timeouts explícitos + listener `on("error")`. |
 | 2026-07-01 | Fase D.2: pre-filtro SQL en `/quotes/search` + desempate en `ORDER BY`. Verificado 13/13 casos idénticos contra DB local. |
+| 2026-07-01 | Fase D.3: cache en memoria (TTL 60s) para `/quotes/suggest/origins` y `/quotes/suggest/destinations`. No está en `guias-maestras/`, implementado a pedido explícito del usuario. |
