@@ -77,6 +77,40 @@ La query de `orphan` (columnas distintas, no repetida) quedó inline en el contr
 
 `npm run build` y `npm run lint` pasan limpio.
 
+### Fase D — hallazgos de performance (fuera del plan original A/B/C) — D.1 y D.2 ✅ Hecho
+
+A diferencia de A/B/C, **no son movimientos puros** — cambian comportamiento interno (config,
+queries SQL), aunque el resultado observable por el cliente HTTP se mantiene igual.
+
+- **D.1 — `database/pool.ts`**: `pg.Pool` no tenía `max`/`idleTimeoutMillis`/`connectionTimeoutMillis`
+  explícitos ni un listener `.on("error", ...)`. Sin ese listener, un error en una conexión idle
+  (ej. red caída) emite un evento `error` sin handler y crashea el proceso Node (comportamiento de
+  `EventEmitter`). Se agregaron los 3 timeouts y el listener con `console.error`. Sin cambio de
+  comportamiento observable.
+
+- **D.2 — `/quotes/search` (`quotesExplore.controller.ts`)**: traía *todas* las quotes con
+  `origin IS NOT NULL` (join con `airports`/`countries` incluido) y filtraba por identidad exacta
+  en JS. Se agregó un pre-filtro SQL (`oa.iata = $1` o `oc.iso2 = $1`, según lo que haya resuelto
+  `parseLocation`) usando los mismos componentes que ya calcula el matching JS — por construcción
+  no puede excluir una fila que el matching exacto aceptaría, porque ese matching ya exige ese
+  mismo `iata`/`country_iso2`. El filtro JS queda intacto después, como antes.
+  Verificado con un script ad-hoc (`_verifyPrefilter.ts`, borrado tras la verificación) que corrió
+  contra la DB local 13 casos (países, IATA, ciudades, con/sin destino) comparando "todas las filas
+  + filtro JS" vs "pre-filtro SQL + filtro JS": **13/13 resultados idénticos**, con reducción real
+  de filas escaneadas (ej. `GRU`: 204 en vez de 5004; `San Diego`: 2 en vez de 5004).
+  De paso se agregó un desempate secundario en el `ORDER BY` (`q.import_key ASC`): sin él, cuando
+  el resultado supera el `limit` (tope duro de 200), qué filas "entran" podía variar entre
+  ejecuciones por empates en `created_at` sin tiebreaker determinístico — esto sí es una mejora de
+  comportamiento (resultados estables ante la misma búsqueda repetida), no solo performance.
+
+`npm run build` y `npm run lint` pasan limpio en D.1 y D.2.
+
+**Pendiente, sin decidir todavía:** `/quotes/suggest/origins` y `/quotes/suggest/destinations`
+hacen matching por substring contra un "haystack" de aliases que no tiene equivalente directo en
+SQL sin duplicar la lógica de aliases ahí. La opción evaluada es cachear en memoria (TTL corto) el
+resultado de la query base — a diferencia de D.1/D.2, esto sí introduce estado nuevo, por eso se
+dejó para decidir aparte.
+
 ---
 
 ## Lo que **no** se hace
@@ -84,7 +118,8 @@ La query de `orphan` (columnas distintas, no repetida) quedó inline en el contr
 - CQRS, `BaseController`, `command/query/action` — no son convenciones del proyecto.
 - Tests (`testEndpoint`) — el proyecto no tiene framework de tests configurado.
 - Migración del patrón Express async — el patrón actual es deliberado.
-- Cambios funcionales — solo movimientos puros.
+- Cambios funcionales en Fase A/B/C — ahí sí, solo movimientos puros. Fase D es la excepción
+  explícita: ahí el objetivo es performance, verificado empíricamente en vez de por inspección.
 
 ---
 
@@ -97,3 +132,5 @@ La query de `orphan` (columnas distintas, no repetida) quedó inline en el contr
 | 2026-07-01 | Fase B: `parseLocation.ts` 745 → 438 líneas. Aliases a `services/locationAliases.ts`, helpers de texto a `services/locationTextUtils.ts`. Build/lint pasan. |
 | 2026-07-01 | Fase C.1: `admin.controller.ts` (381 líneas) partido en 3 controllers por recurso + `controllers/withDb.ts` compartido. `server/app.ts` actualizado. Build/lint pasan. |
 | 2026-07-01 | Fase C.2: `itemsOfficial.controller.ts` 290 → 216 líneas. Matching repetido a `services/itemsOfficialHelpers.ts`. Build/lint pasan. **Plan original (A/B/C) completo.** |
+| 2026-07-01 | Fase D.1: `pool.ts` — timeouts explícitos + listener `on("error")`. |
+| 2026-07-01 | Fase D.2: pre-filtro SQL en `/quotes/search` + desempate en `ORDER BY`. Verificado 13/13 casos idénticos contra DB local. |
