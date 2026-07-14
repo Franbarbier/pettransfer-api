@@ -152,6 +152,8 @@ export type Quote = {
   quoted_total_raw: string | null;
   quoted_total_amount: number | null;
   raw_header_json: QuoteRawHeaderJson | null;
+  /** Número interno secuencial mostrado en el PDF (#00000001...). `NULL` en quotes históricas importadas. */
+  quote_number: number | null;
   created_at: Date;
   updated_at: Date;
 };

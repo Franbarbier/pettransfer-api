@@ -45,7 +45,8 @@
     "db:import:breeds": "tsx src/scripts/importBreeds.ts",
     "db:migrate:email-templates": "tsx src/scripts/applyMigration038EmailTemplates.ts",
     "db:migrate:quotes-fwd-notes": "tsx src/scripts/applyMigration040QuotesFwdNotes.ts",
-    "db:migrate:swap-arg-expo-ecc-air-freight": "tsx src/scripts/applyMigration041SwapArgExpoEccAirFreight.ts"
+    "db:migrate:swap-arg-expo-ecc-air-freight": "tsx src/scripts/applyMigration041SwapArgExpoEccAirFreight.ts",
+    "db:migrate:quotes-quote-number": "tsx src/scripts/applyMigration046QuotesQuoteNumber.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",
