@@ -107,7 +107,22 @@ export async function resolveEmailTemplate(
   };
 }
 
+// Texto genérico para {{recommended_agent}} cuando no hay agente cargado (a veces no lo hay).
+const RECOMMENDED_AGENT_FALLBACK = "one of our trusted local partners";
+
+/**
+ * Bloque condicional {{#key}}...{{/key}}: se conserva el contenido interno solo si `keep`
+ * es true, si no se elimina entero. Usado por T01/T02/T07 para las frases que solo tienen
+ * sentido cuando existe un agente recomendado real (ej. "lo copiamos en este mail").
+ */
+function applyOptionalBlock(body: string, key: string, keep: boolean): string {
+  const re = new RegExp(`\\{\\{#${key}\\}\\}([\\s\\S]*?)\\{\\{/${key}\\}\\}`, "g");
+  return body.replace(re, keep ? "$1" : "");
+}
+
 function applyMergeFields(body: string, fields: EmailMergeFields): string {
+  body = applyOptionalBlock(body, "recommended_agent", fields.recommended_agent.trim() !== "");
+
   const entries: [RegExp, string][] = [
     [/\{\{client_name\}\}/g, fields.client_name],
     [/\{\{pet_type\}\}/g, fields.pet_type],
@@ -115,7 +130,7 @@ function applyMergeFields(body: string, fields: EmailMergeFields): string {
     [/\{\{destination_city\}\}/g, fields.destination_city],
     [/\{\{origin_country\}\}/g, fields.origin_country],
     [/\{\{destination_country\}\}/g, fields.destination_country],
-    [/\{\{recommended_agent\}\}/g, fields.recommended_agent],
+    [/\{\{recommended_agent\}\}/g, fields.recommended_agent.trim() || RECOMMENDED_AGENT_FALLBACK],
   ];
   for (const [pattern, value] of entries) {
     if (value.trim()) body = body.replace(pattern, value);

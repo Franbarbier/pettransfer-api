@@ -46,7 +46,8 @@
     "db:migrate:email-templates": "tsx src/scripts/applyMigration038EmailTemplates.ts",
     "db:migrate:quotes-fwd-notes": "tsx src/scripts/applyMigration040QuotesFwdNotes.ts",
     "db:migrate:swap-arg-expo-ecc-air-freight": "tsx src/scripts/applyMigration041SwapArgExpoEccAirFreight.ts",
-    "db:migrate:quotes-quote-number": "tsx src/scripts/applyMigration046QuotesQuoteNumber.ts"
+    "db:migrate:quotes-quote-number": "tsx src/scripts/applyMigration046QuotesQuoteNumber.ts",
+    "db:migrate:email-templates-agent-fallback": "tsx src/scripts/applyMigration047EmailTemplatesAgentFallback.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",
