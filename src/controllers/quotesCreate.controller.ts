@@ -12,7 +12,7 @@ const BudgetItemSchema = z.object({
   title: z.string(),
   description: z.string(),
   price: z.string(),
-  source: z.enum(["json", "custom", "impo", "similar"]),
+  source: z.enum(["json", "custom", "impo", "similar", "transito", "fwd"]),
 });
 
 const CreateQuoteBodySchema = z.object({
