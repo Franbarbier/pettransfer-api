@@ -62,36 +62,82 @@ export function normalizePaisDestino(
   return "otro";
 }
 
+const SELECT_TEMPLATE_ROW = `SELECT t.code, t.body, t.cc_recommended_agent, t.append_block, b.body AS block_body
+     FROM email_templates t
+     LEFT JOIN email_template_blocks b ON b.code = t.append_block`;
+
+/**
+ * Único template de tipo_cliente = "agente" (texto genérico, no compromete a un tipo de
+ * servicio específico — ver migración 048). Se usa como fallback cuando el contexto no
+ * matchea ninguna fila exacta y el cliente es agente (ej. IMPO+agente, "ambas"+agente:
+ * ninguna combinación tiene template propio).
+ */
+const AGENTE_FALLBACK_CODE = "T03";
+
+export type EmailTemplateListItem = {
+  code: string;
+  description: string;
+  body: string;
+};
+
+/** Lista todos los templates (para el picker manual del FE) — sin resolver merge fields. */
+export async function listEmailTemplates(pool: Pool): Promise<EmailTemplateListItem[]> {
+  const { rows } = await pool.query<EmailTemplateListItem>(
+    `SELECT code, description, body FROM email_templates ORDER BY code`,
+  );
+  return rows;
+}
+
 export async function resolveEmailTemplate(
   pool: Pool,
   context: EmailTemplateContext,
   fields: EmailMergeFields,
+  overrideCode?: string,
 ): Promise<ResolvedEmailTemplate> {
-  const { rows } = await pool.query<TemplateRow>(
-    `SELECT t.code, t.body, t.cc_recommended_agent, t.append_block, b.body AS block_body
-     FROM email_templates t
-     LEFT JOIN email_template_blocks b ON b.code = t.append_block
-     WHERE t.tipo_operacion            = $1
-       AND t.tipo_cliente              IS NOT DISTINCT FROM $2
-       AND t.referido_starwood         IS NOT DISTINCT FROM $3
-       AND t.destino_cubierto_latam    IS NOT DISTINCT FROM $4
-       AND t.pais_destino              IS NOT DISTINCT FROM $5`,
-    [
-      context.tipo_operacion,
-      context.tipo_cliente,
-      context.referido_starwood,
-      context.destino_cubierto_latam,
-      context.pais_destino,
-    ],
-  );
+  let row: TemplateRow | undefined;
 
-  if (rows.length === 0) {
+  if (overrideCode) {
+    // Selección manual desde el picker: se usa tal cual, sin pasar por el match de contexto.
+    const { rows } = await pool.query<TemplateRow>(
+      `${SELECT_TEMPLATE_ROW} WHERE t.code = $1`,
+      [overrideCode],
+    );
+    row = rows[0];
+  } else {
+    const { rows } = await pool.query<TemplateRow>(
+      `${SELECT_TEMPLATE_ROW}
+       WHERE t.tipo_operacion            = $1
+         AND t.tipo_cliente              IS NOT DISTINCT FROM $2
+         AND t.referido_starwood         IS NOT DISTINCT FROM $3
+         AND t.destino_cubierto_latam    IS NOT DISTINCT FROM $4
+         AND t.pais_destino              IS NOT DISTINCT FROM $5`,
+      [
+        context.tipo_operacion,
+        context.tipo_cliente,
+        context.referido_starwood,
+        context.destino_cubierto_latam,
+        context.pais_destino,
+      ],
+    );
+    row = rows[0];
+
+    if (!row && context.tipo_cliente === "agente") {
+      const fallback = await pool.query<TemplateRow>(
+        `${SELECT_TEMPLATE_ROW} WHERE t.code = $1`,
+        [AGENTE_FALLBACK_CODE],
+      );
+      row = fallback.rows[0];
+    }
+  }
+
+  if (!row) {
     throw new Error(
-      `No se encontró template de mail para el contexto: ${JSON.stringify(context)}`,
+      overrideCode
+        ? `No se encontró el template "${overrideCode}".`
+        : `No se encontró template de mail para el contexto: ${JSON.stringify(context)}`,
     );
   }
 
-  const row = rows[0];
   let body = row.body;
 
   if (row.append_block !== null && row.block_body !== null) {
@@ -120,14 +166,27 @@ function applyOptionalBlock(body: string, key: string, keep: boolean): string {
   return body.replace(re, keep ? "$1" : "");
 }
 
+/**
+ * Si falta la ciudad (a veces solo se carga el país), cae al país en vez de dejar el
+ * placeholder sin reemplazar — evita frases rotas tipo "relocation from  to Miami".
+ */
+function cityWithCountryFallback(city: string, country: string): string {
+  return city.trim() || country.trim();
+}
+
 function applyMergeFields(body: string, fields: EmailMergeFields): string {
   body = applyOptionalBlock(body, "recommended_agent", fields.recommended_agent.trim() !== "");
 
+  // Sin fallback posible (no hay "nombre genérico" razonable): si no hay client_name se
+  // saca el placeholder Y el espacio que lo precede (evita "Hello ," colgante) en vez de
+  // dejar "{{client_name}}" visible en el mail enviado.
+  const clientName = fields.client_name.trim();
+  body = body.replace(/\s?\{\{client_name\}\}/g, clientName ? ` ${clientName}` : "");
+
   const entries: [RegExp, string][] = [
-    [/\{\{client_name\}\}/g, fields.client_name],
     [/\{\{pet_type\}\}/g, fields.pet_type],
-    [/\{\{origin_city\}\}/g, fields.origin_city],
-    [/\{\{destination_city\}\}/g, fields.destination_city],
+    [/\{\{origin_city\}\}/g, cityWithCountryFallback(fields.origin_city, fields.origin_country)],
+    [/\{\{destination_city\}\}/g, cityWithCountryFallback(fields.destination_city, fields.destination_country)],
     [/\{\{origin_country\}\}/g, fields.origin_country],
     [/\{\{destination_country\}\}/g, fields.destination_country],
     [/\{\{recommended_agent\}\}/g, fields.recommended_agent.trim() || RECOMMENDED_AGENT_FALLBACK],

@@ -3,7 +3,7 @@ import { Router } from "express";
 import { z } from "zod";
 
 import { getPool, requireDatabaseUrl } from "../database/pool";
-import { resolveEmailTemplate } from "../services/emailTemplates";
+import { listEmailTemplates, resolveEmailTemplate } from "../services/emailTemplates";
 
 export const emailTemplatesRouter = Router();
 
@@ -28,7 +28,38 @@ const fieldsSchema = z.object({
 const bodySchema = z.object({
   context: contextSchema,
   fields: fieldsSchema,
+  code: z.string().optional(),
 });
+
+/** GET /email-templates — lista todos los templates (para el picker manual del FE). */
+emailTemplatesRouter.get(
+  "/email-templates",
+  (_req: Request, res: Response) => {
+    void (async () => {
+      try {
+        requireDatabaseUrl();
+      } catch (e: unknown) {
+        res
+          .status(503)
+          .json({ error: e instanceof Error ? e.message : String(e) });
+        return;
+      }
+
+      try {
+        const templates = await listEmailTemplates(getPool());
+        res.json({ templates });
+      } catch (e: unknown) {
+        res.status(500).json({ error: e instanceof Error ? e.message : String(e) });
+      }
+    })().catch((e: unknown) => {
+      if (!res.headersSent) {
+        res
+          .status(500)
+          .json({ error: e instanceof Error ? e.message : String(e) });
+      }
+    });
+  },
+);
 
 /** POST /email-templates/resolve — selecciona y resuelve el template correcto. */
 emailTemplatesRouter.post(
@@ -55,6 +86,7 @@ emailTemplatesRouter.post(
           getPool(),
           parsed.data.context,
           parsed.data.fields,
+          parsed.data.code,
         );
         res.json(result);
       } catch (e: unknown) {

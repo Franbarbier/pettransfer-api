@@ -13,23 +13,46 @@ const BudgetItemSchema = z.object({
   description: z.string(),
   price: z.string(),
   source: z.enum(["json", "custom", "impo", "similar", "transito", "fwd"]),
+  /** Tipo real de demo-coti-v3 (crate/expo/impo/fwd/transito/custom), para reconstruir
+   * fielmente los ítems al cargar un borrador. v1/v2 no lo mandan (queda NULL). */
+  sourceType: z.enum(["crate", "expo", "impo", "fwd", "transito", "custom"]).optional(),
+});
+
+const QuoteAnimalSchema = z.object({
+  tipo: z.string(),
+  raza: z.string(),
+  nombre: z.string(),
+  crateMode: z.enum(["latam", "client", "none"]),
+  crateSize: z.string().nullable().optional(),
+  cost: z.string(),
 });
 
 const CreateQuoteBodySchema = z.object({
   customerName: z.string(),
+  agentName: z.string().optional(),
+  clientPhone: z.string().optional(),
   origin: z.string(),
   destination: z.string(),
+  tradeDirection: z.enum(["impo", "expo", "ambas", "transito"]).optional(),
+  transitCountry: z.enum(["argentina", "chile"]).optional(),
   fwd: z.string().optional(),
+  fwdMode: z.enum(["avion", "terrestre", "otro"]).optional(),
   notes: z.string().optional(),
   quotedDate: z.string(),
   travelDate: z.string(),
+  aerolinea: z.string().optional(),
+  disclaimerContract: z.string().optional(),
+  disclaimerContact: z.string().optional(),
   animalsCount: z.number().int().min(0),
   animalsDescription: z.string(),
   items: z.array(BudgetItemSchema),
+  /** Mascotas de demo-coti-v3 con fidelidad completa. v1/v2 no lo mandan (queda vacío). */
+  animals: z.array(QuoteAnimalSchema).optional(),
   totalAmount: z.number(),
   status: z.enum(["draft", "sent", "confirmed", "completed"]).default("draft"),
   emailSentTo: z.string().optional(),
   salespersonName: z.string().optional(),
+  salespersonId: z.string().optional(),
 });
 
 type CreateQuoteBody = z.infer<typeof CreateQuoteBodySchema>;
@@ -51,8 +74,8 @@ async function replaceQuoteItems(
         item_number, display_order,
         item_name_raw, item_catalog_id, item_display_name,
         price_raw, price_amount, currency,
-        inline_note, is_zero_priced
-      ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
+        inline_note, is_zero_priced, source_type
+      ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)`,
       [
         itemId,
         importKey,
@@ -66,6 +89,38 @@ async function replaceQuoteItems(
         "USD",
         item.description || null,
         priceAmount === 0,
+        item.sourceType ?? null,
+      ],
+    );
+  }
+}
+
+async function replaceQuoteAnimals(
+  client: PoolClient,
+  importKey: string,
+  animals: CreateQuoteBody["animals"],
+): Promise<void> {
+  await client.query(`DELETE FROM quote_animals WHERE quote_id = $1`, [importKey]);
+  if (!animals) return;
+
+  for (let i = 0; i < animals.length; i++) {
+    const animal = animals[i];
+    const animalId = `${importKey}-animal-${i}`;
+    await client.query(
+      `INSERT INTO quote_animals (
+        quote_animal_id, quote_id, display_order,
+        animal_type, breed, name, crate_mode, crate_size, cost
+      ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
+      [
+        animalId,
+        importKey,
+        i,
+        animal.tipo || null,
+        animal.raza || null,
+        animal.nombre || null,
+        animal.crateMode,
+        animal.crateMode === "none" ? null : animal.crateSize || null,
+        animal.cost || null,
       ],
     );
   }
@@ -90,18 +145,28 @@ quotesCreateRouter.post(
 
       const {
         customerName,
+        agentName,
+        clientPhone,
         origin,
         destination,
+        tradeDirection,
+        transitCountry,
         fwd,
+        fwdMode,
         notes,
         quotedDate,
         travelDate,
+        aerolinea,
+        disclaimerContract,
+        disclaimerContact,
         animalsCount,
         animalsDescription,
         items,
+        animals,
         totalAmount,
         status,
         emailSentTo,
+        salespersonId,
       } = parsed.data;
 
       const importKey = `demo-coti-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -115,23 +180,33 @@ quotesCreateRouter.post(
         const quoteRes = await client.query<{ id: string; quote_number: number | null }>(
           `INSERT INTO quotes (
             import_key, source_filename,
-            customer_name, origin, destination, fwd, notes,
-            quotation_date_raw, travel_date_raw,
+            customer_name, agent, client_phone, origin, destination,
+            trade_direction, transit_country, fwd, fwd_mode, notes,
+            quotation_date_raw, travel_date_raw, aerolinea,
+            disclaimer_contract, disclaimer_contact,
             animals_count, animals_description,
             quoted_total_amount, quoted_total_raw, currency,
-            status, email_sent_to
-          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
+            status, email_sent_to, salesperson_id
+          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25)
           RETURNING id, quote_number`,
           [
             importKey,
             "demo-coti",
             customerName || null,
+            agentName?.trim() ? agentName.trim() : null,
+            clientPhone?.trim() ? clientPhone.trim() : null,
             origin || null,
             destination || null,
+            tradeDirection ?? null,
+            transitCountry ?? null,
             fwd?.trim() ? fwd.trim() : null,
+            fwdMode ?? null,
             notes?.trim() ? notes.trim() : null,
             quotedDate || null,
             travelDate || null,
+            aerolinea?.trim() ? aerolinea.trim() : null,
+            disclaimerContract ?? null,
+            disclaimerContact ?? null,
             animalsCount,
             animalsDescription || null,
             totalAmount,
@@ -139,6 +214,7 @@ quotesCreateRouter.post(
             "USD",
             status,
             emailSentTo ?? null,
+            salespersonId?.trim() ? salespersonId.trim() : null,
           ],
         );
 
@@ -146,6 +222,7 @@ quotesCreateRouter.post(
         const quoteNumber = quoteRes.rows[0]?.quote_number ?? null;
 
         await replaceQuoteItems(client, importKey, items);
+        await replaceQuoteAnimals(client, importKey, animals);
 
         await client.query("COMMIT");
         res.status(201).json({ id: quoteId, importKey, quoteNumber });
@@ -179,18 +256,28 @@ quotesCreateRouter.put(
 
       const {
         customerName,
+        agentName,
+        clientPhone,
         origin,
         destination,
+        tradeDirection,
+        transitCountry,
         fwd,
+        fwdMode,
         notes,
         quotedDate,
         travelDate,
+        aerolinea,
+        disclaimerContract,
+        disclaimerContact,
         animalsCount,
         animalsDescription,
         items,
+        animals,
         totalAmount,
         status,
         emailSentTo,
+        salespersonId,
       } = parsed.data;
 
       const pool = getPool();
@@ -201,28 +288,39 @@ quotesCreateRouter.put(
 
         const quoteRes = await client.query<{ id: string; import_key: string; quote_number: number | null }>(
           `UPDATE quotes SET
-            customer_name = $1, origin = $2, destination = $3, fwd = $4, notes = $5,
-            quotation_date_raw = $6, travel_date_raw = $7,
-            animals_count = $8, animals_description = $9,
-            quoted_total_amount = $10, quoted_total_raw = $11,
-            status = $12, email_sent_to = $13,
+            customer_name = $1, agent = $2, client_phone = $3, origin = $4, destination = $5,
+            trade_direction = $6, transit_country = $7, fwd = $8, fwd_mode = $9, notes = $10,
+            quotation_date_raw = $11, travel_date_raw = $12, aerolinea = $13,
+            disclaimer_contract = $14, disclaimer_contact = $15,
+            animals_count = $16, animals_description = $17,
+            quoted_total_amount = $18, quoted_total_raw = $19,
+            status = $20, email_sent_to = $21, salesperson_id = $22,
             updated_at = now()
-          WHERE id = $14
+          WHERE id = $23
           RETURNING id, import_key, quote_number`,
           [
             customerName || null,
+            agentName?.trim() ? agentName.trim() : null,
+            clientPhone?.trim() ? clientPhone.trim() : null,
             origin || null,
             destination || null,
+            tradeDirection ?? null,
+            transitCountry ?? null,
             fwd?.trim() ? fwd.trim() : null,
+            fwdMode ?? null,
             notes?.trim() ? notes.trim() : null,
             quotedDate || null,
             travelDate || null,
+            aerolinea?.trim() ? aerolinea.trim() : null,
+            disclaimerContract ?? null,
+            disclaimerContact ?? null,
             animalsCount,
             animalsDescription || null,
             totalAmount,
             `USD ${totalAmount.toFixed(2)}`,
             status,
             emailSentTo ?? null,
+            salespersonId?.trim() ? salespersonId.trim() : null,
             req.params.id,
           ],
         );
@@ -235,6 +333,7 @@ quotesCreateRouter.put(
         }
 
         await replaceQuoteItems(client, row.import_key, items);
+        await replaceQuoteAnimals(client, row.import_key, animals);
 
         await client.query("COMMIT");
         res.status(200).json({ id: row.id, importKey: row.import_key, quoteNumber: row.quote_number });
@@ -245,6 +344,131 @@ quotesCreateRouter.put(
       } finally {
         client.release();
       }
+    })();
+  },
+);
+
+type QuoteItemsByNumberRow = {
+  item_name_raw: string | null;
+  item_display_name: string | null;
+  price_raw: string | null;
+  inline_note: string | null;
+  source_type: string | null;
+};
+
+type QuoteAnimalsByNumberRow = {
+  animal_type: string | null;
+  breed: string | null;
+  name: string | null;
+  crate_mode: string | null;
+  crate_size: string | null;
+  cost: string | null;
+};
+
+/** Ítems persistidos de una cotización, para reconstruir un borrador de demo-coti-v3. */
+quotesCreateRouter.get(
+  "/quotes/by-number/:number",
+  (req: Request, res: Response): void => {
+    void (async () => {
+      try {
+        requireDatabaseUrl();
+      } catch {
+        res.status(503).json({ error: "Database no disponible" });
+        return;
+      }
+
+      const digits = req.params.number.replace(/\D/g, "");
+      if (!digits) {
+        res.status(400).json({ error: "Número de cotización inválido" });
+        return;
+      }
+
+      const pool = getPool();
+
+      const quoteRes = await pool.query<{
+        id: string;
+        import_key: string;
+        quote_number: number;
+        customer_name: string | null;
+        agent: string | null;
+        client_phone: string | null;
+        origin: string | null;
+        destination: string | null;
+        trade_direction: string | null;
+        transit_country: string | null;
+        fwd: string | null;
+        fwd_mode: string | null;
+        notes: string | null;
+        quotation_date_raw: string | null;
+        travel_date_raw: string | null;
+        aerolinea: string | null;
+        disclaimer_contract: string | null;
+        disclaimer_contact: string | null;
+        email_sent_to: string | null;
+        salesperson_id: string | null;
+      }>(
+        `SELECT id, import_key, quote_number,
+           customer_name, agent, client_phone, origin, destination,
+           trade_direction, transit_country, fwd, fwd_mode, notes,
+           quotation_date_raw, travel_date_raw, aerolinea,
+           disclaimer_contract, disclaimer_contact, email_sent_to, salesperson_id
+         FROM quotes WHERE quote_number = $1`,
+        [Number(digits)],
+      );
+      const quote = quoteRes.rows[0];
+      if (!quote) {
+        res.status(404).json({ error: "No se encontró ninguna cotización con ese número." });
+        return;
+      }
+
+      const itemsRes = await pool.query<QuoteItemsByNumberRow>(
+        `SELECT item_name_raw, item_display_name, price_raw, inline_note, source_type
+         FROM quote_items WHERE quote_id = $1 ORDER BY display_order`,
+        [quote.import_key],
+      );
+
+      const animalsRes = await pool.query<QuoteAnimalsByNumberRow>(
+        `SELECT animal_type, breed, name, crate_mode, crate_size, cost
+         FROM quote_animals WHERE quote_id = $1 ORDER BY display_order`,
+        [quote.import_key],
+      );
+
+      res.status(200).json({
+        id: quote.id,
+        quoteNumber: quote.quote_number,
+        customerName: quote.customer_name ?? "",
+        agentName: quote.agent ?? "",
+        clientEmail: quote.email_sent_to ?? "",
+        clientPhone: quote.client_phone ?? "",
+        origin: quote.origin ?? "",
+        destination: quote.destination ?? "",
+        tradeDirection: quote.trade_direction,
+        transitCountry: quote.transit_country,
+        fwd: quote.fwd ?? "",
+        fwdMode: quote.fwd_mode,
+        notes: quote.notes ?? "",
+        quotedDate: quote.quotation_date_raw ?? "",
+        travelDate: quote.travel_date_raw ?? "",
+        aerolinea: quote.aerolinea ?? "",
+        disclaimerContract: quote.disclaimer_contract,
+        disclaimerContact: quote.disclaimer_contact,
+        salespersonId: quote.salesperson_id,
+        items: itemsRes.rows.map((r) => ({
+          sourceKey: r.item_name_raw ?? "",
+          title: r.item_display_name ?? "",
+          description: r.inline_note ?? "",
+          price: r.price_raw ?? "",
+          type: r.source_type,
+        })),
+        animals: animalsRes.rows.map((r) => ({
+          tipo: r.animal_type ?? "",
+          raza: r.breed ?? "",
+          nombre: r.name ?? "",
+          crateMode: r.crate_mode,
+          crateSize: r.crate_size,
+          cost: r.cost ?? "",
+        })),
+      });
     })();
   },
 );

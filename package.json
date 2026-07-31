@@ -47,7 +47,12 @@
     "db:migrate:quotes-fwd-notes": "tsx src/scripts/applyMigration040QuotesFwdNotes.ts",
     "db:migrate:swap-arg-expo-ecc-air-freight": "tsx src/scripts/applyMigration041SwapArgExpoEccAirFreight.ts",
     "db:migrate:quotes-quote-number": "tsx src/scripts/applyMigration046QuotesQuoteNumber.ts",
-    "db:migrate:email-templates-agent-fallback": "tsx src/scripts/applyMigration047EmailTemplatesAgentFallback.ts"
+    "db:migrate:email-templates-agent-fallback": "tsx src/scripts/applyMigration047EmailTemplatesAgentFallback.ts",
+    "db:migrate:email-template-agente-fallback-generic": "tsx src/scripts/applyMigration048EmailTemplateAgenteFallbackGeneric.ts",
+    "db:migrate:quote-items-source-type": "tsx src/scripts/applyMigration049QuoteItemsSourceType.ts",
+    "db:migrate:quote-animals": "tsx src/scripts/applyMigration050QuoteAnimals.ts",
+    "db:migrate:quote-items-animals-cascade-delete": "tsx src/scripts/applyMigration051QuoteItemsAnimalsCascadeDelete.ts",
+    "db:migrate:quotes-v3-form-fields": "tsx src/scripts/applyMigration052QuotesV3FormFields.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",
