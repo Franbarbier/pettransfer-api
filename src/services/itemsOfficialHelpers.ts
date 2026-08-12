@@ -41,7 +41,9 @@ const SELECT_ITEM_FIELDS = `id::text, uuid::text, operation_type, airport, count
 
 /**
  * Busca (fuzzy match) el país cargado para un `operation_type` que coincida con `inputLocation`
- * y devuelve sus ítems oficiales. Para `FWD` con `fwdMode` definido, filtra además por
+ * y devuelve sus ítems oficiales. `country IS NULL` en items_official significa "aplica a todos
+ * los países" — esos ítems se suman siempre, haya o no un país específico que matchee
+ * `inputLocation` (no se pisan entre sí). Para `FWD` con `fwdMode` definido, filtra además por
  * `fwd_mode = fwdMode OR fwd_mode IS NULL` (cubre ítems FWD sin modo definido).
  */
 export async function findOfficialItemsByOperation(
@@ -55,25 +57,26 @@ export async function findOfficialItemsByOperation(
     [operationType],
   );
   const matched = countries.find((r) => fuzzyMatch(inputLocation, r.country));
-  if (!matched) return { country: null, items: null };
+  const countryFilter = matched ? `(country = $2 OR country IS NULL)` : `country IS NULL`;
+  const baseParams = matched ? [operationType, matched.country] : [operationType];
 
   if (operationType === "FWD" && fwdMode) {
     const { rows } = await pool.query<OfficialItem>(
       `SELECT ${SELECT_ITEM_FIELDS}
        FROM items_official
        WHERE operation_type = $1
-         AND country = $2
-         AND (fwd_mode = $3 OR fwd_mode IS NULL)
+         AND ${countryFilter}
+         AND (fwd_mode = $${baseParams.length + 1} OR fwd_mode IS NULL)
        ORDER BY id`,
-      [operationType, matched.country, fwdMode],
+      [...baseParams, fwdMode],
     );
-    return { country: matched.country, items: rows };
+    return { country: matched?.country ?? null, items: rows };
   }
 
   const { rows } = await pool.query<OfficialItem>(
     `SELECT ${SELECT_ITEM_FIELDS}
-     FROM items_official WHERE operation_type = $1 AND country = $2 ORDER BY id`,
-    [operationType, matched.country],
+     FROM items_official WHERE operation_type = $1 AND ${countryFilter} ORDER BY id`,
+    baseParams,
   );
-  return { country: matched.country, items: rows };
+  return { country: matched?.country ?? null, items: rows };
 }

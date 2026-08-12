@@ -52,7 +52,9 @@
     "db:migrate:quote-items-source-type": "tsx src/scripts/applyMigration049QuoteItemsSourceType.ts",
     "db:migrate:quote-animals": "tsx src/scripts/applyMigration050QuoteAnimals.ts",
     "db:migrate:quote-items-animals-cascade-delete": "tsx src/scripts/applyMigration051QuoteItemsAnimalsCascadeDelete.ts",
-    "db:migrate:quotes-v3-form-fields": "tsx src/scripts/applyMigration052QuotesV3FormFields.ts"
+    "db:migrate:quotes-v3-form-fields": "tsx src/scripts/applyMigration052QuotesV3FormFields.ts",
+    "db:migrate:items-official-routing-only-aerolinea": "tsx src/scripts/applyMigration053ItemsOfficialRoutingOnlyAerolinea.ts",
+    "db:migrate:quotes-company": "tsx src/scripts/applyMigration054QuotesCompany.ts"
   },
   "dependencies": {
     "archiver": "^7.0.1",

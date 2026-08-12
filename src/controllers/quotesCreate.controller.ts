@@ -30,6 +30,7 @@ const QuoteAnimalSchema = z.object({
 const CreateQuoteBodySchema = z.object({
   customerName: z.string(),
   agentName: z.string().optional(),
+  companyName: z.string().optional(),
   clientPhone: z.string().optional(),
   origin: z.string(),
   destination: z.string(),
@@ -146,6 +147,7 @@ quotesCreateRouter.post(
       const {
         customerName,
         agentName,
+        companyName,
         clientPhone,
         origin,
         destination,
@@ -180,20 +182,21 @@ quotesCreateRouter.post(
         const quoteRes = await client.query<{ id: string; quote_number: number | null }>(
           `INSERT INTO quotes (
             import_key, source_filename,
-            customer_name, agent, client_phone, origin, destination,
+            customer_name, agent, company, client_phone, origin, destination,
             trade_direction, transit_country, fwd, fwd_mode, notes,
             quotation_date_raw, travel_date_raw, aerolinea,
             disclaimer_contract, disclaimer_contact,
             animals_count, animals_description,
             quoted_total_amount, quoted_total_raw, currency,
             status, email_sent_to, salesperson_id
-          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25)
+          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26)
           RETURNING id, quote_number`,
           [
             importKey,
             "demo-coti",
             customerName || null,
             agentName?.trim() ? agentName.trim() : null,
+            companyName?.trim() ? companyName.trim() : null,
             clientPhone?.trim() ? clientPhone.trim() : null,
             origin || null,
             destination || null,
@@ -257,6 +260,7 @@ quotesCreateRouter.put(
       const {
         customerName,
         agentName,
+        companyName,
         clientPhone,
         origin,
         destination,
@@ -288,19 +292,20 @@ quotesCreateRouter.put(
 
         const quoteRes = await client.query<{ id: string; import_key: string; quote_number: number | null }>(
           `UPDATE quotes SET
-            customer_name = $1, agent = $2, client_phone = $3, origin = $4, destination = $5,
-            trade_direction = $6, transit_country = $7, fwd = $8, fwd_mode = $9, notes = $10,
-            quotation_date_raw = $11, travel_date_raw = $12, aerolinea = $13,
-            disclaimer_contract = $14, disclaimer_contact = $15,
-            animals_count = $16, animals_description = $17,
-            quoted_total_amount = $18, quoted_total_raw = $19,
-            status = $20, email_sent_to = $21, salesperson_id = $22,
+            customer_name = $1, agent = $2, company = $3, client_phone = $4, origin = $5, destination = $6,
+            trade_direction = $7, transit_country = $8, fwd = $9, fwd_mode = $10, notes = $11,
+            quotation_date_raw = $12, travel_date_raw = $13, aerolinea = $14,
+            disclaimer_contract = $15, disclaimer_contact = $16,
+            animals_count = $17, animals_description = $18,
+            quoted_total_amount = $19, quoted_total_raw = $20,
+            status = $21, email_sent_to = $22, salesperson_id = $23,
             updated_at = now()
-          WHERE id = $23
+          WHERE id = $24
           RETURNING id, import_key, quote_number`,
           [
             customerName || null,
             agentName?.trim() ? agentName.trim() : null,
+            companyName?.trim() ? companyName.trim() : null,
             clientPhone?.trim() ? clientPhone.trim() : null,
             origin || null,
             destination || null,
@@ -391,6 +396,7 @@ quotesCreateRouter.get(
         quote_number: number;
         customer_name: string | null;
         agent: string | null;
+        company: string | null;
         client_phone: string | null;
         origin: string | null;
         destination: string | null;
@@ -408,7 +414,7 @@ quotesCreateRouter.get(
         salesperson_id: string | null;
       }>(
         `SELECT id, import_key, quote_number,
-           customer_name, agent, client_phone, origin, destination,
+           customer_name, agent, company, client_phone, origin, destination,
            trade_direction, transit_country, fwd, fwd_mode, notes,
            quotation_date_raw, travel_date_raw, aerolinea,
            disclaimer_contract, disclaimer_contact, email_sent_to, salesperson_id
@@ -438,6 +444,7 @@ quotesCreateRouter.get(
         quoteNumber: quote.quote_number,
         customerName: quote.customer_name ?? "",
         agentName: quote.agent ?? "",
+        companyName: quote.company ?? "",
         clientEmail: quote.email_sent_to ?? "",
         clientPhone: quote.client_phone ?? "",
         origin: quote.origin ?? "",
